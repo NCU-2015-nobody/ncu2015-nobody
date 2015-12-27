@@ -1,14 +1,14 @@
 package com.nobody.renderEngine;
 
-import com.nobody.domStub.UIInformation;
+import com.nobody.domStub.DynamicObjectModule;
 
 public class UIRender
 {
 
-	private UIInformation dom;
+	private DynamicObjectModule dom;
 	private UpdateUI canvas;
 	
-	public UIRender(UIInformation dom, UpdateUI canvas)
+	public UIRender(DynamicObjectModule dom, UpdateUI canvas)
 	{
 		this.dom = dom;
 		this.canvas = canvas;

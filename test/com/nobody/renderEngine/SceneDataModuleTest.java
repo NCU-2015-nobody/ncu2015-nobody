@@ -124,44 +124,7 @@ public class SceneDataModuleTest
 	{
 		sdm.loadMap("mapfile4");
 	}
-
-	@Test
-	public final void testGetSceneTypeMap() throws IOException
-	{
-		sdm.loadMap("mapfile1");
-		int[][] checkMap = {
-				{3, 1, 2, 3, 1, 2}, 
-				{1, 2, 1, 2, 4, 2}, 
-				{2, 2, 1, 3, 2, 2}, 
-				{3, 4, 4, 4, 4, 3}};
-		int[][] sceneMap = sdm.getSceneType(0, 0, 6, 4);
-		
-		for(int i = 0; i < sceneMap.length; i++)
-		{
-			for(int j = 0; j < sceneMap[i].length; j++)
-			{
-				assertEquals(checkMap[i][j], sceneMap[i][j]);
-			}
-		}
-		
-
-		int[][] checkMap2 = {
-				{0, 0, 0, 0, 0, 0, 0}, 
-				{0, 0, 0, 0, 0, 0, 0}, 
-				{0, 3, 1, 2, 3, 1, 2}, 
-				{0, 1, 2, 1, 2, 4, 2}, 
-				{0, 2, 2, 1, 3, 2, 2}};
-		sceneMap = sdm.getSceneType(-1, -2, 7, 5);
-		
-		for(int i = 0; i < sceneMap.length; i++)
-		{
-			for(int j = 0; j < sceneMap[i].length; j++)
-			{
-				assertEquals(checkMap2[i][j], sceneMap[i][j]);
-			}
-		}
-	}
-
+	
 	@Test
 	public final void testGetAllKindOfTypeMap1() throws IOException
 	{

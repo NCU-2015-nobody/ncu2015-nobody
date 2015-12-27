@@ -27,16 +27,15 @@ public class SceneDataModule
         String rawData = br.readLine();
         String[] datas = rawData.split(" ");
 		int width = Integer.parseInt(datas[0]);
-		int length = Integer.parseInt(datas[1]);
-		System.out.println(width + " " + length);
+		int height = Integer.parseInt(datas[1]);
+		System.out.println(width + " " + height);
 
-		newMap(width, length);
+		newMap(width, height);
 		for(int y = 0; y < width; y++)
 		{
 			rawData = br.readLine();
-			//System.out.println("rawData=" + rawData);
 	        datas = rawData.split(" ");
-			for(int x = 0; x < length; x++)
+			for(int x = 0; x < height; x++)
 			{
 				this.map[y][x] = Integer.parseInt(datas[x]);
 				System.out.print(map[y][x] + " ");
@@ -53,34 +52,14 @@ public class SceneDataModule
 		fr.close();
 	}
 	
-	public int[][] getSceneType(int mapX, int mapY, int sceneWidth, int sceneLength)
+	private void newMap(int width, int length)
 	{
-		int[][] sceneType = new int[sceneLength][sceneWidth];
-		
-		for(int i = 0; i < sceneLength; i++)
-		{
-			for(int j = 0; j < sceneWidth; j++)
-			{
-				if(mapY + i < 0 || mapY + i >= 20 || mapX + j < 0 || mapX + j >= 50)
-				{
-					sceneType[i][j] = BasicBlock.DEFAULT;
-					continue;
-				}
-				sceneType[i][j] = map[mapY + i][mapX + j];
-			}
-		}
-		
-		return sceneType;
+		map = new int[width][length];
 	}
 	
 	public ArrayList<Integer> getAllKindOfType()
 	{
 		return this.sceneType;
-	}
-	
-	private void newMap(int width, int length)
-	{
-		map = new int[width][length];
 	}
 
 	public int[][] getMap()

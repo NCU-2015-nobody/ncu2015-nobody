@@ -13,14 +13,10 @@ import javax.swing.JPanel;
 
 public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 {
-	/*
 	private int blockWidth;
-	private int blockHeight;*/
+	private int blockHeight;
 
-	private final int sceneTypeMax = 5;/*
-	private int offsetX;
-	private int offsetY;*/
-
+	private final int sceneTypeMax = 7;
 	private BasicBlock[][] sceneBlocks;
 	private Image[] sceneImage;
 	
@@ -39,12 +35,11 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 	
 	public GameCanvas(int blockWidth, int blockHeight)
 	{
-		
+		this.blockWidth = blockWidth;
+		this.blockHeight = blockHeight;
 		
 		sceneBlocks = new BasicBlock[blockHeight][blockWidth];
-		sceneImage = new Image[sceneTypeMax];/*
-		offsetX = -1;
-		offsetY = -1;*/
+		sceneImage = new Image[sceneTypeMax];
 		
 		characterIcon = new Image[4];
 		skill = new Image[4];
@@ -66,9 +61,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 	@Override
 	public void updateScene(int[][] sceneType)
 	{
-		updateSceneBlocks(sceneType);/*
-		this.offsetX = offsetX;
-		this.offsetY = offsetY;*/
+		updateSceneBlocks(sceneType);
 		
 		this.repaint();
 	}
@@ -179,7 +172,6 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 			for(int j = 0; j < sceneBlocks[i].length; j++)
 			{
 				g2D.drawImage(sceneImage[sceneBlocks[i][j].getType()], (j * 100), (i * 100), null);
-				//g2D.drawImage(sceneImage[sceneBlocks[i][j].getType()], offsetX * -1 + (j * 100), offsetY * -1 + (i * 100), null);
 			}
 		}
 	}
@@ -247,5 +239,17 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		Image img = originIcon.getImage();
 		Image newimg = img.getScaledInstance(x, y, Image.SCALE_SMOOTH);
 		return new ImageIcon(newimg);
+	}
+
+	@Override
+	public int getBlockWidth()
+	{
+		return this.blockWidth;
+	}
+
+	@Override
+	public int getBlockHeight()
+	{
+		return this.blockHeight;
 	}
 }
