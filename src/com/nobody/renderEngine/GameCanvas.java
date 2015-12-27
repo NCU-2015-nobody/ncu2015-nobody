@@ -105,7 +105,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		{
 			try
 			{
-				picture = ImageIO.read(new File(BasicBlock.TYPE_NAME[list.get(i)] + ".jpg"));
+				picture = ImageIO.read(new File("./image/" + BasicBlock.TYPE_NAME[list.get(i)] + ".jpg"));
 			}
 			catch (IOException e)
 			{
@@ -128,13 +128,13 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		
 		try
 		{
-			picture = ImageIO.read(new File("hp.jpg"));
+			picture = ImageIO.read(new File("./image/hp.jpg"));
 			hp = setIconSize(new ImageIcon(picture), 100, 30).getImage();
 
-			picture = ImageIO.read(new File("hp_background.jpg"));
+			picture = ImageIO.read(new File("./image/hp_background.jpg"));
 			hpBackground = new ImageIcon(picture).getImage();
 			
-			picture = ImageIO.read(new File("ui_background.jpg"));
+			picture = ImageIO.read(new File("./image/ui_background.jpg"));
 			uiBackground = setIconSize(new ImageIcon(picture), 180, 60).getImage();
 			
 		}
@@ -147,13 +147,13 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		{
 			try
 			{
-				picture = ImageIO.read(new File((i + 1) + ".png"));
+				picture = ImageIO.read(new File("./image/" + (i + 1) + ".png"));
 				characterIcon[i] = setIconSize(new ImageIcon(picture), 50, 50).getImage();
 
-				picture = ImageIO.read(new File((i + 1) + "_skill.png"));
+				picture = ImageIO.read(new File("./image/" + (i + 1) + "_skill.png"));
 				skill[i] = setIconSize(new ImageIcon(picture), 15, 15).getImage();
 				
-				picture = ImageIO.read(new File((i + 1) + "_skill_cd.png"));
+				picture = ImageIO.read(new File("./image/" + (i + 1) + "_skill_cd.png"));
 				skillCD[i] = setIconSize(new ImageIcon(picture), 15, 15).getImage();
 			}
 			catch (IOException e)
@@ -171,7 +171,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		{
 			for(int j = 0; j < sceneBlocks[i].length; j++)
 			{
-				g2D.drawImage(sceneImage[sceneBlocks[i][j].getType()], (j * 100), (i * 100), null);
+				g2D.drawImage(sceneImage[sceneBlocks[i][j].getType()], (j * 25), (i * 25), null);
 			}
 		}
 	}
