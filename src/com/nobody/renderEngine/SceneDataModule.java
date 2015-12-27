@@ -19,7 +19,7 @@ public class SceneDataModule
 	
 	public void loadMap(String mapfileName) throws IOException
 	{
-		FileReader fr = new FileReader(mapfileName);
+		FileReader fr = new FileReader("./map/" + mapfileName);
         BufferedReader br = new BufferedReader(fr);
         sceneType.clear();
         sceneType.add(BasicBlock.DEFAULT); // load default type
