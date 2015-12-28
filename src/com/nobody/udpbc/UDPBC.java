@@ -7,9 +7,11 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.Iterator;
 import java.util.Vector;
+import com.nobody.cdc.*;
+import com.nobody.cdc.Character;
 
 public class UDPBC {
-	
+
 	private TCPSM tcpsm = new TCPSM();
 	private CDC cdc = new CDC();
 	private Socket socket[] = new Socket[4];
@@ -51,8 +53,8 @@ public class UDPBC {
 			Object info = it.next();
 			if (info instanceof Character) {
 				Character chara = (Character) info;
-				msg = "add,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY() + ","
-						+ chara.direction + "," + chara.HP;
+				msg = "add,chara," + chara.clientNumber + "," + chara.position.getX() + "," + chara.position.getY()
+						+ "," + chara.direction + "," + chara.HP;
 			}
 
 			if (info instanceof Monster) {
@@ -80,8 +82,8 @@ public class UDPBC {
 				Object info = it.next();
 				if (info instanceof Character) {
 					Character chara = (Character) info;
-					msg = "update,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY()
-							+ "," + chara.direction + "," + chara.HP;
+					msg = "update,chara," + chara.clientNumber + "," + chara.position.getX() + ","
+							+ chara.position.getY() + "," + chara.direction + "," + chara.HP;
 				}
 
 				if (info instanceof Monster) {
