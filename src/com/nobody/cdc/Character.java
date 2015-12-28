@@ -1,3 +1,5 @@
+package com.nobody.cdc;
+
 import java.awt.*;
 
 public class Character {

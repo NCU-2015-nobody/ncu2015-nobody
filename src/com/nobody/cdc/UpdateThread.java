@@ -1,3 +1,5 @@
+package com.nobody.cdc;
+
 import java.util.ArrayList;
 import java.util.Vector;
 

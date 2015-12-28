@@ -1,3 +1,5 @@
+package com.nobody.cdc;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
