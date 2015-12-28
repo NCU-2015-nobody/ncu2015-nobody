@@ -44,16 +44,10 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		characterIcon = new Image[4];
 		skill = new Image[4];
 		skillCD = new Image[4];
-		hpPecentage = new int[4];
-		
-		// not yet, just for test
-		for(int i = 0; i < hpPecentage.length; i++)
-		{
-			hpPecentage[i] = 50;
-		}
-		cdFlag = new boolean[4];
-		
+
 		initialBlocks();
+		initialHPPercentage();
+		initialCDFlag();
 		
 		loadUIImage();
 	}
@@ -63,7 +57,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 	{
 		updateSceneBlocks(sceneType);
 		
-		this.repaint();
+		//this.repaint();
 	}
 	
 	/*
@@ -231,6 +225,24 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 			{
 				sceneBlocks[i][j] = new BasicBlock(BasicBlock.DEFAULT);
 			}
+		}
+	}
+	
+	private void initialHPPercentage()
+	{
+		hpPecentage = new int[4];
+		for(int i = 0; i < hpPecentage.length; i++)
+		{
+			hpPecentage[i] = 100;
+		}
+	}
+	
+	private void initialCDFlag()
+	{
+		cdFlag = new boolean[4];
+		for(int i = 0; i < cdFlag.length; i++)
+		{
+			cdFlag[i] = false;
 		}
 	}
 	
