@@ -34,55 +34,68 @@ public class cdcsdm {
 		
 	}
 	
+	public Boolean checkTrap(Point position) {
+		//1石頭   2草地   3樹木   4水   5木牆   6尖刺
+		
+		int XX =  (int)position.getX()/25 ;
+		int YY  = (int)position.getY()/25 ;
+		if(columnList.get(XX).get(YY)==6)
+			return true ;
+		else
+			return false;
+	}
+	
 	public ArrayList checkObstacle(Point position, int direction, int attackRange){
 		
 		ArrayList<Boolean> obstacleList = new ArrayList<Boolean>();
 		
-		int XX = (int) position.getX() ;//將座標值轉換成可供list使用的index值
-		int YY = (int) position.getY() ;
+		int XX = (int) position.getX()/25 ;//將座標值轉換成可供list使用的index值
+		int YY = (int) position.getY()/25 ;
 		
-		//草地1   石頭2   陷阱3  樹4 
+		//不可行走區域：1石頭      3樹木     4水     5木牆
+		//可行走區域：2草地      6尖刺
+		//false為不可通過區域
 		switch(direction){ // left0 up1 right2 down3
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==4 ){
-						obstacleList.add(false) ;
+					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						obstacleList.add(true) ;
 					}
 					else
-						obstacleList.add(true) ;
+						obstacleList.add(false) ;
 					XX-- ;
 				}
 			}break;
 			
 			case 1:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==4 ){
-						obstacleList.add(false) ;
+					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						obstacleList.add(true) ;
 					}
 					else
-						obstacleList.add(true) ;
+						obstacleList.add(false) ;
 					YY-- ;
 				}	
 			}break;
 			
 			case 2:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==4 ){
-						obstacleList.add(false) ;
+					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						obstacleList.add(true) ;
 					}
 					else
-						obstacleList.add(true) ;
+						obstacleList.add(false) ;
 					XX++ ;
 				}	
 			}break;
 			
 			case 3:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==4 ){
-						obstacleList.add(false) ;
+					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						obstacleList.add(true) ;
 					}
 					else
-						obstacleList.add(true) ;
+						obstacleList.add(false) ;
 					YY++ ;
 				}
 			}break;
@@ -90,7 +103,6 @@ public class cdcsdm {
 		}
 		
 		return obstacleList ;
-		
 	}
 	
 	
