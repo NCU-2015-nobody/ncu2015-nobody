@@ -56,6 +56,6 @@ public class Panel1_1 extends Panel{
 		});
 		this.add(button2);
 		/////////////
-		this.setBak(this, ".//bg 800.jpg");
+		this.setBak(this, ".//image//bg 800.jpg");
 	}
 }

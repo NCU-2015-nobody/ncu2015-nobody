@@ -25,7 +25,7 @@ public class Panel1 extends Panel{
 		button.addMouseListener(new Return_button(gui));
 		this.add(button);
 		/////////////////
-		this.setBak(this, ".//bg 800.jpg");
+		this.setBak(this, ".//image//bg 800.jpg");
 		///////////////
 		t = t =new Thread() {
 	        public void run() {
