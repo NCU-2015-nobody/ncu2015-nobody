@@ -35,13 +35,16 @@ public class Test
 		background.renderScene();
 		UIRender uiSystem = new UIRender(domStub, canvas);
 		
-		frame.add(canvas);
+		RenderThread renderThread = new RenderThread(background, uiSystem);
+		Thread thread = new Thread(renderThread);
+		thread.start();
 		
+		frame.add(canvas);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
-		
+		/*
 		for(int i = 0; i < 100; i++)
 		{
 			try
@@ -55,6 +58,6 @@ public class Test
 			
 			background.renderScene();
 			uiSystem.renderUI();
-		}
+		}*/
 	}
 }
