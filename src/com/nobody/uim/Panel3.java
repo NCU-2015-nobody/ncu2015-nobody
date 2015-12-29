@@ -16,7 +16,7 @@ public class Panel3 extends Panel{
 		banner.setText(gui.client.message());
 		
 		/////////////////
-		this.setBak(this, ".//bg 800.jpg");
+		this.setBak(this, ".//image//bg 800.jpg");
 	}
 
 }

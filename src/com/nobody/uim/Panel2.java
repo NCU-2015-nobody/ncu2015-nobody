@@ -50,7 +50,7 @@ public class Panel2 extends Panel{
 		select_create(420,350,3,layer,gui);
 		select_create(570,350,4,layer,gui);
 		////
-		this.setBak(this, ".//bg 800.jpg");
+		this.setBak(this, ".//image//bg 800.jpg");
 		/// call a thread to listen other client with server
 		listener(gui);
 		///////
