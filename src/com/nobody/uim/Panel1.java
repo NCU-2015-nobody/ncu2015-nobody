@@ -40,7 +40,7 @@ public class Panel1 extends Panel{
 		        		// TODO Auto-generated catch block
 		        		e.printStackTrace();
 		        	}
-		        	if(number==1){
+		        	if(number==4){
 		        		gui.panelcard2 = new Panel2(gui);
 		        		gui.contentPane.add(gui.panelcard2,"2");
 		        		gui.card.show(gui.contentPane, "2");

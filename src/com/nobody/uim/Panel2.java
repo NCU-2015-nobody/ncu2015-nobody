@@ -126,7 +126,7 @@ public class Panel2 extends Panel{
 		        	id.setText(character[flag]);
 			        gui.repaint();
 			        try {
-			        	Thread.sleep(1000);
+			        	Thread.sleep(500);
 			        } catch (InterruptedException e) {
 			        	// TODO Auto-generated catch block
 			        	e.printStackTrace();
