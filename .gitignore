@@ -40,3 +40,9 @@ local.properties
 
 # STS (Spring Tool Suite)
 .springBeans
+
+# Intellij idea
+.idea/
+
+# Intellij idea out
+out/
