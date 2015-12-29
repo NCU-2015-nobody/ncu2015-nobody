@@ -25,9 +25,7 @@ public class UpdateThread implements Runnable{
             for(Monster monster: monsterList){
                 Vector<Double> distance = new Vector <Double>() ;
                 Vector<Character> characterDetect = new Vector <Character>() ;//紀錄怪物在角色視窗內的該角色值
-                
                
-                
                 for(Character character : characterList){
 
                     double distanceX = Math.abs(character.position.getX() - monster.position.getX()) ; //絕對值
