@@ -37,12 +37,12 @@ public class UpdateThread implements Runnable{
                         distance.add(distanceX*distanceX+distanceY*distanceY) ;
                         characterDetect.add(character) ;
                         
-//                         //Boss attack
-//                        if(monster.isBoss==true){
-//                        	character.HP = character.HP-50 ;
-//                        	character.state = true ;
-//                        	
-//                        }//Boss attack end
+                         //Boss attack
+                        if(monster.isBoss==true){
+                        	character.HP = character.HP-50 ;
+                        	character.state = true ;
+                        	
+                        }//Boss attack end
                         
                     }
                     
