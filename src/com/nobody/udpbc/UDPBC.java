@@ -32,7 +32,7 @@ public class UDPBC {
 	}
 
 	public void startUDPBroadCast() throws InterruptedException {
-		Vector<String> ipList = this.tcpsm.getClientIPTable();
+		Vector<String> ipList = this.tcpsm.getClientTable();
 
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
@@ -53,7 +53,7 @@ public class UDPBC {
 			Object info = it.next();
 			if (info instanceof Character) {
 				Character chara = (Character) info;
-				msg = "add,chara," + chara.clientNumber + "," + chara.position.getX() + "," + chara.position.getY()
+				msg = "add,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY()
 						+ "," + chara.direction + "," + chara.HP;
 			}
 
