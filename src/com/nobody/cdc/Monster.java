@@ -15,13 +15,13 @@ public class Monster {
         this.position.setLocation(position);
         this.direction = 0;//initial?????
 
-        if (objectID < 10){//boss
+        if (objectID < 9){//boss
             this.isBoss = true;
-            this.HP = 100;//initial????
+            this.HP = 5000;
         }
         else {//monster
             this.isBoss = false;
-            this.HP = 100;//initial????
+            this.HP = 200;
         }
 
         this.state = true;

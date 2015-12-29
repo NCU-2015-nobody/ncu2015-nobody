@@ -7,24 +7,24 @@ import java.util.Vector;
 
 public class CDC {
     CDCSDM cdcsdm;
-    private static ArrayList<Character> characterList;
-    private static ArrayList<Monster> monsterList;
-    private static int[][] skillTable;//0, 1戰士, 2牧師, 3法師, 4弓箭手, 5魔王, 6怪物
+    private ArrayList<Character> characterList;
+    private ArrayList<Monster> monsterList;
+    private int[][] skillTable;//0, 1戰士, 2牧師, 3法師, 4弓箭手, 5魔王, 6怪物
 
     public CDC(){
         characterList = new ArrayList<Character>(4);
         monsterList = new ArrayList<Monster>();
-        skillTable = new int[][]{{0,0}, {1,20}, {3,-20}, {5, 20}, {8,20}, {5,20}, {1, }};//{攻擊範圍, 傷害值}
+        skillTable = new int[][]{{0,0}, {1,100}, {3,-50}, {5, 200}, {8,150}, {0,50}, {1,100}};//{攻擊範圍, 傷害值}
     }
 
-    public void addVirtualCharacter(int clientNumber) throws ExceedMaxException {
-        assert !clientNumberExist(clientNumber) : "clientNumber already exists";
+    public void addVirtualCharacter(int clientID) throws ExceedMaxException {
+        assert !clientIDExist(clientID) : "clientID already exists";//要改成if!!!!!
 
         if (characterList.size() == 4){//at most 4 characters
             throw new ExceedMaxException();
         }
 
-        Character character = new Character(clientNumber);
+        Character character = new Character(clientID);
         characterList.add(character);
     }
 
@@ -36,21 +36,21 @@ public class CDC {
         monsterList.add(monster);
     }
 
-    public void updateCharacterStatus(int clientNumber, int newDirection){
-        assert clientNumberExist(clientNumber) : "clientNumber does not exist";
+    public void updateCharacterStatus(int clientID, int newDirection){
+        assert clientIDExist(clientID) : "clientID does not exist";
         assert (0<=newDirection && newDirection<4) : "invalid moveCode";
 
-        Character character = getCertainCharacter(clientNumber);
+        Character character = getCertainCharacter(clientID);
         Point newPosition = getCertainPosition(character.position, newDirection, 1);
         boolean isObstacle = cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
         boolean isTrap = cdcsdm.checkTrap(newPosition);
-        if (!isObstacle && !isTrap){//position ahead is not obstacle/trap
+        if (!isObstacle){//position ahead is not obstacle
             character.position.setLocation(newPosition);
-            character.state = true;
-        }
-        else if (!isObstacle && isTrap){//position ahead is not obstacle, is trap
-            character.position.setLocation(newPosition);
-            character.HP = character.HP - 10;//trap 扣血?????????
+
+            if (isTrap){//position ahead is trap
+                character.HP = character.HP - 50;
+            }
+
             character.state = true;
         }
     }
@@ -62,37 +62,38 @@ public class CDC {
         thread.start();
     }
 
-    public void characterAttack(int clientNumber){
-        assert clientNumberExist(clientNumber) : "clientNumber does not exist";
+    public void characterAttack(int clientID){
+        assert clientIDExist(clientID) : "clientID does not exist";
 
-        int attackRange = skillTable[clientNumber][0];
-        Character character = getCertainCharacter(clientNumber);
+        int attackRange = skillTable[clientID][0];
+        Character character = getCertainCharacter(clientID);
         Point characterPosition = character.position;
 
-        if (clientNumber == 2){//牧師
+        if (clientID == 2){//牧師
             Iterator<Character> charIterator = characterList.iterator();
             while (charIterator.hasNext()) {
                 Character checkCharacter = charIterator.next();
                 Point checkCharPosition = checkCharacter.position;
                 if (characterPosition.getX() - 25 <= checkCharPosition.getX() && checkCharPosition.getX() <= characterPosition.getX() + 25
                         && characterPosition.getY() - 25 <= checkCharPosition.getY() && checkCharPosition.getY() <= characterPosition.getY() + 25) {
-                    checkCharacter.HP = checkCharacter.HP - skillTable[clientNumber][1];
+                    checkCharacter.HP = checkCharacter.HP - skillTable[clientID][1];
                     checkCharacter.state = true;
                 }
             }
         }
-
-        ArrayList<Boolean> isObstacle = cdcsdm.checkObstacle(character.position, character.direction, attackRange);
-        for (int i=1; i<=attackRange; i++){
-            Point checkPosition = getCertainPosition(characterPosition, character.direction, i);
-            Monster checkMonster = getPositionMonster(checkPosition);
-            if (checkMonster != null){
-                checkMonster.HP = checkMonster.HP - skillTable[clientNumber][1];
-                checkMonster.state = true;
-                break;
-            }
-            else if (isObstacle.get(i-1)){//attack failed
-                break;
+        else {
+            ArrayList<Boolean> isObstacle = cdcsdm.checkObstacle(character.position, character.direction, attackRange);
+            for (int i=1; i<=attackRange; i++){
+                Point checkPosition = getCertainPosition(characterPosition, character.direction, i);
+                Monster checkMonster = getPositionMonster(checkPosition);
+                if (checkMonster != null){
+                    checkMonster.HP = checkMonster.HP - skillTable[clientID][1];
+                    checkMonster.state = true;
+                    break;
+                }
+                else if (isObstacle.get(i-1)){//attack failed
+                    break;
+                }
             }
         }
     }
@@ -120,26 +121,26 @@ public class CDC {
         return updatedInfo;
     }
 
-    private boolean clientNumberExist(int clientNumber){
+    private boolean clientIDExist(int clientID){
         Iterator<Character> charIterator = characterList.iterator();
         while (charIterator.hasNext()) {
             Character character = charIterator.next();
-            if (character.clientNumber == clientNumber) {
+            if (character.clientID == clientID) {
                 return true;
             }
         }
         return false;
     }
 
-    private Character getCertainCharacter(int clientNumber){
+    private Character getCertainCharacter(int clientID){
         Iterator<Character> charIterator = characterList.iterator();
         while (charIterator.hasNext()) {
             Character character = charIterator.next();
-            if (character.clientNumber == clientNumber) {
+            if (character.clientID == clientID) {
                 return character;
             }
         }
-        throw new AssertionError("com.nobody.Character with clientNumber cannot be found");
+        throw new AssertionError("com.nobody.Character with clientID cannot be found");
     }
 
     private boolean monsterPositionTaken(Point position) {
