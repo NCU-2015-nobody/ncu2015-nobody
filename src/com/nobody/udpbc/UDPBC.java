@@ -9,18 +9,21 @@ import java.util.Iterator;
 import java.util.Vector;
 import com.nobody.cdc.*;
 import com.nobody.cdc.Character;
+import com.nobody.tcpsm.Server;
 
 public class UDPBC {
 
-	private TCPSM tcpsm = new TCPSM();
-	private CDC cdc = new CDC();
+	private Server tcpsm;
+	private CDC cdc;
 	private Socket socket[] = new Socket[4];
 	private InetSocketAddress isa[] = new InetSocketAddress[4];
 	private BufferedWriter bw[] = new BufferedWriter[4];
 	private int port;
 	private boolean flag;
 
-	public UDPBC() {
+	public UDPBC(Server tcpsm, CDC cdc) {
+		this.tcpsm = tcpsm;
+		this.cdc = cdc;
 		// Set the port to 5566
 		this.port = 5566;
 		this.flag = true;
@@ -53,8 +56,8 @@ public class UDPBC {
 			Object info = it.next();
 			if (info instanceof Character) {
 				Character chara = (Character) info;
-				msg = "add,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY()
-						+ "," + chara.direction + "," + chara.HP;
+				msg = "add,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY() + ","
+						+ chara.direction + "," + chara.HP;
 			}
 
 			if (info instanceof Monster) {
@@ -82,8 +85,8 @@ public class UDPBC {
 				Object info = it.next();
 				if (info instanceof Character) {
 					Character chara = (Character) info;
-					msg = "update,chara," + chara.clientNumber + "," + chara.position.getX() + ","
-							+ chara.position.getY() + "," + chara.direction + "," + chara.HP;
+					msg = "update,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY()
+							+ "," + chara.direction + "," + chara.HP;
 				}
 
 				if (info instanceof Monster) {
