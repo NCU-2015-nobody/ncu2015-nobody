@@ -10,7 +10,7 @@ public class d
 	
 	information info = new information();
 	
-	void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)//改傳入參數；紀錄每個角色的最大血量
+	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)//改傳入參數；紀錄每個角色的最大血量
 	{
 		// 由UDPUS呼叫。
 		// 當UDPUS收到addVirtualCharacter訊息時，呼叫此方法，將server端傳送的人物資訊儲存於DOM。
@@ -50,7 +50,7 @@ public class d
 		}
 	}
 
-	void addMonster(int objectID, int currentX, int currentY, int dir, int health) // 改傳入參數
+	public void addMonster(int objectID, int currentX, int currentY, int dir, int health) // 改傳入參數
 	{
 		// 由UDPUS呼叫
 		// 當UDPUS收到add訊息時，呼叫此方法，將server端傳送的怪物資訊儲存於DOM。
@@ -75,7 +75,7 @@ public class d
 		info.health_monsterList.add(health);
 	}
 	
-	void updateVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)
+	public void updateVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)
 	{
 		// 由UDPUS呼叫。
 		// 當UDPUS收到update訊息時，呼叫此方法，檢查clientNumberList裡有沒有傳入的clientNumber
@@ -112,7 +112,7 @@ public class d
 	}
 
 
-	void updateMonsterStatus(int objectID, int currentX, int currentY, int dir, int health)
+	public void updateMonsterStatus(int objectID, int currentX, int currentY, int dir, int health)
 	{
 		// 由UDPUC呼叫。
 		// 當UDPUS收到update訊息時，呼叫此方法，檢查objectIDList裡有沒有傳入的objectID，如果有的話，便更新；若無，則先呼叫addMonster()再更新。
@@ -148,7 +148,7 @@ public class d
 	}
 
 
-	boolean CDTimer() /////////not done
+	public boolean CDTimer() /////////not done
 	{
 		// 由TCPCM呼叫。
 		// 當玩家按下攻擊鍵，欲攻擊怪物，TCPCM收到UIM傳來的訊息，便呼叫此方法，以確認玩家的冷卻時間，判斷其是否可發出攻擊。
@@ -194,7 +194,7 @@ public class d
 	}
 
 
-	Vector getAllDynamicObjects() /////////not done
+	public Vector getAllDynamicObjects() /////////not done
 	{
 		// 由SPRITERE呼叫。
 		// 回傳 clientNumberList , before_xyList , current_xyList , dirList , health
@@ -224,7 +224,7 @@ public class d
 		return v1;
 	}
 	
-	boolean mainCharacterAttack()
+	public boolean mainCharacterAttack()
 	{
 		if(info.CD > 0)
 		{
@@ -236,7 +236,7 @@ public class d
 		}
 	}
 
-	Point getVirtualCharacterXY()
+	public Point getVirtualCharacterXY()
 	{
 		// 由SCENERE呼叫。
 		// 回傳目前人物的所在坐標（初始化時需設定自己的client Number）。
@@ -256,7 +256,7 @@ public class d
 		return p;
 	}
 	
-	int[] getVirtualCharactersHP() // 轉換%，改成int[]
+	public int[] getVirtualCharactersHP() // 轉換%，改成int[]
 	{
 		// 由UIRE呼叫。
 		// 回傳各人物角色的HP值，以繪製於遊戲畫面中。
@@ -290,7 +290,7 @@ public class d
 	}
 
 
-	boolean[] getVirtualCharactersCD() // 改boolean[]
+	public boolean[] getVirtualCharactersCD() // 改boolean[]
 	{
 		// 由UIRE呼叫。
 		// 回傳各人物角色的CD值，以繪製於遊戲畫面中。

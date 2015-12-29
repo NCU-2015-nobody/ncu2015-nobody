@@ -3,6 +3,8 @@ package com.app.sre;
 import java.awt.Point;
 import java.util.Vector;
 
+import com.app.sre.DOMtest;
+
 public class SRE 
 {
 	@SuppressWarnings("null")
@@ -16,6 +18,7 @@ public class SRE
 		Vector v = DOMtest.getAllDynamicObjects(); 
 		Vector v_picture = new Vector(); // 儲存圖片路徑
 		boolean attack = DOMtest.mainCharacterAttack();
+		Point mainXY = DOMtest.getVirtualCharacterXY();
 		
 		int no = -1;
 		Point before = null;
@@ -30,6 +33,7 @@ public class SRE
 		// 每組資料皆處理完後，再呼叫canvas的updateSprite(Vector v_picture)
 		
 		v_picture.add(attack);
+		v_picture.add(mainXY);
 		
 		while(!v.isEmpty()) //character for first 4, monster for the rest
 		{			
