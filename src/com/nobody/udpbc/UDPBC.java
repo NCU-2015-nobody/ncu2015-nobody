@@ -48,14 +48,15 @@ public class UDPBC {
 
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
+				if (i == 0) {
+					port = 5566;
+				} else {
+					port = 5567;
+				}
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
-				System.out.println("isa:" + i);
 				this.socket[i].connect(isa[i]);
-				System.out.println("connect:" + i);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
-				System.out.println("bw:" + i);
 				System.out.println("Connect to ip:" + ipList.get(i));
-				Thread.sleep(1000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("Some thing wrong! with connect" + ipList.get(i));
