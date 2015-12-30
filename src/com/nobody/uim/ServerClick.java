@@ -9,18 +9,20 @@ import java.io.IOException;
 import com.nobody.tcpcm.Client;
 import com.nobody.tcpsm.Server;
 
-public class ServerClick implements MouseListener{
+public class ServerClick implements MouseListener {
 
 	GUI gui;
-	ServerClick(GUI gui){
-		this.gui=gui;
+
+	ServerClick(GUI gui) {
+		this.gui = gui;
 
 	}
+
 	@Override
-	public  void mouseClicked(MouseEvent e) {
+	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("test click: "+e.getComponent().getName());
-		///initserver
+		System.out.println("test click: " + e.getComponent().getName());
+		/// initserver
 		try {
 			gui.server.initTCPServer();
 			System.out.println(gui.server.IP);
@@ -29,39 +31,43 @@ public class ServerClick implements MouseListener{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-//		///init client
-//		client.connectServer("192.168.0.107");
-//		//client to server
-//		//////////////////////////////////////
-//		//change to 1
-//		gui.panelcard1_0 = new Panel1_0(gui);
-//		gui.contentPane.add(gui.panelcard1_0,"1_0");
-//		gui.card.show(gui.contentPane, "1_0");
-//		//////////////////////////////////////////
-		
-		if (gui.server.onlineCount==4){
-			gui.flag=true;
+		// ///init client
+		// client.connectServer("192.168.0.107");
+		// //client to server
+		// //////////////////////////////////////
+		// //change to 1
+		// gui.panelcard1_0 = new Panel1_0(gui);
+		// gui.contentPane.add(gui.panelcard1_0,"1_0");
+		// gui.card.show(gui.contentPane, "1_0");
+		// //////////////////////////////////////////
+
+		if (gui.server.getClientTable().size() == 4) {
+			gui.flag = true;
 		}
 	}
+
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
