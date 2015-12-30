@@ -12,6 +12,8 @@ public class Main
 		 */
 		
 		
+		
+		
 		// startup server or client
 		if(true) // create server
 		{

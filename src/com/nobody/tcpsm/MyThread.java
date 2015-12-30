@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Vector;
+import com.nobody.cdc.CDC ;
 
 
 
@@ -62,7 +63,7 @@ public class MyThread extends Thread{
                 		break;
                 	case "90":
 //                		w.println("attack");
-                		cdc.attack(findchar(s.getRemoteSocketAddress().toString()));
+                		cdc.characterAttack(findchar(s.getRemoteSocketAddress().toString()));
                 		break;
                 	case "99":
                 		w.println("exit");

@@ -6,7 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
 import java.net.*;
-
+import com.nobody.cdc.CDC ;
 
 
 public class Server {
@@ -18,10 +18,11 @@ public class Server {
 	static Thread listener;
 	static Vector<Userfile> table = new Vector<Userfile>();
 	public Server(){
-			cdc=new CDC();
+			
 	}
 	public void initTCPServer() throws IOException  {
 		try {			
+			final CDC cdc = new CDC() ;
 			ss = new ServerSocket(9999);
 			System.out.println("伺服器已啟動...");
 			InetAddress myComputer = InetAddress.getLocalHost() ;

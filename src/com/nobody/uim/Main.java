@@ -11,5 +11,52 @@ public class Main {
 		GUI gui = new GUI(server,client);
 		gui.setVisible(true);
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // startup server or client
+     		if(true) // create server
+     		{
+     			// if user choose create server, enter if
+     			
+     			
+     			
+     			/*
+     			 * create UDPbc 
+     			 */
+     			
+     		} // end of create server
+     		
+     		
+     		// create client
+     		
+     		/*
+     		 * create dom
+     		 */
+     		
+     		
+     		/*
+     		 * create TCP server and startup
+     		 */
+     		
+     		
+     		/*
+     		 * create UDP server
+     		 */
+     		
+     		
+     		/*
+     		 * create client frame
+     		 * 
+     		 * add actionListener
+     		 */
+     		
+     		
+     		/*
+     		 * create renderEngine
+     		 * 
+     		 * add three renders
+     		 * 
+     		 * add render thread
+     		 */
+        
 	}
 }
