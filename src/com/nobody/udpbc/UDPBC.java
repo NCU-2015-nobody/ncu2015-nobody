@@ -55,6 +55,7 @@ public class UDPBC {
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
 				System.out.println("bw:" + i);
 				System.out.println("Connect to ip:" + ipList.get(i));
+				Thread.sleep(1000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("Some thing wrong! with connect" + ipList.get(i));
