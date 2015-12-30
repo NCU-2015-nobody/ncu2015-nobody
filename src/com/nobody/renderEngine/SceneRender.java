@@ -1,20 +1,21 @@
 package com.nobody.renderEngine;
 
-import com.nobody.domStub.DynamicObjectModule;
-import com.nobody.domStub.Point;
+import java.awt.Point;
+
+import com.nobody.dom.DOM;
 
 
 public class SceneRender
 {
 	private SceneDataModule sdm;
-	private DynamicObjectModule dom;
+	private DOM dom;
 	private UpdateScene canvas;
 	private int[][] scene;
 	
 	private int widthToCentral;
 	private int heightToCentral;
 	
-	public SceneRender(SceneDataModule sdm, DynamicObjectModule dom, UpdateScene canvas)
+	public SceneRender(SceneDataModule sdm, DOM dom, UpdateScene canvas)
 	{
 		this.sdm = sdm;
 		this.dom = dom;
@@ -27,8 +28,8 @@ public class SceneRender
 	public void renderScene()
 	{
 		Point character = dom.getVirtualCharacterXY();
-		int characterX = character.getX();
-		int characterY = character.getY();
+		int characterX = (int)character.getX();
+		int characterY = (int)character.getY();
 		System.out.println("characterX=" + characterX);
 		System.out.println("characterY=" + characterY);
 		

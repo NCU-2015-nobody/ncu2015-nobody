@@ -1,9 +1,19 @@
 package com.nobody.uim;
 
+import java.io.IOException;
+
 import javax.swing.JFrame;
 
 import com.nobody.cdc.CDC;
 import com.nobody.dom.DOM;
+import com.nobody.domStub.DomStub;
+import com.nobody.renderEngine.GameCanvas;
+import com.nobody.renderEngine.GameFrame;
+import com.nobody.renderEngine.Listener;
+import com.nobody.renderEngine.RenderThread;
+import com.nobody.renderEngine.SceneDataModule;
+import com.nobody.renderEngine.SceneRender;
+import com.nobody.renderEngine.UIRender;
 import com.nobody.tcpcm.Client;
 import com.nobody.tcpsm.Server;
 import com.nobody.udpbc.UDPBC;
@@ -57,20 +67,47 @@ public class Main {
 			 */
 			UDPUS udpus = new UDPUS(dom, isServer);
 			udpus.start();
-		}
-		/*
-		 * create client frame
-		 * 
-		 * add actionListener
-		 */
+			
+			// sdm
+			SceneDataModule sdm = new SceneDataModule();
+			try
+			{
+				sdm.loadMap("mapfile.txt");
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+			
+			GameCanvas canvas = new GameCanvas(33, 21);
+			canvas.loadSceneImage(sdm.getAllKindOfType());
+			
+			Listener listener = new Listener(client);
+			
+			SceneRender background = new SceneRender(sdm, dom, canvas);
+			background.renderScene();
+			UIRender uiSystem = new UIRender(dom, canvas);
+			
+			RenderThread renderThread = new RenderThread(background, uiSystem);
+			Thread thread = new Thread(renderThread);
+			thread.start();
+			
+			GameFrame frame = new GameFrame(canvas, listener);
 
-		/*
-		 * create renderEngine
-		 * 
-		 * add three renders
-		 * 
-		 * add render thread
-		 */
+			/*
+			 * create client frame
+			 * 
+			 * add actionListener
+			 */
+
+			/*
+			 * create renderEngine
+			 * 
+			 * add three renders
+			 * 
+			 * add render thread
+			 */
+		}
 
 	}
 }
