@@ -1,9 +1,7 @@
 package com.nobody.uim;
 
 import java.io.IOException;
-
 import javax.swing.JFrame;
-
 import com.nobody.cdc.CDC;
 import com.nobody.dom.DOM;
 import com.nobody.renderEngine.GameCanvas;
