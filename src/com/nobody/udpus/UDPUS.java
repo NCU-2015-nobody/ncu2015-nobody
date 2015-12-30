@@ -21,6 +21,7 @@ public class UDPUS extends Thread {
 		try {
 			serverSocket = new ServerSocket(port);
 		} catch (Exception e) {
+			System.out.println("serversocket error");
 			e.printStackTrace();
 		}
 	}
@@ -64,6 +65,7 @@ public class UDPUS extends Thread {
 				br.close();
 				socket.close();
 			} catch (Exception e) {
+				System.out.println("exception 2");
 				e.printStackTrace();
 			}
 		}

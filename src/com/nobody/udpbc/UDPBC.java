@@ -56,7 +56,7 @@ public class UDPBC {
 				System.out.println("bw:" + i);
 				System.out.println("Connect to ip:" + ipList.get(i));
 			} catch (Exception e) {
-
+				e.printStackTrace();
 				System.out.println("Some thing wrong! with connect" + ipList.get(i));
 			}
 		}
