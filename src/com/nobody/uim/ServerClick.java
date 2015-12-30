@@ -41,8 +41,12 @@ public class ServerClick implements MouseListener {
 		// gui.card.show(gui.contentPane, "1_0");
 		// //////////////////////////////////////////
 
-		while (gui.server.getClientTable().size() < 4) {
-			gui.flag = true;
+		boolean atflag = true;
+		while (atflag == true) {
+			if (gui.server.getClientTable().size() == 4) {
+				gui.flag = true;
+				atflag = false;
+			}
 		}
 	}
 
