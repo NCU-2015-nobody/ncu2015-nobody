@@ -43,9 +43,9 @@ public class UDPBC {
 			ipList2.add(ip);
 			System.out.println("ip:" + ip);
 		}
-		
+
 		ipList = ipList2;
-		
+
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
@@ -80,6 +80,7 @@ public class UDPBC {
 
 			for (int i = 0; i < 4; i++) {
 				try {
+					System.out.println("first time broadcast message " + msg);
 					bw[i].write(msg);
 					bw[i].newLine();
 					bw[i].flush();
@@ -109,6 +110,7 @@ public class UDPBC {
 
 				for (int i = 0; i < 4; i++) {
 					try {
+						System.out.println("no first time Boardcast msg " + msg);
 						bw[i].write(msg);
 						bw[i].newLine();
 						bw[i].flush();
