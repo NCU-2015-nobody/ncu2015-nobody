@@ -81,7 +81,7 @@ public class Panel2 extends Panel{
 		
 	}
 	void select_create(int x,int y,final int flag,JLayeredPane layer,final GUI gui){
-		Icon icon1 = new ImageIcon(".//click.png");
+		Icon icon1 = new ImageIcon(".//image//click.png");
 		JLabel pic = new JLabel(icon1);
 	
 		pic.setBounds(x, y, icon1.getIconWidth(), icon1.getIconHeight());
