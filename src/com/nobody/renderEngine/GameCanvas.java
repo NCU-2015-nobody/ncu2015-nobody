@@ -191,8 +191,11 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 			
 			// draw HP
 			g2D.drawImage(hpBackground, 35  + i * 40 + i * 150 + 50 + 5, 425 + 5, null);
-			hp = setIconSize(new ImageIcon(hp), hpPecentage[i], 30).getImage();
-			g2D.drawImage(hp, 35  + i * 40 + i * 150 + 50 + 5, 425 + 5, null);
+			if(hpPecentage[i] != 0)
+			{
+				hp = setIconSize(new ImageIcon(hp), hpPecentage[i], 30).getImage();
+				g2D.drawImage(hp, 35  + i * 40 + i * 150 + 50 + 5, 425 + 5, null);
+			}
 			
 			// draw skill and CD state
 			g2D.drawImage(skill[i], 35  + i * 40 + i * 150 + 50 + 5, 425 + 35, null);
