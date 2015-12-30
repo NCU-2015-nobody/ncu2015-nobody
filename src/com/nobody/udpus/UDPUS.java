@@ -8,7 +8,7 @@ import java.net.Socket;
 import com.nobody.dom.DOM;
 
 public class UDPUS extends Thread {
-	private int port = 5566;
+	private int port = 5567;
 	private Socket socket;
 	private ServerSocket serverSocket;
 	private DOM dom;
