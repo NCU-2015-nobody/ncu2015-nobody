@@ -22,7 +22,7 @@ public class Main {
         while(gui.getFlag()==false){
 //        	System.out.println(gui.getFlag()) ;
         }
-        
+        gui.setVisible(false);
         // startup server or client
         System.out.println("server.flag_server" + server.flag_server);
      		if(server.flag_server==1) // create server
@@ -56,7 +56,7 @@ public class Main {
      		 * create UDP server
      		 */
      		UDPUS udpus = new UDPUS(dom) ;
-     		
+     		udpus.start() ;
      		/*
      		 * create client frame
      		 * 
