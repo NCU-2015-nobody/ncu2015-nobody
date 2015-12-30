@@ -2,12 +2,18 @@ package com.nobody.uim;
 
 import javax.swing.JFrame;
 
+import com.nobody.cdc.CDC;
+import com.nobody.dom.DOM;
 import com.nobody.tcpcm.Client;
 import com.nobody.tcpsm.Server;
+import com.nobody.udpbc.UDPBC;
+import com.nobody.udpus.UDPUS;
 public class Main {
 	public static void main(String agrs[]){
 		Server server = new Server() ;
 		Client client = new Client() ;
+		
+		CDC cdc ;
 		
 		GUI gui = new GUI(server,client);
 		gui.setVisible(true);
@@ -18,14 +24,18 @@ public class Main {
      		{
      			// if user choose create server, enter if
      			
-     			
+     			cdc = server.getCDC() ;
      			
      			/*
      			 * create UDPbc 
      			 */
-     			
-     			
-     			
+     			UDPBC udpbc = new UDPBC(server, cdc) ;
+     			try {
+					udpbc.startUDPBroadCast() ;
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
      		} // end of create server
      		
      		
@@ -34,17 +44,13 @@ public class Main {
      		/*
      		 * create dom
      		 */
-     		
-     		
-     		/*
-     		 * create TCP server and startup
-     		 */
+     		DOM dom = new DOM () ;
      		
      		
      		/*
      		 * create UDP server
      		 */
-     		
+     		UDPUS udpus = new UDPUS(dom) ;
      		
      		/*
      		 * create client frame

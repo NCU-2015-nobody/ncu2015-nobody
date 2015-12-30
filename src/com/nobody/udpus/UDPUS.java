@@ -5,16 +5,16 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.nobody.dom.d;
+import com.nobody.dom.DOM;
 
 public class UDPUS extends Thread {
 	private int port = 5566;
 	private Socket socket;
 	private ServerSocket serverSocket;
-	private d dom;
+	private DOM dom;
 	private boolean flag;
 
-	public UDPUS(d dom) {
+	public UDPUS(DOM dom) {
 		this.dom = dom;
 		flag = true;
 		try {

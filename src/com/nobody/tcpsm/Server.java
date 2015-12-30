@@ -69,4 +69,8 @@ public class Server {
 		return table;
 	}
 	
+	public CDC getCDC(){
+		return this.cdc ;
+	}
+	
 }
