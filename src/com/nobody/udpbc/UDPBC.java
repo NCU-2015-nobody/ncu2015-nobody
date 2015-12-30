@@ -43,6 +43,9 @@ public class UDPBC {
 			ipList2.add(ip);
 			System.out.println("ip:" + ip);
 		}
+		
+		ipList = ipList2;
+		
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
