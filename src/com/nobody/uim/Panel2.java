@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 
 public class Panel2 extends Panel{
+	
 	int char_flag=0;
 	String character[]=new String[5];
 	int flag_select[]=new int[5];
@@ -188,6 +189,7 @@ public class Panel2 extends Panel{
 		        		gui.contentPane.add(gui.panelcard3,"3");
 		        		gui.card.show(gui.contentPane, "3");
 		        		run=false;
+		        		gui.flag = true ;
 		        		break;
 		        	}
 	        	}

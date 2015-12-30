@@ -19,6 +19,9 @@ public class Main {
 		gui.setVisible(true);
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+        while(gui.getFlag()==false){
+        }
+        
         // startup server or client
      		if(server.flag_server==1) // create server
      		{

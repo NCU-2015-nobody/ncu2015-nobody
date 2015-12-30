@@ -10,6 +10,7 @@ import com.nobody.tcpcm.Client;
 import com.nobody.tcpsm.Server;
 
 public class GUI extends JFrame{
+	boolean flag = false ;
 	CardLayout card=null;
 	Container contentPane =null;
 	JPanel panelcard0=null; //start menu
@@ -51,4 +52,8 @@ public class GUI extends JFrame{
 		contentPane.add(panelcard1_1,"1_1");
 		//contentPane.add(panelcard2,"2");
 	}
+	public boolean getFlag(){
+		return flag ;
+	}
+
 }
