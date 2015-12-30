@@ -1,5 +1,6 @@
 package com.nobody.uim;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -15,6 +16,7 @@ public class Panel1_1 extends Panel{
 		JLabel ServerIP = new JLabel("ServerIP: ");
 		ServerIP.setFont(new Font("標楷體",Font.BOLD,20));
 		ServerIP.setBounds(190, 250, 120, 40);
+		ServerIP.setForeground(Color.yellow);
 		final JTextField box = new JTextField();
 		box.setBounds(300, 250, 120, 40);
 		this.add(ServerIP);
@@ -23,6 +25,7 @@ public class Panel1_1 extends Panel{
 		JLabel userID = new JLabel("UserID: ");
 		userID.setFont(new Font("標楷體",Font.BOLD,20));
 		userID.setBounds(190, 300, 120, 40);
+		userID.setForeground(Color.yellow);
 		final JTextField box2 = new JTextField();
 		box2.setBounds(300, 300, 120, 40);
 		this.add(userID);
