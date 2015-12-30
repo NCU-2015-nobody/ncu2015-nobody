@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 
 import com.nobody.cdc.CDC;
 import com.nobody.dom.DOM;
-import com.nobody.domStub.DomStub;
 import com.nobody.renderEngine.GameCanvas;
 import com.nobody.renderEngine.GameFrame;
 import com.nobody.renderEngine.Listener;
