@@ -43,20 +43,21 @@ public class Main {
 
 			cdc = server.getCDC();
 			isServer = true;
+			
 			/*
 			 * create UDPbc
 			 */
 			UDPBC udpbc = new UDPBC(server, cdc);
 			try {
 				udpbc.startUDPBroadCast();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+			}
+			catch (InterruptedException e)
+			{
 				e.printStackTrace();
 			}
 		} // end of create server
-		else {
-			// create client
-
+		else// create client
+		{
 			/*
 			 * create dom
 			 */
@@ -68,7 +69,9 @@ public class Main {
 			UDPUS udpus = new UDPUS(dom, isServer);
 			udpus.start();
 			
-			// sdm
+			/*
+			 * create sdm
+			 */
 			SceneDataModule sdm = new SceneDataModule();
 			try
 			{
@@ -79,35 +82,36 @@ public class Main {
 				e.printStackTrace();
 			}
 			
+			/*
+			 * create canvas and listener for the frame
+			 */
 			GameCanvas canvas = new GameCanvas(33, 21);
 			canvas.loadSceneImage(sdm.getAllKindOfType());
 			
 			Listener listener = new Listener(client);
 			
+			/*
+			 * create renderEngine
+			 * 
+			 * SceneRender
+			 * SpriteRender
+			 * UIRender
+			 */
 			SceneRender background = new SceneRender(sdm, dom, canvas);
 			background.renderScene();
 			UIRender uiSystem = new UIRender(dom, canvas);
 			
+			/*
+			 * create RenderThread and startup thread
+			 */
 			RenderThread renderThread = new RenderThread(background, uiSystem);
 			Thread thread = new Thread(renderThread);
 			thread.start();
 			
+			/*
+			 * create frame
+			 */
 			GameFrame frame = new GameFrame(canvas, listener);
-
-			/*
-			 * create client frame
-			 * 
-			 * add actionListener
-			 */
-
-			/*
-			 * create renderEngine
-			 * 
-			 * add three renders
-			 * 
-			 * add render thread
-			 */
 		}
-
 	}
 }
