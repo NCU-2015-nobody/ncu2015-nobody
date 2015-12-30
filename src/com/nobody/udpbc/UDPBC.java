@@ -36,13 +36,16 @@ public class UDPBC {
 
 	public void startUDPBroadCast() throws InterruptedException {
 		Vector<String> ipList = this.tcpsm.getClientTable();
-
+		for(String ip : ipList) {
+			System.out.println(ip);
+		}
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
 				this.socket[i].connect(isa[i]);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
 			} catch (Exception e) {
+				
 				System.out.println("Some thing wrong!");
 			}
 		}
