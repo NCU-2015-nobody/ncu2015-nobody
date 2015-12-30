@@ -33,9 +33,9 @@ public class ServerClick implements MouseListener{
 //		client.connectServer("192.168.0.107");
 //		//client to server
 		//change to 1
-		gui.panelcard1_0 = new Panel1_0(gui);
-		gui.contentPane.add(gui.panelcard1_0,"1_0");
-		gui.card.show(gui.contentPane, "1_0");
+//		gui.panelcard1_0 = new Panel1_0(gui);
+//		gui.contentPane.add(gui.panelcard1_0,"1_0");
+//		gui.card.show(gui.contentPane, "1_0");
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
