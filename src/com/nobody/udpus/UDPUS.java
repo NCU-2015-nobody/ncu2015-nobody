@@ -16,6 +16,7 @@ public class UDPUS extends Thread {
 
 	public UDPUS(DOM dom) {
 		this.dom = dom;
+
 		flag = true;
 		try {
 			serverSocket = new ServerSocket(port);
