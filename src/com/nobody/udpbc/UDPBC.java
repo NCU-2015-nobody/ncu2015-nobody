@@ -49,8 +49,11 @@ public class UDPBC {
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
+				System.out.println("isa:" + i);
 				this.socket[i].connect(isa[i]);
+				System.out.println("connect:" + i);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
+				System.out.println("bw:" + i);
 				System.out.println("Connect to ip:" + ipList.get(i));
 			} catch (Exception e) {
 
