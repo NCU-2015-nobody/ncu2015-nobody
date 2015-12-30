@@ -208,15 +208,15 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 	
 	private void updateSceneBlocks(int[][] sceneType)
 	{
-		System.out.println("---update blocks---");
+		//System.out.println("---update blocks---");
 		for(int i = 0; i < sceneBlocks.length; i++)
 		{
 			for(int j = 0; j < sceneBlocks[i].length; j++)
 			{
 				sceneBlocks[i][j].setType(sceneType[i][j]);
-				System.out.print(sceneBlocks[i][j].getType() + " ");
+				//System.out.print(sceneBlocks[i][j].getType() + " ");
 			}
-			System.out.println();
+			//System.out.println();
 		}
 	}
 	
