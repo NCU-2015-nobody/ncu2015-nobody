@@ -20,7 +20,7 @@ public class Main {
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         while(gui.getFlag()==false){
-//        	System.out.println(gui.getFlag()) ;
+        	System.out.println(gui.getFlag()) ;
         }
         gui.setVisible(false);
         // startup server or client
@@ -50,7 +50,6 @@ public class Main {
      		 * create dom
      		 */
      		DOM dom = new DOM () ;
-     		
      		
      		/*
      		 * create UDP server

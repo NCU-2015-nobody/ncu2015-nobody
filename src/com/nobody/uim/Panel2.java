@@ -190,6 +190,7 @@ public class Panel2 extends Panel{
 		        		gui.card.show(gui.contentPane, "3");
 		        		run=false;
 		        		gui.flag = true ;
+		        		System.out.println("complete.") ;
 		        		break;
 		        	}
 	        	}
