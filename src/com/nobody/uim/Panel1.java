@@ -19,6 +19,7 @@ public class Panel1 extends Panel{
 		final JLabel online=new JLabel();
 		online.setBounds(400,250,180,50);
 		online.setFont(new Font("標楷體",Font.BOLD,20));
+		online.setForeground(Color.yellow);
 		this.add(online);
 		/////////////////
 		JButton button = new JButton("Return");	
