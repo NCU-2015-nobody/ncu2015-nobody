@@ -25,7 +25,7 @@ public class UDPBC {
 		this.tcpsm = tcpsm;
 		this.cdc = cdc;
 		// Set the port to 5566
-		this.port = 5566;
+		this.port = 5567;
 		this.flag = true;
 
 		// init the socket
