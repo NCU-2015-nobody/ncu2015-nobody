@@ -44,19 +44,20 @@ public class Main {
 				e.printStackTrace();
 			}
 		} // end of create server
+		else {
+			// create client
 
-		// create client
+			/*
+			 * create dom
+			 */
+			DOM dom = new DOM();
 
-		/*
-		 * create dom
-		 */
-		DOM dom = new DOM();
-
-		/*
-		 * create UDP server
-		 */
-		UDPUS udpus = new UDPUS(dom, isServer);
-		udpus.start();
+			/*
+			 * create UDP server
+			 */
+			UDPUS udpus = new UDPUS(dom, isServer);
+			udpus.start();
+		}
 		/*
 		 * create client frame
 		 * 
