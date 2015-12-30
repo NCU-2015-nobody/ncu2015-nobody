@@ -43,9 +43,9 @@ public class SceneRender
 		{
 			for(int x = 0; x < scene[y].length; x++)
 			{
-				System.out.print(scene[y][x] + " ");
+				//System.out.print(scene[y][x] + " ");
 			}
-			System.out.println();
+			//System.out.println();
 		}
 		
 		// call GameCanvas update
