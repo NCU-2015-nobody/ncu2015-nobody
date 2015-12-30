@@ -59,6 +59,7 @@ public class UDPBC {
 		}
 
 		Vector<Object> updateInfo = cdc.getUpdateInfo();
+		System.out.println("get update info from cdc.");
 		Iterator<Object> it = updateInfo.iterator();
 		String msg = "";
 
