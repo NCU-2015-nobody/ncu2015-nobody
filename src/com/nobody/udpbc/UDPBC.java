@@ -54,10 +54,14 @@ public class UDPBC {
 					port = 5567;
 				}
 				System.out.println("Connect with" + ipList.get(i) + ", port:" + port);
-				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
+				if (i == 0) {
+					this.isa[i] = new InetSocketAddress("127.0.0.1", port);
+				} else {
+					this.isa[i] = new InetSocketAddress(ipList.get(i), port);
+				}
 				this.socket[i].connect(isa[i]);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
-				System.out.println("Connect to ip:" + ipList.get(i));
+				System.out.println("Connect success");
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("Some thing wrong! with connect" + ipList.get(i));
