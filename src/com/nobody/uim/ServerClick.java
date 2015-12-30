@@ -39,7 +39,7 @@ public class ServerClick implements MouseListener{
 //		gui.card.show(gui.contentPane, "1_0");
 //		//////////////////////////////////////////
 		
-		if (gui.server.onlineCount==3){
+		if (gui.server.onlineCount==4){
 			gui.flag=true;
 		}
 	}
