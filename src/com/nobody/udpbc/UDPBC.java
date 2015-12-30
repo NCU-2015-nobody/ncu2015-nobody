@@ -36,7 +36,11 @@ public class UDPBC {
 
 	public void startUDPBroadCast() throws InterruptedException {
 		Vector<String> ipList = this.tcpsm.getClientTable();
+		Vector<String> ipList2 = new Vector<String>();
 		for (String ip : ipList) {
+			ip = ip.substring(1);
+			ip = ip.split(":")[0];
+			ipList2.add(ip);
 			System.out.println("ip:" + ip);
 		}
 		for (int i = 0; i < 4; i++) {
