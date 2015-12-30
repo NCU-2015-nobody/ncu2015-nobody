@@ -48,17 +48,17 @@ public class UDPBC {
 
 		for (int i = 0; i < 4; i++) {
 			try { // connect to the UDP Server
-				if (i == 0) {
-					port = 5566;
-				} else {
-					port = 5567;
-				}
+					// if (i == 0) {
+					// port = 5566;
+					// } else {
+				port = 5567;
+				// }
 				System.out.println("Connect with" + ipList.get(i) + ", port:" + port);
-				if (i == 0) {
-					this.isa[i] = new InetSocketAddress("127.0.0.1", port);
-				} else {
-					this.isa[i] = new InetSocketAddress(ipList.get(i), port);
-				}
+				// if (i == 0) {
+				this.isa[i] = new InetSocketAddress("127.0.0.1", port);
+				// } else {
+				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
+				// }
 				this.socket[i].connect(isa[i]);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
 				System.out.println("Connect success");

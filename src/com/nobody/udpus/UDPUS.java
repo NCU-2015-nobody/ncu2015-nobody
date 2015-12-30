@@ -19,9 +19,9 @@ public class UDPUS extends Thread {
 		this.dom = dom;
 		this.isServer = isServer;
 
-		if (isServer) {
-			this.port = 5566;
-		}
+		// if (isServer) {
+		// this.port = 5566;
+		// }
 		flag = true;
 		try {
 			System.out.println("isServer:" + isServer + ", port" + this.port);
