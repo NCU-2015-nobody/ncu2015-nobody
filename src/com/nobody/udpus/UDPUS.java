@@ -24,6 +24,7 @@ public class UDPUS extends Thread {
 		}
 		flag = true;
 		try {
+			System.out.println("isServer:" + isServer + ", port" + this.port);
 			serverSocket = new ServerSocket(port);
 		} catch (Exception e) {
 			System.out.println("serversocket error");

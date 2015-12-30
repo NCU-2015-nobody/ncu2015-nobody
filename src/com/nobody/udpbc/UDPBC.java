@@ -53,6 +53,7 @@ public class UDPBC {
 				} else {
 					port = 5567;
 				}
+				System.out.println("Connect with" + ipList.get(i) + ", port:" + port);
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
 				this.socket[i].connect(isa[i]);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
