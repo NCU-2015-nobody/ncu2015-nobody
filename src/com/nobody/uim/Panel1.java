@@ -1,5 +1,6 @@
 package com.nobody.uim;
 
+import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JButton;
@@ -12,6 +13,7 @@ public class Panel1 extends Panel{
 		JLabel id=new JLabel("現在登入人數:");
 		id.setBounds(250,250,180,50);
 		id.setFont(new Font("標楷體",Font.BOLD,20));
+		id.setForeground(Color.yellow);
 		this.add(id);
 		/////////////////
 		final JLabel online=new JLabel();
