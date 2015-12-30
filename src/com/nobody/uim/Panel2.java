@@ -57,9 +57,9 @@ public class Panel2 extends Panel{
 		
 	}
 	void pic_create(String pic1,String pic2,int x,int y){
-		Icon icon1 = new ImageIcon(pic1);
-		Icon icon2 = new ImageIcon(pic2);
-		JLabel pic = new JLabel(icon1);
+		final Icon icon1 = new ImageIcon(pic1);
+		final Icon icon2 = new ImageIcon(pic2);
+		final JLabel pic = new JLabel(icon1);
 		pic.setBounds(x, y, icon1.getIconWidth(), icon1.getIconHeight());
 		pic.addMouseListener(new MouseListener(){
 			@Override
@@ -80,7 +80,7 @@ public class Panel2 extends Panel{
 		this.add(pic);
 		
 	}
-	void select_create(int x,int y,int flag,JLayeredPane layer,GUI gui){
+	void select_create(int x,int y,final int flag,JLayeredPane layer,final GUI gui){
 		Icon icon1 = new ImageIcon(".//click.png");
 		JLabel pic = new JLabel(icon1);
 	
@@ -114,7 +114,7 @@ public class Panel2 extends Panel{
 		});
 		this.add(pic);
 		//////////////
-		JLabel id=new JLabel("Press");
+		final JLabel id=new JLabel("Press");
 		id.setBounds(x+5,y+10,180,50);
 		id.setFont(new Font("標楷體",Font.BOLD,35));
 		id.setName(Integer.toString(flag));
@@ -164,7 +164,7 @@ public class Panel2 extends Panel{
 		}
 		///
 	}
-	void listener(GUI gui){
+	void listener(final GUI gui){
 		Thread t = t =new Thread() {
 	        public void run() {
 	        	while(true){

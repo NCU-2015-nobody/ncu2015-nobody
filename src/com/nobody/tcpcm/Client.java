@@ -21,7 +21,7 @@ public class Client {
 	public Client(){
 		port=9999;
 	}
-	public Boolean connectServer(String serverip){
+	public Boolean connectServer(final String serverip){
 		t =new Thread() {
 	        public void run() {
 	            s = new Socket();

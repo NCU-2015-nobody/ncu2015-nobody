@@ -1,4 +1,4 @@
-package com.app.dom;
+package com.nobody.dom;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -10,17 +10,17 @@ public class d
 	
 	information info = new information();
 	
-	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)//§ï¶Ç¤J°Ñ¼Æ¡F¬ö¿ý¨C­Ó¨¤¦âªº³Ì¤j¦å¶q
+	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)//ï¿½ï¿½Ç¤Jï¿½Ñ¼Æ¡Fï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½Ó¨ï¿½ï¿½âªºï¿½Ì¤jï¿½ï¿½q
 	{
-		// ¥ÑUDPUS©I¥s¡C
-		// ·íUDPUS¦¬¨ìaddVirtualCharacter°T®§®É¡A©I¥s¦¹¤èªk¡A±NserverºÝ¶Ç°eªº¤Hª«¸ê°TÀx¦s©óDOM¡C
-		// ¥H¤U¨C¶µ¸ê°T³£¦U¥Î¤@­Óarraylist¦s¡A¨Ãªì©l¤Æ
+		// ï¿½ï¿½UDPUSï¿½Iï¿½sï¿½C
+		// ï¿½ï¿½UDPUSï¿½ï¿½ï¿½ï¿½addVirtualCharacterï¿½Tï¿½ï¿½ï¿½É¡Aï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½kï¿½Aï¿½Nserverï¿½Ý¶Ç°eï¿½ï¿½ï¿½Hï¿½ï¿½ï¿½ï¿½Tï¿½xï¿½sï¿½ï¿½DOMï¿½C
+		// ï¿½Hï¿½Uï¿½Cï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Uï¿½Î¤@ï¿½ï¿½arraylistï¿½sï¿½Aï¿½Ãªï¿½lï¿½ï¿½
 	
-		// int clientNumber ¡G ¨¤¦â½s¸¹ 
-		// Point before_xy ¡G ¨¤¦â§ó·s«eªº®y¼Ð
-		// Point current_xy ¡G ¨¤¦â·í«e®y¼Ð
-		// int dir ¡G  ¤è¦V (¥ª0¡B¤W1¡B¥k2¡B¤U3)
-		// int health ¡G ¨¤¦â¦å¶q
+		// int clientNumber ï¿½G ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ 
+		// Point before_xy ï¿½G ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½eï¿½ï¿½ï¿½yï¿½ï¿½
+		// Point current_xy ï¿½G ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½yï¿½ï¿½
+		// int dir ï¿½G  ï¿½ï¿½V (ï¿½ï¿½0ï¿½Bï¿½W1ï¿½Bï¿½k2ï¿½Bï¿½U3)
+		// int health ï¿½G ï¿½ï¿½ï¿½ï¿½ï¿½q
 		
 //		information info = new information();
 		
@@ -50,18 +50,18 @@ public class d
 		}
 	}
 
-	public void addMonster(int objectID, int currentX, int currentY, int dir, int health) // §ï¶Ç¤J°Ñ¼Æ
+	public void addMonster(int objectID, int currentX, int currentY, int dir, int health) // ï¿½ï¿½Ç¤Jï¿½Ñ¼ï¿½
 	{
-		// ¥ÑUDPUS©I¥s
-		// ·íUDPUS¦¬¨ìadd°T®§®É¡A©I¥s¦¹¤èªk¡A±NserverºÝ¶Ç°eªº©Çª«¸ê°TÀx¦s©óDOM¡C
-		// ¥H¤U¨C¶µ¸ê°T³£¦U¥Î¤@­Óarraylist¦s¡A¨Ãªì©l¤Æ
+		// ï¿½ï¿½UDPUSï¿½Iï¿½s
+		// ï¿½ï¿½UDPUSï¿½ï¿½ï¿½ï¿½addï¿½Tï¿½ï¿½ï¿½É¡Aï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½kï¿½Aï¿½Nserverï¿½Ý¶Ç°eï¿½ï¿½ï¿½Çªï¿½ï¿½ï¿½Tï¿½xï¿½sï¿½ï¿½DOMï¿½C
+		// ï¿½Hï¿½Uï¿½Cï¿½ï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Uï¿½Î¤@ï¿½ï¿½arraylistï¿½sï¿½Aï¿½Ãªï¿½lï¿½ï¿½
 	
 	
-		// int objectID ¡G ©Çª«½s¸¹ 
-		// Point before_xy_monster ¡G ©Çª«§ó·s«eªº®y¼Ð
-		// Point current_xy_monster ¡G ©Çª«·í«e®y¼Ð
-		// int dir_monster ¡G  ¤è¦V (¥ª0¡B¤W1¡B¥k2¡B¤U3)
-		// int health_monster ¡G ©Çª«¦å¶q
+		// int objectID ï¿½G ï¿½Çªï¿½ï¿½sï¿½ï¿½ 
+		// Point before_xy_monster ï¿½G ï¿½Çªï¿½ï¿½ï¿½sï¿½eï¿½ï¿½ï¿½yï¿½ï¿½
+		// Point current_xy_monster ï¿½G ï¿½Çªï¿½ï¿½ï¿½eï¿½yï¿½ï¿½
+		// int dir_monster ï¿½G  ï¿½ï¿½V (ï¿½ï¿½0ï¿½Bï¿½W1ï¿½Bï¿½k2ï¿½Bï¿½U3)
+		// int health_monster ï¿½G ï¿½Çªï¿½ï¿½ï¿½q
 		
 //		information info = new information();
 		
@@ -77,12 +77,12 @@ public class d
 	
 	public void updateVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)
 	{
-		// ¥ÑUDPUS©I¥s¡C
-		// ·íUDPUS¦¬¨ìupdate°T®§®É¡A©I¥s¦¹¤èªk¡AÀË¬dclientNumberList¸Ì¦³¨S¦³¶Ç¤JªºclientNumber
-		// ¦pªG¦³ªº¸Ü¡A¥Î¤@­Óindex¨Ó°O¿ýupdateªº¦ì¸m¡F­YµL¡A«h¥ý©I¥saddVirtualCharacter()¡C
-		// ¦A°µ§ó·s¡C
+		// ï¿½ï¿½UDPUSï¿½Iï¿½sï¿½C
+		// ï¿½ï¿½UDPUSï¿½ï¿½ï¿½ï¿½updateï¿½Tï¿½ï¿½ï¿½É¡Aï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½kï¿½Aï¿½Ë¬dclientNumberListï¿½Ì¦ï¿½ï¿½Sï¿½ï¿½ï¿½Ç¤Jï¿½ï¿½clientNumber
+		// ï¿½pï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½Ü¡Aï¿½Î¤@ï¿½ï¿½indexï¿½Ó°Oï¿½ï¿½updateï¿½ï¿½ï¿½ï¿½mï¿½Fï¿½Yï¿½Lï¿½Aï¿½hï¿½ï¿½ï¿½Iï¿½saddVirtualCharacter()ï¿½C
+		// ï¿½Aï¿½ï¿½ï¿½ï¿½sï¿½C
 	
-		// ¬°¤F§PÂ_ª¬ºA¬°¨«¸ôorÀR¤î¡A¦b§ó·s«e¥ýÀx¦s§ó·s«eªº®y¼Ð
+		// ï¿½ï¿½ï¿½Fï¿½Pï¿½_ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½orï¿½Rï¿½ï¿½Aï¿½bï¿½ï¿½sï¿½eï¿½ï¿½ï¿½xï¿½sï¿½ï¿½sï¿½eï¿½ï¿½ï¿½yï¿½ï¿½
 	
 //		information info = new information();
 		int index = -1;
@@ -103,7 +103,7 @@ public class d
 			index = info.clientNumberList.size() - 1;
 		}
 		
-		info.before_xyList.set(index, info.current_xyList.get(index)); //Àx¦s§ó·s«eªº®y¼Ð 
+		info.before_xyList.set(index, info.current_xyList.get(index)); //ï¿½xï¿½sï¿½ï¿½sï¿½eï¿½ï¿½ï¿½yï¿½ï¿½ 
 		
 		info.current_xyList.set(index, current_xy);
 		info.dirList.set(index, dir);
@@ -114,10 +114,10 @@ public class d
 
 	public void updateMonsterStatus(int objectID, int currentX, int currentY, int dir, int health)
 	{
-		// ¥ÑUDPUC©I¥s¡C
-		// ·íUDPUS¦¬¨ìupdate°T®§®É¡A©I¥s¦¹¤èªk¡AÀË¬dobjectIDList¸Ì¦³¨S¦³¶Ç¤JªºobjectID¡A¦pªG¦³ªº¸Ü¡A«K§ó·s¡F­YµL¡A«h¥ý©I¥saddMonster()¦A§ó·s¡C
+		// ï¿½ï¿½UDPUCï¿½Iï¿½sï¿½C
+		// ï¿½ï¿½UDPUSï¿½ï¿½ï¿½ï¿½updateï¿½Tï¿½ï¿½ï¿½É¡Aï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½kï¿½Aï¿½Ë¬dobjectIDListï¿½Ì¦ï¿½ï¿½Sï¿½ï¿½ï¿½Ç¤Jï¿½ï¿½objectIDï¿½Aï¿½pï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½Ü¡Aï¿½Kï¿½ï¿½sï¿½Fï¿½Yï¿½Lï¿½Aï¿½hï¿½ï¿½ï¿½Iï¿½saddMonster()ï¿½Aï¿½ï¿½sï¿½C
 	
-		// ¬°¤F§PÂ_ª¬ºA¬°¨«¸ôorÀR¤î¡A¦b§ó·s«e¥ýÀx¦s§ó·s«eªº®y¼Ð
+		// ï¿½ï¿½ï¿½Fï¿½Pï¿½_ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½orï¿½Rï¿½ï¿½Aï¿½bï¿½ï¿½sï¿½eï¿½ï¿½ï¿½xï¿½sï¿½ï¿½sï¿½eï¿½ï¿½ï¿½yï¿½ï¿½
 
 //		information info = new information();
 		int indexM = -1;
@@ -138,7 +138,7 @@ public class d
 			indexM = info.objectIDList.size() - 1;
 		}
 		
-		info.before_xy_monsterList.set(indexM, info.current_xy_monsterList.get(indexM)); //Àx¦s§ó·s«eªº®y¼Ð
+		info.before_xy_monsterList.set(indexM, info.current_xy_monsterList.get(indexM)); //ï¿½xï¿½sï¿½ï¿½sï¿½eï¿½ï¿½ï¿½yï¿½ï¿½
 		//warn the situation of the index and the other are not equal 
 		
 		info.current_xy_monsterList.set(indexM, current_xy);
@@ -150,14 +150,14 @@ public class d
 
 	public boolean CDTimer() /////////not done
 	{
-		// ¥ÑTCPCM©I¥s¡C
-		// ·íª±®a«ö¤U§ðÀ»Áä¡A±ý§ðÀ»©Çª«¡ATCPCM¦¬¨ìUIM¶Ç¨Óªº°T®§¡A«K©I¥s¦¹¤èªk¡A¥H½T»{ª±®aªº§N«o®É¶¡¡A§PÂ_¨ä¬O§_¥iµo¥X§ðÀ»¡C
+		// ï¿½ï¿½TCPCMï¿½Iï¿½sï¿½C
+		// ï¿½ï¿½ï¿½aï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çªï¿½ï¿½ATCPCMï¿½ï¿½ï¿½ï¿½UIMï¿½Ç¨Óªï¿½ï¿½Tï¿½ï¿½ï¿½Aï¿½Kï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½kï¿½Aï¿½Hï¿½Tï¿½{ï¿½ï¿½ï¿½aï¿½ï¿½ï¿½Nï¿½oï¿½É¶ï¿½ï¿½Aï¿½Pï¿½_ï¿½ï¿½Oï¿½_ï¿½iï¿½oï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½C
 	
-		// int CD ¡G ¦Û¤v¨¤¦âªº§N«o®É¶¡
+		// int CD ï¿½G ï¿½Û¤vï¿½ï¿½ï¿½âªºï¿½Nï¿½oï¿½É¶ï¿½
 	
 		/*if (CD == 0)
-			CD = 1000; // ¼È©w§ðÀ»¶¡¹j¬°1000²@¬í
-			Thread t = new Thread(new Runnable()); // ¶}©l¦©CD
+			CD = 1000; // ï¿½È©wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½1000ï¿½@ï¿½ï¿½
+			Thread t = new Thread(new Runnable()); // ï¿½}ï¿½lï¿½ï¿½CD
 			return true;
 		end if
 		else
@@ -165,12 +165,12 @@ public class d
 		end else*/
 		
 //		final information info = new information();
-		final int timeInterval = 1000; // ¶¡¹j1000²@¬í
+		final int timeInterval = 1000; // ï¿½ï¿½ï¿½j1000ï¿½@ï¿½ï¿½
 		
 		if(info.CD == 0)
 		{
 			info.CD = 3;
-			Thread t = new Thread(new Runnable(){ // ª½±µµ|3¬í
+			Thread t = new Thread(new Runnable(){ // ï¿½ï¿½ï¿½ï¿½ï¿½|3ï¿½ï¿½
 				public void run() {						
 						
 						try {
@@ -196,9 +196,9 @@ public class d
 
 	public Vector getAllDynamicObjects() /////////not done
 	{
-		// ¥ÑSPRITERE©I¥s¡C
-		// ¦^¶Ç clientNumberList , before_xyList , current_xyList , dirList , health
-		// ¦^¶Ç objectIDList , before_xy_monsterList , current_xy_monsterList , dir_monsterList , health_monster
+		// ï¿½ï¿½SPRITEREï¿½Iï¿½sï¿½C
+		// ï¿½^ï¿½ï¿½ clientNumberList , before_xyList , current_xyList , dirList , health
+		// ï¿½^ï¿½ï¿½ objectIDList , before_xy_monsterList , current_xy_monsterList , dir_monsterList , health_monster
 //		information info = new information();
 		Vector v1 = new Vector();
 		
@@ -238,8 +238,8 @@ public class d
 
 	public Point getVirtualCharacterXY()
 	{
-		// ¥ÑSCENERE©I¥s¡C
-		// ¦^¶Ç¥Ø«e¤Hª«ªº©Ò¦b§¤¼Ð¡]ªì©l¤Æ®É»Ý³]©w¦Û¤vªºclient Number¡^¡C
+		// ï¿½ï¿½SCENEREï¿½Iï¿½sï¿½C
+		// ï¿½^ï¿½Ç¥Ø«eï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½Ò¦bï¿½ï¿½ï¿½Ð¡]ï¿½ï¿½lï¿½Æ®É»Ý³]ï¿½wï¿½Û¤vï¿½ï¿½client Numberï¿½^ï¿½C
 		Point p = new Point();
 		
 		int self_no = TCPtest.character();
@@ -256,10 +256,10 @@ public class d
 		return p;
 	}
 	
-	public int[] getVirtualCharactersHP() // Âà´«%¡A§ï¦¨int[]
+	public int[] getVirtualCharactersHP() // ï¿½à´«%ï¿½Aï¿½ï¦¨int[]
 	{
-		// ¥ÑUIRE©I¥s¡C
-		// ¦^¶Ç¦U¤Hª«¨¤¦âªºHP­È¡A¥HÃ¸»s©ó¹CÀ¸µe­±¤¤¡C
+		// ï¿½ï¿½UIREï¿½Iï¿½sï¿½C
+		// ï¿½^ï¿½Ç¦Uï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½âªºHPï¿½È¡Aï¿½HÃ¸ï¿½sï¿½ï¿½Cï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½C
 //		Vector v = new Vector();
 //		information info = new information();
 		
@@ -290,10 +290,10 @@ public class d
 	}
 
 
-	public boolean[] getVirtualCharactersCD() // §ïboolean[]
+	public boolean[] getVirtualCharactersCD() // ï¿½ï¿½boolean[]
 	{
-		// ¥ÑUIRE©I¥s¡C
-		// ¦^¶Ç¦U¤Hª«¨¤¦âªºCD­È¡A¥HÃ¸»s©ó¹CÀ¸µe­±¤¤¡C
+		// ï¿½ï¿½UIREï¿½Iï¿½sï¿½C
+		// ï¿½^ï¿½Ç¦Uï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½âªºCDï¿½È¡Aï¿½HÃ¸ï¿½sï¿½ï¿½Cï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½C
 		
 		boolean[] boolCD = {false, false, false, false};
 		int self_no = TCPtest.character();
@@ -306,7 +306,7 @@ public class d
 		return boolCD;
 	}
 	
-	public static class information //XstaticX ¡F 
+	public static class information //XstaticX ï¿½F 
 	{
 		public static ArrayList<Integer> clientNumberList = new ArrayList<Integer>();
 		public static ArrayList<Point> before_xyList = new ArrayList<Point>();

@@ -11,11 +11,11 @@ import javax.swing.JTextField;
 
 //for Client
 public class Panel1_1 extends Panel{
-	Panel1_1(GUI gui){
+	Panel1_1(final GUI gui){
 		JLabel ServerIP = new JLabel("ServerIP: ");
 		ServerIP.setFont(new Font("標楷體",Font.BOLD,20));
 		ServerIP.setBounds(190, 250, 120, 40);
-		JTextField box = new JTextField();
+		final JTextField box = new JTextField();
 		box.setBounds(300, 250, 120, 40);
 		this.add(ServerIP);
 		this.add(box);
@@ -23,7 +23,7 @@ public class Panel1_1 extends Panel{
 		JLabel userID = new JLabel("UserID: ");
 		userID.setFont(new Font("標楷體",Font.BOLD,20));
 		userID.setBounds(190, 300, 120, 40);
-		JTextField box2 = new JTextField();
+		final JTextField box2 = new JTextField();
 		box2.setBounds(300, 300, 120, 40);
 		this.add(userID);
 		this.add(box2);

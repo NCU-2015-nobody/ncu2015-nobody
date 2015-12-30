@@ -11,16 +11,16 @@ import javax.swing.JTextField;
 
 public class Panel1_0 extends Panel{
 	//server start and give username then login p.s show server IP
-	Panel1_0(GUI gui){
+	Panel1_0(final GUI gui){
 		JLabel label = new JLabel("UserID: ");
 		label.setFont(new Font("標楷體",Font.BOLD,20));
 		label.setBounds(190, 250, 120, 40);
-		JTextField box = new JTextField();
+		final JTextField box = new JTextField();
 		box.setBounds(300, 250, 150, 40);
 		this.add(label);
 		this.add(box);
 		//////////////
-		String ip = gui.server.IP;
+		final String ip = gui.server.IP;
 		JLabel serverip = new JLabel("ServerIP:"+ip);
 		serverip.setFont(new Font("標楷體",Font.BOLD,20));
 		serverip.setForeground(Color.red);

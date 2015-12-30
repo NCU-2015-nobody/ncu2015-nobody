@@ -1,22 +1,22 @@
-package com.app.sre;
+package com.nobody.renderEngine;
 
 import java.awt.Point;
 import java.util.Vector;
 
-import com.app.sre.DOMtest;
+import com.nobody.renderEngine.DOMtest;
 
 public class SRE 
 {
 	@SuppressWarnings("null")
 	void renderSprites()
 	{
-		// ¥Ñ Render Thread ©I¥s¡C
-		// Ã¸»sµø³¥½d³ò¤ºªº°ÊºAª«¥ó¡C
-		// ©I¥sDOMªºgetAllDynamicObjects()¤èªk¡A¨ú±o¦s¦³©Ò¦³°ÊºAª«¥óªºVecter
-		//¨Ã§PÂ_¡BÃ¸»sµø³¥¤ºªºª«¥ó¡C
+		// ï¿½ï¿½ Render Thread ï¿½Iï¿½sï¿½C
+		// Ã¸ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½dï¿½ò¤ºªï¿½ï¿½ÊºAï¿½ï¿½ï¿½ï¿½C
+		// ï¿½Iï¿½sDOMï¿½ï¿½getAllDynamicObjects()ï¿½ï¿½kï¿½Aï¿½ï¿½ï¿½oï¿½sï¿½ï¿½ï¿½Ò¦ï¿½ï¿½ÊºAï¿½ï¿½ï¿½ï¿½Vecter
+		//ï¿½Ã§Pï¿½_ï¿½BÃ¸ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½C
 	
 		Vector v = DOMtest.getAllDynamicObjects(); 
-		Vector v_picture = new Vector(); // Àx¦s¹Ï¤ù¸ô®|
+		Vector v_picture = new Vector(); // ï¿½xï¿½sï¿½Ï¤ï¿½ï¿½ï¿½ï¿½|
 		boolean attack = DOMtest.mainCharacterAttack();
 		Point mainXY = DOMtest.getVirtualCharacterXY();
 		
@@ -27,10 +27,10 @@ public class SRE
 		int health = -1;
 		
 	
-		// ±NgetAllDynamicObjects()¶Ç¦^¨Óªºvector¤À²Õ[clientNumber + before_xy + current_xy + dir + health¬°¤@²Õ] or [objectID + before_xy_monster + current_xy_monster + dir_monster + health_monster¬°¤@²Õ]¡A¤@¦¸§PÂ_¤@²Õ¸ê®Æ¡C
+		// ï¿½NgetAllDynamicObjects()ï¿½Ç¦^ï¿½Óªï¿½vectorï¿½ï¿½ï¿½ï¿½[clientNumber + before_xy + current_xy + dir + healthï¿½ï¿½ï¿½@ï¿½ï¿½] or [objectID + before_xy_monster + current_xy_monster + dir_monster + health_monsterï¿½ï¿½ï¿½@ï¿½ï¿½]ï¿½Aï¿½@ï¿½ï¿½ï¿½Pï¿½_ï¿½@ï¿½Õ¸ï¿½Æ¡C
 	
-		// §PÂ_»Ý­nÃ¸»s­þ±i¹Ï¨Ã¦s¦Üv_picture¸Ì
-		// ¨C²Õ¸ê®Æ¬Ò³B²z§¹«á¡A¦A©I¥scanvasªºupdateSprite(Vector v_picture)
+		// ï¿½Pï¿½_ï¿½Ý­nÃ¸ï¿½sï¿½ï¿½ï¿½iï¿½Ï¨Ã¦sï¿½ï¿½v_pictureï¿½ï¿½
+		// ï¿½Cï¿½Õ¸ï¿½Æ¬Ò³Bï¿½zï¿½ï¿½ï¿½ï¿½Aï¿½Aï¿½Iï¿½scanvasï¿½ï¿½updateSprite(Vector v_picture)
 		
 		v_picture.add(attack);
 		v_picture.add(mainXY);
@@ -67,7 +67,7 @@ public class SRE
 				}
 			}
 			
-			// ¨C²Õ¸ê®Æ¬Ò³B²z§¹«á¡A¦A©I¥scanvasªºupdateSprite(Vector v_picture)
+			// ï¿½Cï¿½Õ¸ï¿½Æ¬Ò³Bï¿½zï¿½ï¿½ï¿½ï¿½Aï¿½Aï¿½Iï¿½scanvasï¿½ï¿½updateSprite(Vector v_picture)
 		}
 	}
 

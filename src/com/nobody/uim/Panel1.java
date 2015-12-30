@@ -8,13 +8,13 @@ import javax.swing.JLabel;
 public class Panel1 extends Panel{
 	Thread t=null;
 	public static boolean run = true;
-	Panel1(GUI gui){
+	Panel1(final GUI gui){
 		JLabel id=new JLabel("現在登入人數:");
 		id.setBounds(250,250,180,50);
 		id.setFont(new Font("標楷體",Font.BOLD,20));
 		this.add(id);
 		/////////////////
-		JLabel online=new JLabel();
+		final JLabel online=new JLabel();
 		online.setBounds(400,250,180,50);
 		online.setFont(new Font("標楷體",Font.BOLD,20));
 		this.add(online);
