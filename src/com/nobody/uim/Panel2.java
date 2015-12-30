@@ -40,10 +40,10 @@ public class Panel2 extends Panel{
 		banner.setForeground(Color.blue);
 		this.add(banner);
 		////char pic and button
-		pic_create(".//1-1.png",".//1-2.png",120,100);
-		pic_create(".//2-1.png",".//2-2.png",270,100);
-		pic_create(".//3-1.png",".//3-2.png",420,100);
-		pic_create(".//4-1.png",".//4-2.png",570,100);
+		pic_create(".//image//1-1.png",".//image//1-2.png",120,100);
+		pic_create(".//image//2-1.png",".//image//2-2.png",270,100);
+		pic_create(".//image//3-1.png",".//image//3-2.png",420,100);
+		pic_create(".//image//4-1.png",".//image//4-2.png",570,100);
 		////select tag   1 戰, 2牧, 3法, 4弓
 		select_create(120,350,1,layer,gui);
 		select_create(270,350,2,layer,gui);
