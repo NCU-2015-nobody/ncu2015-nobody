@@ -47,7 +47,7 @@ public class UDPUS extends Thread {
 							}
 						}
 
-						if (data[0].equals("update")) {
+						if (data[0].equals("update")) { 
 							if (data[1].equals("chara")) {
 								dom.updateVirtualCharacter(Integer.valueOf(data[2]), Integer.valueOf(data[3]),
 										Integer.valueOf(data[4]), Integer.valueOf(data[5]), Integer.valueOf(data[6]));
