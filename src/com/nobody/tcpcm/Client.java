@@ -8,12 +8,15 @@ import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
+import com.nobody.dom.DOM;
+
 public class Client {
 	private String address ;// 連線的ip
     private int port ;// 連線的port
     InetSocketAddress isa = null;
     BufferedReader reader;
     PrintWriter writer;
+    DOM dom = null;
     Socket s;
     Thread t;
     public  int online_flag=0;
@@ -67,7 +70,13 @@ public class Client {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-		writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);	
+		if(Movecode!=90){
+			writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);	
+		}else{
+			if(dom.CDTimer()==true){
+				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);
+			}
+		}
 	}
 	public void inputID(int Movecode,String id){
 		while(online_flag==0){
@@ -109,5 +118,8 @@ public class Client {
 	}
 	public int character(){
 		return char_flag;
+	}
+	public void getDOM(DOM dom){
+		this.dom=dom;
 	}
 }
