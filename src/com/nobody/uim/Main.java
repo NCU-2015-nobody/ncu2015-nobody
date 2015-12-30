@@ -13,7 +13,7 @@ public class Main {
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // startup server or client
-     		if(true) // create server
+     		if(server.flag_server==1) // create server
      		{
      			// if user choose create server, enter if
      			

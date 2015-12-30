@@ -17,12 +17,14 @@ public class Server {
 	public static CDC cdc = null;
 	static Thread listener;
 	static Vector<Userfile> table = new Vector<Userfile>();
+	public int flag_server=0;
 	public Server(){
 			
 	}
 	public void initTCPServer() throws IOException  {
 		try {			
 			final CDC cdc = new CDC() ;
+			flag_server=1;
 			ss = new ServerSocket(9999);
 			System.out.println("伺服器已啟動...");
 			InetAddress myComputer = InetAddress.getLocalHost() ;
