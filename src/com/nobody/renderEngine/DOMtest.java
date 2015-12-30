@@ -11,9 +11,10 @@ public class DOMtest
 		
 	}
 
-	public static boolean mainCharacterAttack() {
+	public static int[] mainCharacterinfo() {
 		// TODO Auto-generated method stub
-		return false;
+		int[] set = new int[3];
+		return set;
 	}
 	
 	public static Point getVirtualCharacterXY() {

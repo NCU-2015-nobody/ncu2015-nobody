@@ -9,15 +9,10 @@ public class SRE
 {
 	@SuppressWarnings("null")
 	void renderSprites()
-	{
-		// �� Render Thread �I�s�C
-		// ø�s�����d�򤺪��ʺA����C
-		// �I�sDOM��getAllDynamicObjects()��k�A���o�s���Ҧ��ʺA����Vecter
-		//�çP�_�Bø�s������������C
-	
+	{	
 		Vector v = DOMtest.getAllDynamicObjects(); 
-		Vector v_picture = new Vector(); // �x�s�Ϥ����|
-		boolean attack = DOMtest.mainCharacterAttack();
+		Vector v_picture = new Vector(); 
+		int[] characterInfo = DOMtest.mainCharacterinfo();
 		Point mainXY = DOMtest.getVirtualCharacterXY();
 		
 		int no = -1;
@@ -26,13 +21,11 @@ public class SRE
 		int dir = -1;
 		int health = -1;
 		
-	
-		// �NgetAllDynamicObjects()�Ǧ^�Ӫ�vector����[clientNumber + before_xy + current_xy + dir + health���@��] or [objectID + before_xy_monster + current_xy_monster + dir_monster + health_monster���@��]�A�@���P�_�@�ո�ơC
-	
-		// �P�_�ݭnø�s���i�Ϩæs��v_picture��
-		// �C�ո�ƬҳB�z����A�A�I�scanvas��updateSprite(Vector v_picture)
+		for(int i = 0 ; i < 3 ; i++)
+		{
+			v.add(characterInfo[i]);
+		}
 		
-		v_picture.add(attack);
 		v_picture.add(mainXY);
 		
 		while(!v.isEmpty()) //character for first 4, monster for the rest
@@ -66,8 +59,6 @@ public class SRE
 					v_picture.add(current);
 				}
 			}
-			
-			// �C�ո�ƬҳB�z����A�A�I�scanvas��updateSprite(Vector v_picture)
 		}
 	}
 

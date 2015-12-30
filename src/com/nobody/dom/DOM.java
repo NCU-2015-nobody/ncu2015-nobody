@@ -4,26 +4,13 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Vector;
 
+
 public class DOM 
 {
-	//self number!!
-	
 	information info = new information();
 	
-	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)//��ǤJ�ѼơF�����C�Ө��⪺�̤j��q
-	{
-		// ��UDPUS�I�s�C
-		// ��UDPUS����addVirtualCharacter�T���ɡA�I�s����k�A�Nserver�ݶǰe���H����T�x�s��DOM�C
-		// �H�U�C����T���U�Τ@��arraylist�s�A�ê�l��
-	
-		// int clientNumber �G ����s�� 
-		// Point before_xy �G �����s�e���y��
-		// Point current_xy �G �����e�y��
-		// int dir �G  ��V (��0�B�W1�B�k2�B�U3)
-		// int health �G �����q
-		
-//		information info = new information();
-		
+	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)
+	{		
 		Point p = new Point();
 		p.setLocation(currentX, currentY);
 		
@@ -50,21 +37,8 @@ public class DOM
 		}
 	}
 
-	public void addMonster(int objectID, int currentX, int currentY, int dir, int health) // ��ǤJ�Ѽ�
-	{
-		// ��UDPUS�I�s
-		// ��UDPUS����add�T���ɡA�I�s����k�A�Nserver�ݶǰe���Ǫ���T�x�s��DOM�C
-		// �H�U�C����T���U�Τ@��arraylist�s�A�ê�l��
-	
-	
-		// int objectID �G �Ǫ��s�� 
-		// Point before_xy_monster �G �Ǫ���s�e���y��
-		// Point current_xy_monster �G �Ǫ���e�y��
-		// int dir_monster �G  ��V (��0�B�W1�B�k2�B�U3)
-		// int health_monster �G �Ǫ���q
-		
-//		information info = new information();
-		
+	public void addMonster(int objectID, int currentX, int currentY, int dir, int health)
+	{		
 		Point current_xy = new Point();
 		current_xy.setLocation(currentX, currentY);
 		
@@ -77,23 +51,9 @@ public class DOM
 	
 	public void updateVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health)
 	{
-		// ��UDPUS�I�s�C
-		// ��UDPUS����update�T���ɡA�I�s����k�A�ˬdclientNumberList�̦��S���ǤJ��clientNumber
-		// �p�G�����ܡA�Τ@��index�ӰO��update����m�F�Y�L�A�h���I�saddVirtualCharacter()�C
-		// �A����s�C
-	
-		// ���F�P�_���A������or�R��A�b��s�e���x�s��s�e���y��
-	
-//		information info = new information();
 		int index = -1;
 		Point current_xy = new Point();
 		current_xy.setLocation(currentX, currentY);
-	
-//		for(int i = 0 ; i < info.clientNumberList.size() ; i++) // indexof
-//		{
-//			if(clientNumber == info.clientNumberList.get(i))
-				
-//		}
 		
 		index = info.clientNumberList.indexOf(clientNumber);
 	
@@ -114,21 +74,9 @@ public class DOM
 
 	public void updateMonsterStatus(int objectID, int currentX, int currentY, int dir, int health)
 	{
-		// ��UDPUC�I�s�C
-		// ��UDPUS����update�T���ɡA�I�s����k�A�ˬdobjectIDList�̦��S���ǤJ��objectID�A�p�G�����ܡA�K��s�F�Y�L�A�h���I�saddMonster()�A��s�C
-	
-		// ���F�P�_���A������or�R��A�b��s�e���x�s��s�e���y��
-
-//		information info = new information();
 		int indexM = -1;
 		Point current_xy = new Point();
 		current_xy.setLocation(currentX, currentY);
-	
-//		for(int i = 0 ; i < info.objectIDList.size() ; i++)
-//		{
-//			if(objectID == info.objectIDList.get(i))
-//				indexM = i;
-//		}
 		
 		indexM = info.objectIDList.indexOf(objectID);
 	
@@ -139,7 +87,6 @@ public class DOM
 		}
 		
 		info.before_xy_monsterList.set(indexM, info.current_xy_monsterList.get(indexM)); //�x�s��s�e���y��
-		//warn the situation of the index and the other are not equal 
 		
 		info.current_xy_monsterList.set(indexM, current_xy);
 		info.dir_monsterList.set(indexM, dir);
@@ -150,27 +97,12 @@ public class DOM
 
 	public boolean CDTimer() /////////not done
 	{
-		// ��TCPCM�I�s�C
-		// ���a���U������A�������Ǫ��ATCPCM����UIM�ǨӪ��T���A�K�I�s����k�A�H�T�{���a���N�o�ɶ��A�P�_��O�_�i�o�X�����C
-	
-		// int CD �G �ۤv���⪺�N�o�ɶ�
-	
-		/*if (CD == 0)
-			CD = 1000; // �ȩw�������j��1000�@��
-			Thread t = new Thread(new Runnable()); // �}�l��CD
-			return true;
-		end if
-		else
-			return false;
-		end else*/
-		
-//		final information info = new information();
-		final int timeInterval = 1000; // ���j1000�@��
+		final int timeInterval = 1000; 
 		
 		if(info.CD == 0)
 		{
 			info.CD = 3;
-			Thread t = new Thread(new Runnable(){ // �����|3��
+			Thread t = new Thread(new Runnable(){ 
 				public void run() {						
 						
 						try {
@@ -183,7 +115,6 @@ public class DOM
 				}				
 			});
 			t.start();
-//			mainCharacterAttack();
 			return true;
 		}
 		else
@@ -194,12 +125,8 @@ public class DOM
 	}
 
 
-	public Vector getAllDynamicObjects() /////////not done
+	public Vector getAllDynamicObjects() 
 	{
-		// ��SPRITERE�I�s�C
-		// �^�� clientNumberList , before_xyList , current_xyList , dirList , health
-		// �^�� objectIDList , before_xy_monsterList , current_xy_monsterList , dir_monsterList , health_monster
-//		information info = new information();
 		Vector v1 = new Vector();
 		
 		for(int i = 0 ; i < info.clientNumberList.size() ; i++)
@@ -209,7 +136,6 @@ public class DOM
 			v1.add(info.current_xyList.get(i));
 			v1.add(info.dirList.get(i));
 			v1.add(info.healthList.get(i));
-//			v1.add(info.CD);
 		}
 		
 		for(int i = 0 ; i < info.objectIDList.size() ; i++)
@@ -224,22 +150,29 @@ public class DOM
 		return v1;
 	}
 	
-	public boolean mainCharacterAttack()
+	public int[] mainCharacterInfo()
 	{
+		int[] character = new int[3];
+		int self_no = TCPtest.character();
+		int index = info.clientNumberList.indexOf(self_no);
+		
 		if(info.CD > 0)
 		{
-			return false;
+			character[0] = 0; // 0 for no attack; 1 for attack
 		}
 		else
 		{
-			return true;
+			character[0] = 1;
 		}
+		
+		character[1] = info.dirList.get(index);
+		character[2] = self_no;
+		
+		return character;
 	}
 
 	public Point getVirtualCharacterXY()
 	{
-		// ��SCENERE�I�s�C
-		// �^�ǥثe�H�����Ҧb���С]��l�Ʈɻݳ]�w�ۤv��client Number�^�C
 		Point p = new Point();
 		
 		int self_no = TCPtest.character();
@@ -248,7 +181,6 @@ public class DOM
 		{
 			if(self_no == info.clientNumberList.get(i))
 			{
-				//p = info.current_xyList.get(i);
 				p.setLocation(info.current_xyList.get(i));
 			}
 		}
@@ -256,14 +188,8 @@ public class DOM
 		return p;
 	}
 	
-	public int[] getVirtualCharactersHP() // �ഫ%�A�令int[]
+	public int[] getVirtualCharactersHP() 
 	{
-		// ��UIRE�I�s�C
-		// �^�ǦU�H�����⪺HP�ȡA�Hø�s��C���e�����C
-//		Vector v = new Vector();
-//		information info = new information();
-		
-//		int percentageHP = 0;
 		int[] percentageHP = new int[4];
 		
 		for(int i = 0 ; i < info.healthList.size() ; i++)
@@ -283,18 +209,14 @@ public class DOM
 				percentageHP[3] = info.healthList.get(i) / info.maxHP[3];
 				break;
 			}
-//			v.add(info.healthList.get(i));
 		}
 		
 		return percentageHP;
 	}
 
 
-	public boolean[] getVirtualCharactersCD() // ��boolean[]
-	{
-		// ��UIRE�I�s�C
-		// �^�ǦU�H�����⪺CD�ȡA�Hø�s��C���e�����C
-		
+	public boolean[] getVirtualCharactersCD() 
+	{		
 		boolean[] boolCD = {false, false, false, false};
 		int self_no = TCPtest.character();
 		
@@ -306,23 +228,22 @@ public class DOM
 		return boolCD;
 	}
 	
-	public static class information //XstaticX �F 
+	public class information 
 	{
-		public static ArrayList<Integer> clientNumberList = new ArrayList<Integer>();
-		public static ArrayList<Point> before_xyList = new ArrayList<Point>();
-		public static ArrayList<Point> current_xyList = new ArrayList<Point>();
-		public static ArrayList<Integer> dirList = new ArrayList<Integer>();
-		public static ArrayList<Integer> healthList = new ArrayList<Integer>();
+		public ArrayList<Integer> clientNumberList = new ArrayList<Integer>();
+		public ArrayList<Point> before_xyList = new ArrayList<Point>();
+		public ArrayList<Point> current_xyList = new ArrayList<Point>();
+		public ArrayList<Integer> dirList = new ArrayList<Integer>();
+		public ArrayList<Integer> healthList = new ArrayList<Integer>();
 		
-		public static ArrayList<Integer> objectIDList = new ArrayList<Integer>();
-		public static ArrayList<Point> before_xy_monsterList = new ArrayList<Point>();
-		public static ArrayList<Point> current_xy_monsterList = new ArrayList<Point>();
-		public static ArrayList<Integer> dir_monsterList = new ArrayList<Integer>();
-		public static ArrayList<Integer> health_monsterList = new ArrayList<Integer>();
+		public ArrayList<Integer> objectIDList = new ArrayList<Integer>();
+		public ArrayList<Point> before_xy_monsterList = new ArrayList<Point>();
+		public ArrayList<Point> current_xy_monsterList = new ArrayList<Point>();
+		public ArrayList<Integer> dir_monsterList = new ArrayList<Integer>();
+		public ArrayList<Integer> health_monsterList = new ArrayList<Integer>();
 		
-//		public static int selfNumber = -1;
-		public static int CD;
-		public static int[] maxHP = new int[4];
+		public int CD;
+		public int[] maxHP = new int[4];
 	}
 }
 
