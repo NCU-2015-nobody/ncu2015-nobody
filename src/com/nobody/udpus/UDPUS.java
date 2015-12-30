@@ -36,6 +36,7 @@ public class UDPUS extends Thread {
 				while (flag == true) {
 					String msg = br.readLine();
 					if (msg != null) {
+						System.out.println("Get mseeage :" + msg);
 						String data[] = msg.split(",");
 						if (data[0].equals("add")) {
 							if (data[1].equals("chara")) {
