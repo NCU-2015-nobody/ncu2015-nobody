@@ -13,10 +13,15 @@ public class UDPUS extends Thread {
 	private ServerSocket serverSocket;
 	private DOM dom;
 	private boolean flag;
+	private boolean isServer;
 
-	public UDPUS(DOM dom) {
+	public UDPUS(DOM dom, boolean isServer) {
 		this.dom = dom;
+		this.isServer = isServer;
 
+		if (isServer) {
+			this.port = 5566;
+		}
 		flag = true;
 		try {
 			serverSocket = new ServerSocket(port);
