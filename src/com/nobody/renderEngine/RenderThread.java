@@ -28,6 +28,7 @@ public class RenderThread implements Runnable
 			try
 			{
 				Thread.sleep(50);
+				//Thread.sleep(5000);
 			}
 			catch (InterruptedException e)
 			{

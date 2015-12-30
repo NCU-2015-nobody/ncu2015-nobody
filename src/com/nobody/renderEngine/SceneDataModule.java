@@ -38,14 +38,14 @@ public class SceneDataModule
 			for(int x = 0; x < height; x++)
 			{
 				this.map[y][x] = Integer.parseInt(datas[x]);
-				System.out.print(map[y][x] + " ");
+				//System.out.print(map[y][x] + " ");
 				
 				if(!sceneType.contains(map[y][x]))
 				{
 					sceneType.add(map[y][x]);
 				}
 			}
-			System.out.println();
+			//System.out.println();
 		}
 		
 		br.close();
