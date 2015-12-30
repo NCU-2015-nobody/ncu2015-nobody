@@ -27,7 +27,7 @@ public class Panel1 extends Panel{
 		/////////////////
 		this.setBak(this, ".//image//bg 800.jpg");
 		///////////////
-		t = t =new Thread() {
+		t = new Thread() {
 	        public void run() {
 	        	while(run){
 	        		gui.client.inputMoves(95);

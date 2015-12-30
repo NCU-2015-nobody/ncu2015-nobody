@@ -121,7 +121,7 @@ public class Panel2 extends Panel{
 		id.setName(Integer.toString(flag));
 		layer.add(id);
 		//////////
-		Thread t = t =new Thread() {
+		Thread t = new Thread() {
 	        public void run() {
 		        while(run){
 		        	id.setText(character[flag]);
