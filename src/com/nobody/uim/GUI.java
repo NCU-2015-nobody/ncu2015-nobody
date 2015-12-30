@@ -20,8 +20,8 @@ public class GUI extends JFrame{
 	JPanel panelcard3=null; //loading
 	String userID ="";
 	//////// 
-	public static Server server ;
-	public  static Client client ;
+	public Server server ;
+	public Client client ;
 	////////
 	GUI(Server server,Client client){
 		this.server=server;

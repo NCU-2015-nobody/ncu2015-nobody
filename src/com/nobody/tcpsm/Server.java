@@ -23,7 +23,7 @@ public class Server {
 	}
 	public void initTCPServer() throws IOException  {
 		try {			
-			final CDC cdc = new CDC() ;
+			cdc = new CDC() ;
 			flag_server=1;
 			ss = new ServerSocket(9999);
 			System.out.println("伺服器已啟動...");
