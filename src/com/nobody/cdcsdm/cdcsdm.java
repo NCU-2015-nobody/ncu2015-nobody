@@ -19,7 +19,7 @@ public class cdcsdm {
 	
 	public void loadMap(String mapfile) throws IOException{
 		
-		FileReader fr = new FileReader(mapfile);
+		FileReader fr = new FileReader("./map/" + mapfile);
 		BufferedReader br = new BufferedReader(fr);
 		while (br.ready()) {
 			String line = br.readLine() ;
@@ -29,14 +29,11 @@ public class cdcsdm {
 			}
 			columnList.add(rowList) ;
 		}
-		
 		fr.close();
-		
 	}
 	
 	public Boolean checkTrap(Point position) {
-		//1¥ÛÀY   2¯ó¦a   3¾ğ¤ì   4¤ô   5¤ìÀğ   6¦y¨ë
-		
+		//1çŸ³é ­   2è‰åœ°   3æ¨¹æœ¨   4æ°´   5æœ¨ç‰†   6å°–åˆº
 		int XX =  (int)position.getX()/25 ;
 		int YY  = (int)position.getY()/25 ;
 		if(columnList.get(XX).get(YY)==6)
@@ -49,12 +46,12 @@ public class cdcsdm {
 		
 		ArrayList<Boolean> obstacleList = new ArrayList<Boolean>();
 		
-		int XX = (int) position.getX()/25 ;//±N®y¼Ğ­ÈÂà´«¦¨¥i¨Ñlist¨Ï¥Îªºindex­È
+		int XX = (int) position.getX()/25 ;//å°‡åº§æ¨™å€¼è½‰æ›æˆå¯ä¾›listä½¿ç”¨çš„indexå€¼
 		int YY = (int) position.getY()/25 ;
 		
-		//¤£¥i¦æ¨«°Ï°ì¡G1¥ÛÀY      3¾ğ¤ì     4¤ô     5¤ìÀğ
-		//¥i¦æ¨«°Ï°ì¡G2¯ó¦a      6¦y¨ë
-		//false¬°¤£¥i³q¹L°Ï°ì
+		//ä¸å¯è¡Œèµ°å€åŸŸï¼š1çŸ³é ­      3æ¨¹æœ¨     4æ°´     5æœ¨ç‰†
+		//å¯è¡Œèµ°å€åŸŸï¼š2è‰åœ°      6å°–åˆº
+		//falseç‚ºä¸å¯é€šéå€åŸŸ
 		switch(direction){ // left0 up1 right2 down3
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){

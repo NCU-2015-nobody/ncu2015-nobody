@@ -1,6 +1,9 @@
 package com.nobody.cdc;
 
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
@@ -15,6 +18,23 @@ public class CDC {
         characterList = new ArrayList<Character>(4);
         monsterList = new ArrayList<Monster>();
         skillTable = new int[][]{{0,0}, {1,100}, {3,-50}, {5, 200}, {8,150}, {0,50}, {1,100}};//{攻擊範圍, 傷害值}
+    
+        ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>() ;
+        try {
+			list = loadMap("MonsterList.txt") ;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("loadMap is wrong. CDC") ;
+			e.printStackTrace();
+		}
+        
+        Monster monster ;
+        Point position  = new Point() ;
+        for (int n=0 ; n<list.size() ; n++){
+        	position.setLocation(list.get(n).get(0),list.get(n).get(1)) ;       	
+        	monster = new Monster(n+1, position) ;
+        	monsterList.add(monster) ; 
+        }
     }
 
     public void addVirtualCharacter(int clientID) throws ExceedMaxException {
@@ -182,4 +202,24 @@ public class CDC {
         }
         return position;
     }
+    
+    private static ArrayList loadMap(String mapfile) throws IOException{
+		ArrayList<ArrayList<Integer>> columnList = new ArrayList<ArrayList<Integer>>();
+		
+		FileReader fr = new FileReader("./map/" + mapfile);
+		BufferedReader br = new BufferedReader(fr);
+		while (br.ready()) {
+			String line = br.readLine() ;
+			ArrayList<Integer> rowList = new ArrayList <Integer>() ;
+			String[] AfterSplit = line.split(" ") ;
+			rowList.add(Integer.valueOf(AfterSplit[0])) ;
+			rowList.add(Integer.valueOf(AfterSplit[1])) ;
+			columnList.add(rowList) ;
+		}
+		
+		fr.close();
+		
+		return columnList;
+		
+	}
 }

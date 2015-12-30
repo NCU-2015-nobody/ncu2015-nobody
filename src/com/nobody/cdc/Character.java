@@ -12,7 +12,8 @@ public class Character {
 
     public Character(int clientID) {
         this.clientID = clientID;
-
+        
+        //(25,300) (25,350) (75,300) (75,350)
         switch (clientID){
             case 1://戰士
                 this.position.setLocation(2500, 2500);//initial????
