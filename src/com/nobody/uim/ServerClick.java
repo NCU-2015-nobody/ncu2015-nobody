@@ -32,10 +32,16 @@ public class ServerClick implements MouseListener{
 //		///init client
 //		client.connectServer("192.168.0.107");
 //		//client to server
-		//change to 1
-		gui.panelcard1 = new Panel1(gui);
-		gui.contentPane.add(gui.panelcard1,"1");
-		gui.card.show(gui.contentPane, "1");
+//		//////////////////////////////////////
+//		//change to 1
+//		gui.panelcard1_0 = new Panel1_0(gui);
+//		gui.contentPane.add(gui.panelcard1_0,"1_0");
+//		gui.card.show(gui.contentPane, "1_0");
+//		//////////////////////////////////////////
+		
+		if (gui.server.onlineCount==3){
+			gui.flag=true;
+		}
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {

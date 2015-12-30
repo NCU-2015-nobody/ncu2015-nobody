@@ -166,7 +166,7 @@ public class Panel2 extends Panel{
 		///
 	}
 	void listener(final GUI gui){
-		Thread t = t =new Thread() {
+		Thread t = new Thread() {
 	        public void run() {
 	        	while(true){
 	        		buttonrenew(gui);
