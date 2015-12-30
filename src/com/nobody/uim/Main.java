@@ -61,7 +61,7 @@ public class Main {
 			 * create dom
 			 */
 			DOM dom = new DOM();
-
+			client.getDOM(dom);
 			/*
 			 * create UDP server
 			 */
