@@ -39,7 +39,7 @@ public class CDC {
 
     public void addVirtualCharacter(int clientID) throws ExceedMaxException {
         assert !clientIDExist(clientID) : "clientID already exists";//要改成if!!!!!
-
+        System.out.println(clientID + ": add Character") ;
         if (characterList.size() == 4){//at most 4 characters
             throw new ExceedMaxException();
         }
