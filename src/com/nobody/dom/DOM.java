@@ -210,7 +210,7 @@ public class DOM {
 
 	public boolean[] getVirtualCharactersCD() {
 		boolean[] boolCD = { false, false, false, false };
-		int self_no = client.character();
+		int self_no = client.character() - 1;
 
 		if (info.CD > 0)
 			boolCD[self_no] = false;
