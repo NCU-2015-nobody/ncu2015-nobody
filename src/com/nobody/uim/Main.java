@@ -32,6 +32,7 @@ public class Main {
 		while (flag == false) {
 			flag = gui.getFlag();
 		}
+		System.out.println("exit while loop");
 		gui.setVisible(false);
 		// startup server or client
 		System.out.println("server.flag_server" + server.flag_server);

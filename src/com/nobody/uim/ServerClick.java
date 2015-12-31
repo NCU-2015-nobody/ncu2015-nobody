@@ -44,6 +44,7 @@ public class ServerClick implements MouseListener {
 		boolean atflag = true;
 		while (atflag == true) {
 			if (gui.server.getClientTable().size() == 4) {
+				System.out.println("Client size change to 4");
 				gui.flag = true;
 				atflag = false;
 			}
