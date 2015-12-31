@@ -4,14 +4,25 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Vector;
 
+import com.nobody.tcpcm.Client;
+
 public class DOM {
 	information info = new information();
-
+	private Client client;
+	
+	
+	public DOM(Client client)
+	{
+		this.client = client;
+	}
+	
+	
 	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health) {
 		System.out.println(
 				"dom: add chara :" + clientNumber + ", " + currentX + ", " + currentY + ", " + dir + ", " + health);
 		Point p = new Point();
 		p.setLocation(currentX, currentY);
+		System.out.println("p = " + p.getX() + "," + p.getY());
 
 		info.clientNumberList.add(clientNumber);
 		info.before_xyList.add(null);
@@ -161,10 +172,13 @@ public class DOM {
 		Point p = new Point();
 
 		int self_no = TCPtest.character();
-
+		
+		System.out.println("info.clientNumberList.size()=" + info.clientNumberList.size());
+		
 		for (int i = 0; i < info.clientNumberList.size(); i++) {
 			if (self_no == info.clientNumberList.get(i)) {
 				p.setLocation(info.current_xyList.get(i));
+				System.out.println("get XY point=" + p.getX() + "," + p.getY());
 			}
 		}
 
