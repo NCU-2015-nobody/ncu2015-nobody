@@ -10,8 +10,8 @@ import java.util.Vector;
 
 public class CDC {
     CDCSDM cdcsdm;
-    private ArrayList<Character> characterList;
-    private ArrayList<Monster> monsterList;
+    public ArrayList<Character> characterList;
+    public ArrayList<Monster> monsterList;
     private int[][] skillTable;//0, 1戰士, 2牧師, 3法師, 4弓箭手, 5魔王, 6怪物
 
     public CDC(){
