@@ -42,7 +42,7 @@ public class MyThread extends Thread{
             ///
             while (true) {             
                 String getMessage=r.readLine();//client command   (show, get ?,)
-                //System.out.println ( "傳遞的訊息是：" + getMessage);
+                System.out.println ( "傳遞的訊息是：" + getMessage);
                 /////////////////////////////   
                 switch(getMessage.split(" ")[1]){
                 	case "37":

@@ -23,7 +23,7 @@ public class Listener implements KeyListener
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
-        if((key >= 37 && key <= 40) || key == 90)
+        if((key >= 37 && key <= 40) || key == 32)
         {
         	System.out.println("user input, key=" + key);
             client.inputMoves(key);

@@ -69,12 +69,13 @@ public class Client {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
-		if(Movecode!=90){
+		}
+		System.out.println("client movement=" + Movecode);
+		if(Movecode!=32){
 			writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);	
 		}else{
 			if(dom.CDTimer()==true){
-				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);
+				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode+58);
 			}
 		}
 	}
