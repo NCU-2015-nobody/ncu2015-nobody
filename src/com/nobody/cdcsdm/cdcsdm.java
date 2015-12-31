@@ -14,7 +14,11 @@ public class cdcsdm {
 	static ArrayList<ArrayList<Integer>> columnList = new ArrayList<ArrayList<Integer>>();
 	
 	public cdcsdm(){
-		
+		try {
+			loadMap("mapfile.txt");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void loadMap(String mapfile) throws IOException{
@@ -42,12 +46,14 @@ public class cdcsdm {
 			return false;
 	}
 	
-	public ArrayList checkObstacle(Point position, int direction, int attackRange){
+	public ArrayList<Boolean> checkObstacle(Point position, int direction, int attackRange){
 		
 		ArrayList<Boolean> obstacleList = new ArrayList<Boolean>();
 		
 		int XX = (int) position.getX()/25 ;//將座標值轉換成可供list使用的index值
 		int YY = (int) position.getY()/25 ;
+		
+		System.out.println("XX=" + XX + ", YY=" + YY);
 		
 		//不可行走區域：1石頭      3樹木     4水     5木牆
 		//可行走區域：2草地      6尖刺

@@ -16,6 +16,7 @@ public class CDC {
 	private int[][] skillTable;// 0, 1戰士, 2牧師, 3法師, 4弓箭手, 5魔王, 6怪物
 
 	public CDC() {
+		cdcsdm = new cdcsdm();
 		characterList = new ArrayList<Character>(4);
 		monsterList = new ArrayList<Monster>();
 		skillTable = new int[][] { { 0, 0 }, { 1, 100 }, { 3, -50 }, { 5, 200 }, { 8, 150 }, { 0, 50 }, { 1, 100 } };// {攻擊範圍,
@@ -64,7 +65,8 @@ public class CDC {
 
 		Character character = getCertainCharacter(clientID);
 		Point newPosition = getCertainPosition(character.position, newDirection, 1);
-		boolean isObstacle = (boolean) cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
+		System.out.println("clientID="+clientID+",character.position="+character.position+",newDirection"+newDirection);
+		boolean isObstacle = cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
 		boolean isTrap = cdcsdm.checkTrap(newPosition);
 		if (!isObstacle) {// position ahead is not obstacle
 			character.position.setLocation(newPosition);
