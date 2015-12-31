@@ -153,7 +153,7 @@ public class DOM {
 
 	public int[] mainCharacterInfo() {
 		int[] character = new int[3];
-		int self_no = TCPtest.character();
+		int self_no = client.character();
 		int index = info.clientNumberList.indexOf(self_no);
 
 		if (info.CD > 0) {
@@ -171,7 +171,7 @@ public class DOM {
 	public Point getVirtualCharacterXY() {
 		Point p = new Point();
 
-		int self_no = TCPtest.character();
+		int self_no = client.character();
 		
 		System.out.println("info.clientNumberList.size()=" + info.clientNumberList.size());
 		
@@ -210,7 +210,7 @@ public class DOM {
 
 	public boolean[] getVirtualCharactersCD() {
 		boolean[] boolCD = { false, false, false, false };
-		int self_no = TCPtest.character();
+		int self_no = client.character();
 
 		if (info.CD > 0)
 			boolCD[self_no] = false;
