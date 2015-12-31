@@ -47,10 +47,12 @@ public class UDPUS extends Thread {
 						String data[] = msg.split(",");
 						if (data[0].equals("add")) {
 							if (data[1].equals("chara")) {
+								System.out.println("call add chara");
 								dom.addVirtualCharacter(Integer.valueOf(data[2]), Integer.valueOf(data[3]),
 										Integer.valueOf(data[4]), Integer.valueOf(data[5]), Integer.valueOf(data[6]));
 							}
 							if (data[1].equals("mon")) {
+								System.out.println("call add mon");
 								dom.addMonster(Integer.valueOf(data[2]), Integer.valueOf(data[3]),
 										Integer.valueOf(data[4]), Integer.valueOf(data[5]), Integer.valueOf(data[6]));
 							}
@@ -58,10 +60,12 @@ public class UDPUS extends Thread {
 
 						if (data[0].equals("update")) {
 							if (data[1].equals("chara")) {
+								System.out.println("update chara");
 								dom.updateVirtualCharacter(Integer.valueOf(data[2]), Integer.valueOf(data[3]),
 										Integer.valueOf(data[4]), Integer.valueOf(data[5]), Integer.valueOf(data[6]));
 							}
 							if (data[1].equals("mon")) {
+								System.out.println("update mon");
 								dom.updateMonsterStatus(Integer.valueOf(data[2]), Integer.valueOf(data[3]),
 										Integer.valueOf(data[4]), Integer.valueOf(data[5]), Integer.valueOf(data[6]));
 							}
