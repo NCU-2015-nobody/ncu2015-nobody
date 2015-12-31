@@ -140,6 +140,7 @@ public class MyThread extends Thread{
                 	case "96":
                 		//final check
                 		w.println(findchar(s.getRemoteSocketAddress().toString()));
+                		cdc.addVirtualCharacter(findchar(s.getRemoteSocketAddress().toString()));
                 		break;
                 	default:
                 		w.println("None");
