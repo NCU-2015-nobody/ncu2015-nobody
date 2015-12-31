@@ -373,7 +373,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		//將所有該出現的圖片讀進picture陣列中
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		for(int i = 0;i<68;i++){
-			preLoad[i] = tk.getDefaultToolkit().getImage(i+".png");
+			preLoad[i] = tk.getDefaultToolkit().getImage("./image/sprite/"+i+".png");
 			tk.prepareImage(preLoad[i], -1, -1, null);
 		}
 	}
