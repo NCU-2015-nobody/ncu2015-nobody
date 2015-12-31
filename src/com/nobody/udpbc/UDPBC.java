@@ -79,14 +79,14 @@ public class UDPBC {
 			Object info = it.next();
 			if (info instanceof Character) {
 				Character chara = (Character) info;
-				msg = "add,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY() + ","
-						+ chara.direction + "," + chara.HP;
+				msg = "add,chara," + chara.clientID + "," + (int) chara.position.getX() + ","
+						+ (int) chara.position.getY() + "," + chara.direction + "," + chara.HP;
 			}
 
 			if (info instanceof Monster) {
 				Monster mon = (Monster) info;
-				msg = "add,mon," + mon.objectID + "," + mon.position.getX() + "," + mon.position.getY() + ","
-						+ mon.direction + "," + mon.HP + "," + mon.isBoss;
+				msg = "add,mon," + mon.objectID + "," + (int) mon.position.getX() + "," + (int) mon.position.getY()
+						+ "," + mon.direction + "," + mon.HP + "," + mon.isBoss;
 			}
 
 			for (int i = 0; i < 4; i++) {
@@ -109,14 +109,14 @@ public class UDPBC {
 				Object info = it.next();
 				if (info instanceof Character) {
 					Character chara = (Character) info;
-					msg = "update,chara," + chara.clientID + "," + chara.position.getX() + "," + chara.position.getY()
-							+ "," + chara.direction + "," + chara.HP;
+					msg = "update,chara," + chara.clientID + "," + (int) chara.position.getX() + ","
+							+ (int) chara.position.getY() + "," + chara.direction + "," + chara.HP;
 				}
 
 				if (info instanceof Monster) {
 					Monster mon = (Monster) info;
-					msg = "update,mon," + mon.objectID + "," + mon.position.getX() + "," + mon.position.getY() + ","
-							+ mon.direction + "," + mon.HP + "," + mon.isBoss;
+					msg = "update,mon," + mon.objectID + "," + (int) mon.position.getX() + ","
+							+ (int) mon.position.getY() + "," + mon.direction + "," + mon.HP + "," + mon.isBoss;
 				}
 
 				for (int i = 0; i < 4; i++) {
