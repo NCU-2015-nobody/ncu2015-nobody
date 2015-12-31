@@ -21,7 +21,7 @@ public class CDC {
     
         ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>() ;
         try {
-			list = loadMap("MonsterList.txt") ;
+			list = loadMap("MonsterMap.txt") ;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("loadMap is wrong. CDC") ;
