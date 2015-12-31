@@ -28,8 +28,8 @@ public class Main {
 		gui.setVisible(true);
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		boolean flag = true;
-		while (flag) {
+		boolean flag = false;
+		while (flag == false) {
 			flag = gui.getFlag();
 		}
 		gui.setVisible(false);
