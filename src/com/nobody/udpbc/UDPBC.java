@@ -71,7 +71,7 @@ public class UDPBC {
 		Vector<Object> updateInfo = cdc.getUpdateInfo();
 		System.out.println("get update info from cdc.");
 		Iterator<Object> it = updateInfo.iterator();
-		System.out.println(updateInfo.size());
+		System.out.println("updateInfo size :" + updateInfo.size());
 		String msg = "";
 
 		// first time call getUpdate is add

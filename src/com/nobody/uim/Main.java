@@ -28,8 +28,9 @@ public class Main {
 		gui.setVisible(true);
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		while (gui.getFlag() == false) {
-			System.out.println(gui.getFlag());
+		boolean flag = true;
+		while (flag) {
+			flag = gui.getFlag();
 		}
 		gui.setVisible(false);
 		// startup server or client
@@ -40,16 +41,14 @@ public class Main {
 
 			cdc = server.getCDC();
 			isServer = true;
-			
+
 			/*
 			 * create UDPbc
 			 */
 			UDPBC udpbc = new UDPBC(server, cdc);
 			try {
 				udpbc.startUDPBroadCast();
-			}
-			catch (InterruptedException e)
-			{
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		} // end of create server
@@ -65,46 +64,41 @@ public class Main {
 			 */
 			UDPUS udpus = new UDPUS(dom, isServer);
 			udpus.start();
-			
+
 			/*
 			 * create sdm
 			 */
 			SceneDataModule sdm = new SceneDataModule();
-			try
-			{
+			try {
 				sdm.loadMap("mapfile.txt");
-			}
-			catch (IOException e)
-			{
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+
 			/*
 			 * create canvas and listener for the frame
 			 */
 			GameCanvas canvas = new GameCanvas(33, 21);
 			canvas.loadSceneImage(sdm.getAllKindOfType());
-			
+
 			Listener listener = new Listener(client);
-			
+
 			/*
 			 * create renderEngine
 			 * 
-			 * SceneRender
-			 * SpriteRender
-			 * UIRender
+			 * SceneRender SpriteRender UIRender
 			 */
 			SceneRender background = new SceneRender(sdm, dom, canvas);
 			background.renderScene();
 			UIRender uiSystem = new UIRender(dom, canvas);
-			
+
 			/*
 			 * create RenderThread and startup thread
 			 */
 			RenderThread renderThread = new RenderThread(background, uiSystem);
 			Thread thread = new Thread(renderThread);
 			thread.start();
-			
+
 			/*
 			 * create frame
 			 */
