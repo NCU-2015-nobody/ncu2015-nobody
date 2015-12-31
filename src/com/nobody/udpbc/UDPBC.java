@@ -55,7 +55,7 @@ public class UDPBC {
 				// }
 				System.out.println("Connect with" + ipList.get(i) + ", port:" + port);
 				// if (i == 0) {
-				this.isa[i] = new InetSocketAddress("127.0.0.1", port);
+				//this.isa[i] = new InetSocketAddress("127.0.0.1", port);
 				// } else {
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
 				// }
