@@ -189,8 +189,15 @@ public class Panel2 extends Panel{
 		        		gui.contentPane.add(gui.panelcard3,"3");
 		        		gui.card.show(gui.contentPane, "3");
 		        		run=false;
-		        		gui.flag = true ;
 		        		System.out.println("complete.") ;
+		        		try {
+		        			Thread.sleep(2000);
+		        		} catch (InterruptedException e) {
+		        			// TODO Auto-generated catch block
+		        			e.printStackTrace();
+		        		}
+		        		gui.flag = true ;
+		        		
 		        		break;
 		        	}
 	        	}
