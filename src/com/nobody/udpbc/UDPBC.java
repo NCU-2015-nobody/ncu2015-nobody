@@ -105,6 +105,12 @@ public class UDPBC {
 		while (flag == true) {
 			Thread.sleep(200);
 
+			updateInfo = cdc.getUpdateInfo();
+			System.out.println("get update info from cdc.");
+			it = updateInfo.iterator();
+			System.out.println("updateInfo size :" + updateInfo.size());
+			msg = "";
+			
 			while (it.hasNext()) {
 				Object info = it.next();
 				if (info instanceof Character) {
@@ -121,7 +127,7 @@ public class UDPBC {
 
 				for (int i = 0; i < 4; i++) {
 					try {
-						System.out.println("no first time Boardcast msg " + msg);
+						//System.out.println("no first time Boardcast msg " + msg);
 						bw[i].write(msg);
 						bw[i].newLine();
 						bw[i].flush();

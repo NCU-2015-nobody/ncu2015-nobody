@@ -127,6 +127,7 @@ public class CDC {
 
 		for (Character character : characterList) {
 			if (character.state) {
+				System.out.println("cdc update character=" + character.position);
 				updatedInfo.add(character);
 				character.state = false;
 				character.attackState = false;

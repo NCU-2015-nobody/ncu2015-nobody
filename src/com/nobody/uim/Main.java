@@ -54,6 +54,14 @@ public class Main {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
+			// start monster thread
+			try {
+				cdc.updateMonsterThread();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} // end of create server
 		else// create client
 		{
