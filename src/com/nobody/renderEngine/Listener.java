@@ -25,6 +25,7 @@ public class Listener implements KeyListener
         int key = e.getKeyCode();
         if((key >= 37 && key <= 40) || key == 90)
         {
+        	System.out.println("user input, key=" + key);
             client.inputMoves(key);
         }
     }
