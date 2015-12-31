@@ -15,7 +15,7 @@ public class cdcsdm {
 	
 	public cdcsdm(){
 		try {
-			loadMap("mapfile.txt");
+			loadMap("mapfileForCDCSDM.txt");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
