@@ -2,13 +2,14 @@ package com.nobody.cdc;
 
 import java.util.ArrayList;
 import java.util.Vector;
+import com.nobody.cdcsdm.cdcsdm;
 
 public class UpdateThread implements Runnable{
-    CDCSDM cdcsdm;
+    cdcsdm cdcsdm;
     ArrayList<Character> characterList;
     ArrayList<Monster> monsterList;
 
-    public UpdateThread(CDCSDM cdcsdm, ArrayList<Character> characterList, ArrayList<Monster> monsterList){
+    public UpdateThread(cdcsdm cdcsdm, ArrayList<Character> characterList, ArrayList<Monster> monsterList){
         this.cdcsdm = cdcsdm;
         this.characterList = characterList;
         this.monsterList = monsterList;
@@ -24,11 +25,11 @@ public class UpdateThread implements Runnable{
             
             for(Monster monster: monsterList){
                 Vector<Double> distance = new Vector <Double>() ;
-                Vector<Character> characterDetect = new Vector <Character>() ;//¬ö¿ý©Çª«¦b¨¤¦âµøµ¡¤ºªº¸Ó¨¤¦â­È
+                Vector<Character> characterDetect = new Vector <Character>() ;//ï¿½ï¿½ï¿½ï¿½ï¿½Çªï¿½ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¨ï¿½ï¿½ï¿½ï¿½
                
                 for(Character character : characterList){
 
-                    double distanceX = Math.abs(character.position.getX() - monster.position.getX()) ; //µ´¹ï­È
+                    double distanceX = Math.abs(character.position.getX() - monster.position.getX()) ; //ï¿½ï¿½ï¿½ï¿½ï¿½
                     double distanceY = Math.abs(character.position.getY() - monster.position.getY()) ;
 
                     if( distanceX<250 && distanceY<400 ){//if monster is in the window of the character
@@ -44,7 +45,7 @@ public class UpdateThread implements Runnable{
                         
                     }
                     
-                    if((distanceX + distanceY)==25){//§P©w¨¤¦â¦b©Çª«®ÇÃä«h·l¦å
+                    if((distanceX + distanceY)==25){//ï¿½Pï¿½wï¿½ï¿½ï¿½ï¿½bï¿½Çªï¿½ï¿½ï¿½ï¿½ï¿½hï¿½lï¿½ï¿½
                     	character.HP = character.HP-25 ;
                     	character.state = true ;
                     }       
@@ -60,7 +61,7 @@ public class UpdateThread implements Runnable{
 
                 //determine the relative position between character and monster
                 Character character = characterDetect.get(min) ;
-                int nx, ny ;//¦]¬°¬O©Ç©¹¨¤¦â¤è¦V«e¶i¡A©Ò¥H¥H©Çª«¬°°ò·ÇÂI
+                int nx, ny ;//ï¿½]ï¿½ï¿½ï¿½Oï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Vï¿½eï¿½iï¿½Aï¿½Ò¥Hï¿½Hï¿½Çªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½I
                 /**
                  *
                  * 00  10  20
@@ -85,7 +86,7 @@ public class UpdateThread implements Runnable{
                 int forChangeState = -1;
                 switch(nx+ny){
                     case 0:{
-                        //¤Hª«¦b©Çª«¥ª¤W¨¤¡AÅý©Çª«ª½±µ¦V¤W¥ý¨«
+                        //ï¿½Hï¿½ï¿½ï¿½bï¿½Çªï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Çªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Vï¿½Wï¿½ï¿½ï¿½ï¿½
                         list = cdcsdm.checkObstacle(monster.position, 1, 1) ;
                         forChangeState = 1;
                     }break;

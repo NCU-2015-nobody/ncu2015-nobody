@@ -7,9 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
+import com.nobody.cdcsdm.cdcsdm;
 
 public class CDC {
-	CDCSDM cdcsdm;
+	cdcsdm cdcsdm;
 	public ArrayList<Character> characterList;
 	public ArrayList<Monster> monsterList;
 	private int[][] skillTable;// 0, 1戰士, 2牧師, 3法師, 4弓箭手, 5魔王, 6怪物
@@ -63,7 +64,7 @@ public class CDC {
 
 		Character character = getCertainCharacter(clientID);
 		Point newPosition = getCertainPosition(character.position, newDirection, 1);
-		boolean isObstacle = cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
+		boolean isObstacle = (boolean) cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
 		boolean isTrap = cdcsdm.checkTrap(newPosition);
 		if (!isObstacle) {// position ahead is not obstacle
 			character.position.setLocation(newPosition);
