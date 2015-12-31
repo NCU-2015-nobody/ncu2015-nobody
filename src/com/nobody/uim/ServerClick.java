@@ -42,6 +42,7 @@ public class ServerClick implements MouseListener {
 		// //////////////////////////////////////////
 
 		boolean atflag = true;
+		System.out.println("Server cliick hash code :" + gui.hashCode());
 		while (atflag == true) {
 			if (gui.server.getClientTable().size() == 4) {
 				System.out.println("Client size change to 4");
@@ -49,6 +50,7 @@ public class ServerClick implements MouseListener {
 				atflag = false;
 			}
 		}
+		System.out.println("gui getflag = " + gui.getFlag() + ",gui flag = " + gui.flag + ",exit client size  loop");
 	}
 
 	@Override

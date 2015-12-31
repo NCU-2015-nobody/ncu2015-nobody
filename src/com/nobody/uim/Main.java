@@ -29,8 +29,10 @@ public class Main {
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		boolean flag = false;
+		System.out.println("main cliick hash code :" + gui.hashCode());
 		while (flag == false) {
 			flag = gui.getFlag();
+			System.out.println(flag);
 		}
 		System.out.println("exit while loop");
 		gui.setVisible(false);
