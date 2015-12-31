@@ -152,6 +152,7 @@ public class MyThread extends Thread{
                 
             }
         } catch (Exception e) {
+        	e.printStackTrace();
             System.err.println(s.getRemoteSocketAddress() + " 已離線");
             for(int i=0;i<clist.size();i++){
             	if(clist.elementAt(i).compareTo(s.getRemoteSocketAddress().toString())==0){
