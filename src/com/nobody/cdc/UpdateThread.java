@@ -81,48 +81,48 @@ public class UpdateThread implements Runnable{
 	                else ny=2;
 	
 	
-	                ArrayList<Boolean> list = new ArrayList<Boolean>() ;
+	                ArrayList<Boolean> isObstacle = new ArrayList<Boolean>() ;
 	                //it's a "move", so the attackRange is the same as a step
 	                int forChangeState = -1;
 	                switch(nx+ny){
 	                    case 0:{
 	                        //�H���b�Ǫ����W���A���Ǫ������V�W����
-	                        list = cdcsdm.checkObstacle(monster.position, 1, 1) ;
+	                    	isObstacle = cdcsdm.checkObstacle(monster.position, 1, 1) ;
 	                        forChangeState = 1;
 	                    }break;
 	
 	                    case 1:{
 	                        if(nx==1){
-	                            list = cdcsdm.checkObstacle(monster.position, 1, 1) ;
+	                        	isObstacle = cdcsdm.checkObstacle(monster.position, 1, 1) ;
 	                            forChangeState = 1;
 	                        }else{
-	                            list = cdcsdm.checkObstacle(monster.position, 0, 1) ;
+	                        	isObstacle = cdcsdm.checkObstacle(monster.position, 0, 1) ;
 	                            forChangeState = 0;
 	                        }
 	                    }break;
 	
 	                    case 2:{
 	                        if(nx==2){
-	                            list = cdcsdm.checkObstacle(monster.position, 2, 1) ;
+	                        	isObstacle = cdcsdm.checkObstacle(monster.position, 2, 1) ;
 	                            forChangeState = 2;
 	                        }else{
-	                            list = cdcsdm.checkObstacle(monster.position, 0, 1) ;
+	                        	isObstacle = cdcsdm.checkObstacle(monster.position, 0, 1) ;
 	                            forChangeState = 0 ;
 	                        }
 	                    }break;
 	
 	                    case 3:{
 	                        if(nx==2){
-	                            list = cdcsdm.checkObstacle(monster.position, 2, 1) ;
+	                        	isObstacle = cdcsdm.checkObstacle(monster.position, 2, 1) ;
 	                            forChangeState = 2;
 	                        }else{
-	                            list = cdcsdm.checkObstacle(monster.position, 3, 1) ;
+	                        	isObstacle = cdcsdm.checkObstacle(monster.position, 3, 1) ;
 	                            forChangeState = 3 ;
 	                        }
 	                    }break;
 	
 	                    case 4:{
-	                        list = cdcsdm.checkObstacle(monster.position, 3, 1) ;
+	                    	isObstacle = cdcsdm.checkObstacle(monster.position, 3, 1) ;
 	                        forChangeState = 3;
 	                    }break;
 	
@@ -131,26 +131,26 @@ public class UpdateThread implements Runnable{
 	
 	                }
 	
-//	                if( list.get(0).equals(true) && monster.HP>0){
+//	                if( isObstacle.get(0).equals(true) && monster.HP>0){
 //	
 //	                    switch(forChangeState){
 //	                        case 0:{
-//	                            monster.position.setLocation(monster.position.getX()+25,monster.position.getY()) ;
+//	                            monster.position.setLocation(monster.position.getX()-25,monster.position.getY()) ;
 //	                            monster.direction = 0 ;
 //	                            monster.state = true ;
 //	                        }
 //	                        case 1:{
-//	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()+25) ;
+//	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()-25) ;
 //	                            monster.direction = 1 ;
 //	                            monster.state = true ;
 //	                        }
 //	                        case 2:{
-//	                            monster.position.setLocation(monster.position.getX()-25,monster.position.getY()) ;
+//	                            monster.position.setLocation(monster.position.getX()+25,monster.position.getY()) ;
 //	                            monster.direction = 2;
 //	                            monster.state = true ;
 //	                        }
 //	                        case 3:{
-//	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()-25) ;
+//	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()+25) ;
 //	                            monster.direction = 3 ;
 //	                            monster.state = true ;
 //	                        }

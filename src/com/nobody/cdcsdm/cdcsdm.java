@@ -57,7 +57,7 @@ public class cdcsdm {
 		
 		//不可行走區域：1石頭      3樹木     4水     5木牆
 		//可行走區域：  2草地      6尖刺
-		//false為不可通過區域
+		//false is not obstacle
 		switch(direction){ // left0 up1 right2 down3
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){
