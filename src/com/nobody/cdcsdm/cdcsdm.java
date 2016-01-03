@@ -56,12 +56,13 @@ public class cdcsdm {
 		System.out.println("XX=" + XX + ", YY=" + YY);
 		
 		//不可行走區域：1石頭      3樹木     4水     5木牆
-		//可行走區域：2草地      6尖刺
+		//可行走區域：  2草地      6尖刺
 		//false為不可通過區域
 		switch(direction){ // left0 up1 right2 down3
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
+						System.out.println("This is obstacle, and the type:" + columnList.get(XX).get(YY)) ;
 						obstacleList.add(true) ;
 					}
 					else
@@ -72,7 +73,8 @@ public class cdcsdm {
 			
 			case 1:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
+						System.out.println("This is obstacle, and the type:" + columnList.get(XX).get(YY)) ;
 						obstacleList.add(true) ;
 					}
 					else
@@ -83,7 +85,8 @@ public class cdcsdm {
 			
 			case 2:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
+						System.out.println("This is obstacle, and the type:" + columnList.get(XX).get(YY)) ;
 						obstacleList.add(true) ;
 					}
 					else
@@ -94,7 +97,8 @@ public class cdcsdm {
 			
 			case 3:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
+						System.out.println("This is obstacle, and the type:" + columnList.get(XX).get(YY)) ;
 						obstacleList.add(true) ;
 					}
 					else
