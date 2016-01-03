@@ -71,7 +71,7 @@ public class CDC {
 
 		Point newPosition = getCertainPosition(character.position, newDirection, 1);
 		System.out.println("clientID="+clientID+",character.position="+character.position+",newDirection"+newDirection);
-		boolean isObstacle = !cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
+		boolean isObstacle = cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
 		boolean isTrap = cdcsdm.checkTrap(newPosition);
 		if (!isObstacle) {// position ahead is not obstacle
 			character.position.setLocation(newPosition);
@@ -127,11 +127,13 @@ public class CDC {
 				}
 			}
 		} else {
+			System.out.println("cdc: character attack loop");
 			ArrayList<Boolean> isObstacle = cdcsdm.checkObstacle(character.position, character.direction, attackRange);
 			for (int i = 1; i <= attackRange; i++) {
 				Point checkPosition = getCertainPosition(characterPosition, character.direction, i);
 				Monster checkMonster = getPositionMonster(checkPosition);
 				if (checkMonster != null) {
+					System.out.println("cdc characterAttack: monster at attackrange " + i);
 					if (0 <= checkMonster.HP - skillTable[clientID][1]){
 						checkMonster.HP = checkMonster.HP - skillTable[clientID][1];
 					}
@@ -141,6 +143,7 @@ public class CDC {
 					checkMonster.state = true;
 					break;
 				} else if (isObstacle.get(i - 1)) {// attack failed
+					System.out.println("cdc: obstacle ahead, attack failed");
 					break;
 				}
 			}
