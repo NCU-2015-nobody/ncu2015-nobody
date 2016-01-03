@@ -75,7 +75,8 @@ public class Client {
 			writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);	
 		}else{
 			if(!dom.isCD()){
-				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode+58);
+				Movecode=Movecode+58;
+				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);
 				
 				dom.updateCDTimer();
 			}
