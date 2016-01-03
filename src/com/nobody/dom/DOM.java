@@ -144,9 +144,9 @@ public class DOM {
 		int index = info.clientNumberList.indexOf(self_no);
 		
 		if (info.CD) {
-			character[0] = 0; // 0 for no attack; 1 for attack
+			character[0] = 1; // 0 for no attack; 1 for attack
 		} else {
-			character[0] = 1;
+			character[0] = 0;
 		}
 
 		character[1] = info.dirList.get(index);
