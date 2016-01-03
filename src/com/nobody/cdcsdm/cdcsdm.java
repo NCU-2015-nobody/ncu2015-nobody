@@ -61,44 +61,44 @@ public class cdcsdm {
 		switch(direction){ // left0 up1 right2 down3
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
-						obstacleList.add(true) ;
+					if( columnList.get(YY).get(XX-1)==2 || columnList.get(YY).get(XX-1)==6 ){
+						obstacleList.add(false) ;
 					}
 					else
-						obstacleList.add(false) ;
+						obstacleList.add(true) ;
 					XX-- ;
 				}
 			}break;
 			
 			case 1:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
-						obstacleList.add(true) ;
+					if( columnList.get(YY-1).get(XX)==2 || columnList.get(YY-1).get(XX)==6 ){
+						obstacleList.add(false) ;
 					}
 					else
-						obstacleList.add(false) ;
+						obstacleList.add(true) ;
 					YY-- ;
 				}	
 			}break;
 			
 			case 2:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
-						obstacleList.add(true) ;
+					if( columnList.get(YY).get(XX+1)==2 || columnList.get(YY).get(XX+1)==6 ){
+						obstacleList.add(false) ;
 					}
 					else
-						obstacleList.add(false) ;
+						obstacleList.add(true) ;
 					XX++ ;
 				}	
 			}break;
 			
 			case 3:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
-						obstacleList.add(true) ;
+					if( columnList.get(YY+1).get(XX)==2 || columnList.get(YY+1).get(XX)==6 ){
+						obstacleList.add(false) ;
 					}
 					else
-						obstacleList.add(false) ;
+						obstacleList.add(true) ;
 					YY++ ;
 				}
 			}break;

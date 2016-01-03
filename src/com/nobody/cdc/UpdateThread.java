@@ -40,7 +40,6 @@ public class UpdateThread implements Runnable{
                         if(monster.isBoss && monster.HP>0){
                         	character.HP = character.HP-50 ;
                         	character.state = true ;
-                        	
                         }//Boss attack end
                         
                     }
@@ -73,8 +72,7 @@ public class UpdateThread implements Runnable{
 	                 * 02  12  22
 	                 *
 	                 * **/
-	                if(character.position.getX()<monster.position.getX())
-	                    nx=0;
+	                if(character.position.getX()<monster.position.getX()) nx=0;
 	                else if(character.position.getX()==monster.position.getX()) nx=1;
 	                else nx=2;
 	
@@ -133,31 +131,31 @@ public class UpdateThread implements Runnable{
 	
 	                }
 	
-	                if( list.get(0).equals(true) && monster.HP>0){
-	
-	                    switch(forChangeState){
-	                        case 0:{
-	                            monster.position.setLocation(monster.position.getX()+25,monster.position.getY()) ;
-	                            monster.direction = 0 ;
-	                            monster.state = true ;
-	                        }
-	                        case 1:{
-	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()+25) ;
-	                            monster.direction = 1 ;
-	                            monster.state = true ;
-	                        }
-	                        case 2:{
-	                            monster.position.setLocation(monster.position.getX()-25,monster.position.getY()) ;
-	                            monster.direction = 2;
-	                            monster.state = true ;
-	                        }
-	                        case 3:{
-	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()-25) ;
-	                            monster.direction = 3 ;
-	                            monster.state = true ;
-	                        }
-	                    }
-	                }
+//	                if( list.get(0).equals(true) && monster.HP>0){
+//	
+//	                    switch(forChangeState){
+//	                        case 0:{
+//	                            monster.position.setLocation(monster.position.getX()+25,monster.position.getY()) ;
+//	                            monster.direction = 0 ;
+//	                            monster.state = true ;
+//	                        }
+//	                        case 1:{
+//	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()+25) ;
+//	                            monster.direction = 1 ;
+//	                            monster.state = true ;
+//	                        }
+//	                        case 2:{
+//	                            monster.position.setLocation(monster.position.getX()-25,monster.position.getY()) ;
+//	                            monster.direction = 2;
+//	                            monster.state = true ;
+//	                        }
+//	                        case 3:{
+//	                            monster.position.setLocation(monster.position.getX(),monster.position.getY()-25) ;
+//	                            monster.direction = 3 ;
+//	                            monster.state = true ;
+//	                        }
+//	                    }
+//	                }
 
                 }
                 
