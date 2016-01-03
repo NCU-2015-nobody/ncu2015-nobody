@@ -190,18 +190,20 @@ public class CDC {
 	}
 
 	private Point getCertainPosition(Point position, int direction, int distance) {
+		Point nextPosition;
+
 		switch (direction) {
 		case 0:// left
-			position.setLocation(position.getX() - 25 * distance, position.getY());
+			nextPosition = new Point(position.x-25*distance, position.y);
 			break;
 		case 1:// up
-			position.setLocation(position.getX(), position.getY() - 25 * distance);
+			nextPosition = new Point(position.x, position.y - 25 * distance);
 			break;
 		case 2:// right
-			position.setLocation(position.getX() + 25 * distance, position.getY());
+			nextPosition = new Point(position.x + 25 * distance, position.y);
 			break;
 		case 3:// down
-			position.setLocation(position.getX(), position.getY() + 25 * distance);
+			nextPosition = new Point(position.x, position.y + 25 * distance);
 			break;
 		}
 		return position;
