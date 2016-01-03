@@ -110,7 +110,7 @@ public class Main {
 			SceneRender background = new SceneRender(sdm, dom, canvas);
 			background.renderScene();
 			
-			SRE spriteRender = new SRE(dom);
+			SRE spriteRender = new SRE(dom, canvas);
 			
 			UIRender uiSystem = new UIRender(dom, canvas);
 

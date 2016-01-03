@@ -82,7 +82,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 	 * for RenderSpriteEngine
 	 */
 	
-	public void updateSprite(Vector v) throws IOException{
+	public void updateSprite(Vector v){
 		
 		//v=attack+dir+job+point+filenaame+point
 		

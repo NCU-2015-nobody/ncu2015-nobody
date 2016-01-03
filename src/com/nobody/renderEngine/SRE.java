@@ -9,10 +9,12 @@ import com.nobody.renderEngine.DOMtest;
 public class SRE 
 {
 	private DOM dom;
+	private GameCanvas canvas;
 	
-	public SRE(DOM dom)
+	public SRE(DOM dom, GameCanvas canvas)
 	{
 		this.dom = dom;
+		this.canvas = canvas;
 	}
 	
 	@SuppressWarnings("null")
@@ -69,6 +71,8 @@ public class SRE
 				}
 			}
 		}
+		
+		canvas.updateSprite(v_picture);
 	}
 
 }
