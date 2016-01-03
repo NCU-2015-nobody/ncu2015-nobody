@@ -22,7 +22,8 @@ public class UpdateThread implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            
+            System.out.println("updateThread here.");
+			
             for(Monster monster: monsterList){
                 Vector<Double> distance = new Vector <Double>() ;
                 Vector<Character> characterDetect = new Vector <Character>() ;//�����Ǫ��b������������Ө����
