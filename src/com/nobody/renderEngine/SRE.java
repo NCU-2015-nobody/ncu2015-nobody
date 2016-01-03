@@ -40,7 +40,8 @@ public class SRE
 		{			
 			no = (int) v.get(0);
 			v.remove(0);
-			before = (Point) v.get(0);
+			if(v.get(0) != null)
+				before = (Point) v.get(0);
 			v.remove(0);
 			current = (Point) v.get(0);
 			v.remove(0);
