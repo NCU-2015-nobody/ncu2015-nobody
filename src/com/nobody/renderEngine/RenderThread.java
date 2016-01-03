@@ -36,8 +36,8 @@ public class RenderThread implements Runnable
 			// 1/20s == 50ms == 20fps
 			try
 			{
-				Thread.sleep(50);
-//				Thread.sleep(5000);
+//				Thread.sleep(50);
+				Thread.sleep(5000);
 			}
 			catch (InterruptedException e)
 			{
