@@ -2,12 +2,10 @@ package com.nobody.dom;
 
 public class CDTimer implements Runnable{
 	private DOM dom;
-	private boolean cd;
 	private int cdTime;
 	
 	public CDTimer(DOM dom) {
 		this.dom = dom;
-		this.cd = dom.info.CD;
 		this.cdTime = 10;
 	}
 	
@@ -22,7 +20,7 @@ public class CDTimer implements Runnable{
 				e.printStackTrace();
 			}
 			
-			System.out.println("run run run CD: " + cdTime);
+//			System.out.println("run run run CD: " + cdTime);
 			
 			if(cdTime > 0)
 			{
@@ -31,11 +29,11 @@ public class CDTimer implements Runnable{
 			
 			if(cdTime == 0)
 			{
-				cd = false;
+				dom.info.CD = false;
 			}
 			else // cdTime != 0
 			{
-				cd = true;
+				dom.info.CD = true;
 			}
 		}
 	}
