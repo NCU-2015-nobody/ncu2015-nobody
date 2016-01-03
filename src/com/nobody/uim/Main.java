@@ -119,12 +119,19 @@ public class Main {
 			 */
 			RenderThread renderThread = new RenderThread(background, spriteRender, uiSystem);
 			Thread thread = new Thread(renderThread);
-			thread.start();
 
 			/*
 			 * create frame
 			 */
 			GameFrame frame = new GameFrame(canvas, listener);
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			thread.start();
 		}
 	}
 }

@@ -14,21 +14,13 @@ public class DOM {
 	public DOM(Client client)
 	{
 		this.client = client;
-		
-		for(int i = 0 ; i < 4 ; i++)
-		{
-			info.dirList.add(3);
-		}
 	}
 	
 	
 	public void addVirtualCharacter(int clientNumber, int currentX, int currentY, int dir, int health) {
 		System.out.println(
 				"dom: add chara :" + clientNumber + ", " + currentX + ", " + currentY + ", " + dir + ", " + health);
-		
-		int index = -1;
-		
-		
+				
 		Point p = new Point();
 		p.setLocation(currentX, currentY);
 		System.out.println("p = " + p.getX() + "," + p.getY());
@@ -36,11 +28,7 @@ public class DOM {
 		info.clientNumberList.add(clientNumber);
 		info.before_xyList.add(null);
 		info.current_xyList.add(p);
-		
-		index = info.clientNumberList.indexOf(clientNumber);
-		info.dirList.set(index,dir);
-		
-		
+		info.dirList.add(dir);
 		info.healthList.add(health);
 
 		switch (clientNumber) {
@@ -168,6 +156,7 @@ public class DOM {
 		int[] character = new int[3];
 		int self_no = client.character();
 		int index = info.clientNumberList.indexOf(self_no-1);
+
 
 		if (info.CD > 0) {
 			character[0] = 0; // 0 for no attack; 1 for attack
