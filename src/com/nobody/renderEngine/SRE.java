@@ -57,7 +57,7 @@ public class SRE
 			{
 				if (health == 0) // dead
 				{
-					v_picture.add(no + "-2-4");
+					v_picture.add("1-2-4");
 					v_picture.add(current);
 				}
 

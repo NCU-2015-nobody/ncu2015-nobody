@@ -151,6 +151,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 				switch(s[i/2]){
 					//���`
 					case "1-2-4":
+						System.out.println("dead-pic");
 						picture[i/2] = preLoad[66];
 						break;
 						
