@@ -13,12 +13,14 @@ public class CDC {
 	cdcsdm cdcsdm;
 	public ArrayList<Character> characterList;
 	public ArrayList<Monster> monsterList;
+	private int[] hpTable;
 	private int[][] skillTable;// 0, 1戰士, 2牧師, 3法師, 4弓箭手, 5魔王, 6怪物
 
 	public CDC() {
 		cdcsdm = new cdcsdm();
 		characterList = new ArrayList<Character>(4);
 		monsterList = new ArrayList<Monster>();
+		hpTable = new int[] {0, 500, 300, 200, 250, 5000, 200};
 		skillTable = new int[][] { { 0, 0 }, { 1, 100 }, { 3, -50 }, { 5, 200 }, { 8, 150 }, { 0, 50 }, { 1, 100 } };// {攻擊範圍,
 																														// 傷害值}
 
@@ -72,7 +74,12 @@ public class CDC {
 			character.direction = newDirection;
 
 			if (isTrap) {// position ahead is trap
-				character.HP = character.HP - 50;
+				if (0 <= character.HP-50){
+					character.HP = character.HP - 50;
+				}
+				else {
+					character.HP = 0;
+				}
 			}
 			System.out.println("Character change to true");
 			character.state = true;
@@ -102,7 +109,13 @@ public class CDC {
 						&& checkCharPosition.getX() <= characterPosition.getX() + 25
 						&& characterPosition.getY() - 25 <= checkCharPosition.getY()
 						&& checkCharPosition.getY() <= characterPosition.getY() + 25) {
-					checkCharacter.HP = checkCharacter.HP - skillTable[clientID][1];
+					if (checkCharacter.HP-skillTable[clientID][1] <= hpTable[checkCharacter.clientID]){
+						checkCharacter.HP = checkCharacter.HP - skillTable[clientID][1];
+					}
+					else {
+						checkCharacter.HP = hpTable[checkCharacter.clientID];
+					}
+
 					checkCharacter.state = true;
 				}
 			}
@@ -112,7 +125,12 @@ public class CDC {
 				Point checkPosition = getCertainPosition(characterPosition, character.direction, i);
 				Monster checkMonster = getPositionMonster(checkPosition);
 				if (checkMonster != null) {
-					checkMonster.HP = checkMonster.HP - skillTable[clientID][1];
+					if (0 <= checkMonster.HP - skillTable[clientID][1]){
+						checkMonster.HP = checkMonster.HP - skillTable[clientID][1];
+					}
+					else {
+						checkMonster.HP = 0;
+					}
 					checkMonster.state = true;
 					break;
 				} else if (isObstacle.get(i - 1)) {// attack failed
