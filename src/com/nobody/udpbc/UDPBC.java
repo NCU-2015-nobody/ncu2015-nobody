@@ -88,7 +88,6 @@ public class UDPBC {
 					bw[i].write(msg);
 					bw[i].newLine();
 					bw[i].flush();
-					Thread.sleep(200);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
