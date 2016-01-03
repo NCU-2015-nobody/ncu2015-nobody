@@ -78,6 +78,7 @@ public class Client {
 				Movecode=Movecode+58;
 				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode);
 				
+				System.out.println("updateCD in client");
 				dom.updateCDTimer();
 			}
 		}
