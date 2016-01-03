@@ -77,7 +77,7 @@ public class Client {
 			if(!dom.isCD()){
 				writer.println(s.getLocalSocketAddress().toString()+" "+Movecode+58);
 				
-				// dom call update CD
+				dom.updateCDTimer();
 			}
 		}
 	}

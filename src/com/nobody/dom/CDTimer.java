@@ -31,7 +31,7 @@ public class CDTimer implements Runnable{
 			{
 				cd = false;
 			}
-			else
+			else // cdTime != 0
 			{
 				cd = true;
 			}
