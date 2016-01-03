@@ -140,7 +140,7 @@ public class DOM {
 			v1.add(info.dirList.get(i));
 			v1.add(info.healthList.get(i));
 		}
-
+		
 		for (int i = 0; i < info.objectIDList.size(); i++) {
 			v1.add(info.objectIDList.get(i));
 			v1.add(info.before_xy_monsterList.get(i));
@@ -157,8 +157,6 @@ public class DOM {
 		int self_no = client.character();
 		int index = info.clientNumberList.indexOf(self_no-1);
 		
-		
-
 		if (info.CD > 0) {
 			character[0] = 0; // 0 for no attack; 1 for attack
 		} else {

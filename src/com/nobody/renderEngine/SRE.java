@@ -31,7 +31,7 @@ public class SRE
 		
 		for(int i = 0 ; i < 3 ; i++)
 		{
-			v.add(characterInfo[i]);
+			v_picture.add(characterInfo[i]);
 		}
 		
 		v_picture.add(mainXY);
