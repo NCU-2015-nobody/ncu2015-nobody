@@ -147,7 +147,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		for(int i = 0;i<v.size();i++){
 			if(v.get(i) instanceof String){
 				s[i/2] = (String) v.get(i);
-				System.out.println(i/2+"//"+s[i/2]);
+				//System.out.println(i/2+"//"+s[i/2]);
 				switch(s[i/2]){
 					//���`
 					case "1-2-4":
@@ -531,24 +531,24 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		
 		switch(dir){
 		case 0:
-			p_attack1.setLocation(375, 250);
-			p_attack2.setLocation(375-25, 250);
-			p_attack3.setLocation(375-50, 250);
+			p_attack1.setLocation(p_player.getX()-25, p_player.getY());
+			p_attack2.setLocation(p_player.getX()-50, p_player.getY());
+			p_attack3.setLocation(p_player.getX()-75, p_player.getY());
 			break;
 		case 1:
-			p_attack1.setLocation(400, 225);
-			p_attack2.setLocation(400, 225-25);
-			p_attack3.setLocation(400, 225-50);
+			p_attack1.setLocation(p_player.getX(),p_player.getY()-25);
+			p_attack2.setLocation(p_player.getX(),p_player.getY()-50);
+			p_attack3.setLocation(p_player.getX(),p_player.getY()-75);
 			break;
 		case 2:
-			p_attack1.setLocation(425, 250);
-			p_attack2.setLocation(425+25, 250);
-			p_attack3.setLocation(425+50, 250);
+			p_attack1.setLocation(p_player.getX()+25,p_player.getY());
+			p_attack2.setLocation(p_player.getX()+50,p_player.getY());
+			p_attack3.setLocation(p_player.getX()+75,p_player.getY());
 			break;
 		case 3:
-			p_attack1.setLocation(400, 275);
-			p_attack2.setLocation(400, 275+25);
-			p_attack3.setLocation(400, 275+50);
+			p_attack1.setLocation(p_player.getX(),p_player.getY()+25);
+			p_attack2.setLocation(p_player.getX(),p_player.getY()+50);
+			p_attack3.setLocation(p_player.getX(),p_player.getY()+75);
 			break;
 		}
 		switch(job){
@@ -586,18 +586,19 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		case 0:
 			picture[i/2] = preLoad[j];
 			if(picture[i/2]==null) System.out.println("error");
-			System.out.println("1");
+			//System.out.println("1");
 			break;
 		case 1:
 			picture[i/2] = preLoad[j+1];
-			System.out.println("2");
+			//System.out.println("2");
 			break;
 		case 2:
 			picture[i/2] = preLoad[j];
-			System.out.println("3");
+			//System.out.println("3");
 			break;
 		case 3:
 			picture[i/2] = preLoad[j+2];
+			//System.out.println("4");
 			break;
 		}
 		a[index]++;
