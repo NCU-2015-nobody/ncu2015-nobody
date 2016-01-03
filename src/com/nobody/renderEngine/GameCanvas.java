@@ -106,7 +106,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		//�P�_�O�_����ܧ����Ϥ�
 		if(attacked == 0){
 			if(attackNow == 1){
-				attack_con = 3;
+				attack_con = 7;
 				v = selectAttack(dir,job,v);
 				/*
 				 * �����ʵe
