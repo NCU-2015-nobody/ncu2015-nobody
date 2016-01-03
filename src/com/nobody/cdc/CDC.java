@@ -70,6 +70,7 @@ public class CDC {
 		boolean isTrap = cdcsdm.checkTrap(newPosition);
 		if (!isObstacle) {// position ahead is not obstacle
 			character.position.setLocation(newPosition);
+			character.direction = newDirection;
 
 			if (isTrap) {// position ahead is trap
 				character.HP = character.HP - 50;
