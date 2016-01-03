@@ -61,7 +61,7 @@ public class cdcsdm {
 		switch(direction){ // left0 up1 right2 down3
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){
-					if( columnList.get(XX).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
+					if( columnList.get(YY).get(XX)==2 || columnList.get(YY).get(XX)==6 ){
 						System.out.println("This is obstacle, and the type:" + columnList.get(XX).get(YY)) ;
 						obstacleList.add(true) ;
 					}
