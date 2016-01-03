@@ -30,8 +30,8 @@ public class SceneRender
 		Point character = dom.getVirtualCharacterXY();
 		int characterX = (int)character.getX();
 		int characterY = (int)character.getY();
-		System.out.println("characterX=" + characterX);
-		System.out.println("characterY=" + characterY);
+//		System.out.println("characterX=" + characterX);
+//		System.out.println("characterY=" + characterY);
 		
 		int panelX = characterX - widthToCentral;
 		int panelY = characterY - heightToCentral;

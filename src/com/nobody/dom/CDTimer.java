@@ -22,6 +22,8 @@ public class CDTimer implements Runnable{
 				e.printStackTrace();
 			}
 			
+			System.out.println("run run run CD: " + cdTime);
+			
 			if(cdTime > 0)
 			{
 				cdTime--;

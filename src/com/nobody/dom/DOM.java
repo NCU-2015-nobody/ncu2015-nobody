@@ -161,12 +161,10 @@ public class DOM {
 
 		int self_no = client.character();
 		
-		System.out.println("info.clientNumberList.size()=" + info.clientNumberList.size());
-		
 		for (int i = 0; i < info.clientNumberList.size(); i++) {
 			if (self_no == info.clientNumberList.get(i)) {
 				p.setLocation(info.current_xyList.get(i));
-				System.out.println("get XY point=" + p.getX() + "," + p.getY());
+//				System.out.println("get XY point=" + p.getX() + "," + p.getY());
 			}
 		}
 
