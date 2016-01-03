@@ -53,42 +53,45 @@ public class SRE
 			health = (int) v.get(0);
 			v.remove(0);
 			
-			if(health == 0) //dead
+			if (count < 4) // 4 character
 			{
-				v_picture.add(no + "-2-4");
-				v_picture.add(current);
-			}
-			else
+				if (health == 0) // dead
+				{
+					v_picture.add(no + "-2-4");
+					v_picture.add(current);
+				}
+
+				if (before != current) // walking
+				{
+					v_picture.add(no + "-0-" + dir);
+					v_picture.add(current);
+				} 
+				else // stand straight
+				{
+					v_picture.add(no + "-1-" + dir);
+					v_picture.add(current);
+				}
+			} 
+			else // monster
 			{
-				if(count < 4)
+				if (health == 0) // dead
 				{
-					if(before != current) // walking
-					{
-						v_picture.add(no + "-0-" +dir);
-						v_picture.add(current);
-					}
-					else //stand straight
-					{
-						v_picture.add(no + "-1-" + dir);
-						v_picture.add(current);
-					}
+					continue;
 				}
-				else
+
+				if (before != current) // walking
 				{
-					if(before != current) // walking
-					{
-						v_picture.add("0-0-" + dir);
-						v_picture.add(current);
-					}
-					else //stand straight
-					{
-						v_picture.add("0-1-" + dir);
-						v_picture.add(current);
-					}
+					v_picture.add("0-0-" + dir);
+					v_picture.add(current);
+				} 
+				else // stand straight
+				{
+					v_picture.add("0-1-" + dir);
+					v_picture.add(current);
 				}
-				
-				
 			}
+				
+			
 			count++;
 		}
 		
