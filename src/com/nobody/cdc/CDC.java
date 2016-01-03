@@ -190,23 +190,23 @@ public class CDC {
 	}
 
 	private Point getCertainPosition(Point position, int direction, int distance) {
-		Point nextPosition;
+		Point nextPosition = new Point();
 
 		switch (direction) {
 		case 0:// left
-			nextPosition = new Point(position.x-25*distance, position.y);
+			nextPosition.setLocation(position.x-25*distance, position.y);
 			break;
 		case 1:// up
-			nextPosition = new Point(position.x, position.y - 25 * distance);
+			nextPosition.setLocation(position.x, position.y - 25 * distance);
 			break;
 		case 2:// right
-			nextPosition = new Point(position.x + 25 * distance, position.y);
+			nextPosition.setLocation(position.x + 25 * distance, position.y);
 			break;
 		case 3:// down
-			nextPosition = new Point(position.x, position.y + 25 * distance);
+			nextPosition.setLocation(position.x, position.y + 25 * distance);
 			break;
 		}
-		return position;
+		return nextPosition;
 	}
 
 	private static ArrayList loadMap(String mapfile) throws IOException {
