@@ -17,6 +17,13 @@ public class RenderThread implements Runnable
 	@Override
 	public void run()
 	{
+		// sleep for cdc and dom initialization
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		
 		while(true)
 		{
 			sceneRender.renderScene();
