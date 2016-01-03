@@ -32,7 +32,13 @@ public class Main {
 		System.out.println("main cliick hash code :" + gui.hashCode());
 		while (flag == false) {
 			flag = gui.getFlag();
-			System.out.println(flag);
+//			System.out.println(flag);
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		System.out.println("exit while loop");
 		gui.setVisible(false);

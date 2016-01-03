@@ -106,9 +106,11 @@ public class UDPBC {
 			Thread.sleep(200);
 
 			updateInfo = cdc.getUpdateInfo();
-			System.out.println("get update info from cdc.");
-			it = updateInfo.iterator();
-			System.out.println("updateInfo size :" + updateInfo.size());
+			if(updateInfo.size() > 0) {
+				System.out.println("get update info from cdc.");
+				it = updateInfo.iterator();
+				System.out.println("updateInfo size :" + updateInfo.size());
+			}
 			msg = "";
 			
 			while (it.hasNext()) {

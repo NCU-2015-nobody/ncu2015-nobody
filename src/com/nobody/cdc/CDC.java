@@ -74,7 +74,7 @@ public class CDC {
 			if (isTrap) {// position ahead is trap
 				character.HP = character.HP - 50;
 			}
-
+			System.out.println("Character change to true");
 			character.state = true;
 		}
 	}
@@ -124,7 +124,6 @@ public class CDC {
 
 	public Vector<Object> getUpdateInfo() {
 		Vector<Object> updatedInfo = new Vector<Object>();
-
 		for (Character character : characterList) {
 			if (character.state) {
 				System.out.println("cdc update character=" + character.position);
