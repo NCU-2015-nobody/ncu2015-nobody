@@ -36,7 +36,7 @@ public class UpdateThread implements Runnable{
                         characterDetect.add(character) ;
                         
                          //Boss attack
-                        if(monster.isBoss==true){
+                        if(monster.isBoss && monster.HP>0){
                         	character.HP = character.HP-50 ;
                         	character.state = true ;
                         	
@@ -132,7 +132,7 @@ public class UpdateThread implements Runnable{
 	
 	                }
 	
-	                if( list.get(0).equals(true) ){
+	                if( list.get(0).equals(true) && monster.HP>0){
 	
 	                    switch(forChangeState){
 	                        case 0:{

@@ -42,7 +42,7 @@ public class CDC {
 	}
 
 	public void addVirtualCharacter(int clientID) throws ExceedMaxException {
-		assert !clientIDExist(clientID) : "clientID already exists";// 要改成if!!!!!
+		assert !clientIDExist(clientID) : "clientID already exists";
 		System.out.println(clientID + ": add Character");
 		if (characterList.size() == 4) {// at most 4 characters
 			throw new ExceedMaxException();
@@ -65,6 +65,10 @@ public class CDC {
 		assert (0 <= newDirection && newDirection < 4) : "invalid moveCode";
 
 		Character character = getCertainCharacter(clientID);
+		if (character.HP <= 0){
+			return;
+		}
+
 		Point newPosition = getCertainPosition(character.position, newDirection, 1);
 		System.out.println("clientID="+clientID+",character.position="+character.position+",newDirection"+newDirection);
 		boolean isObstacle = !cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
@@ -99,6 +103,9 @@ public class CDC {
 		int attackRange = skillTable[clientID][0];
 		Character character = getCertainCharacter(clientID);
 		Point characterPosition = character.position;
+		if (character.HP <= 0){
+			return;
+		}
 
 		if (clientID == 2) {// 牧師
 			Iterator<Character> charIterator = characterList.iterator();
