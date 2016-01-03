@@ -65,6 +65,7 @@ public class Main {
 
 			// start monster thread
 			try {
+				System.out.println("In the Main, try updateMonsterThread")  ;
 				cdc.updateMonsterThread();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
