@@ -177,16 +177,16 @@ public class DOM {
 		for (int i = 0; i < info.healthList.size(); i++) {
 			switch (info.clientNumberList.get(i)) {
 			case 1:
-				percentageHP[0] = (info.healthList.get(i) / info.maxHP[0]) * 100;
+				percentageHP[0] = (info.healthList.get(i) * 100) / info.maxHP[0];
 				break;
 			case 2:
-				percentageHP[1] = (info.healthList.get(i) / info.maxHP[1]) * 100;
+				percentageHP[1] = (info.healthList.get(i) * 100) / info.maxHP[1];
 				break;
 			case 3:
-				percentageHP[2] = (info.healthList.get(i) / info.maxHP[2]) * 100;
+				percentageHP[2] = (info.healthList.get(i) * 100) / info.maxHP[2];
 				break;
 			case 4:
-				percentageHP[3] = (info.healthList.get(i) / info.maxHP[3]) * 100;
+				percentageHP[3] = (info.healthList.get(i) * 100) / info.maxHP[3];
 				break;
 			}
 		}
