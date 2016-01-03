@@ -44,7 +44,7 @@ public class UpdateThread implements Runnable{
                         
                     }
                     
-                    if(!(character.HP <= 0) && (distanceX + distanceY)==25){//�P�w����b�Ǫ�����h�l��
+                    if(!(character.HP <= 0) && (distanceX + distanceY)==25 && monster.state==true){//�P�w����b�Ǫ�����h�l��
                     	character.HP = character.HP-25 ;
                     	character.state = true ;
                     }       

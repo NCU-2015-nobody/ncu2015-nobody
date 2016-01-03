@@ -130,8 +130,11 @@ public class CDC {
 			System.out.println("cdc: character attack loop");
 			ArrayList<Boolean> isObstacle = cdcsdm.checkObstacle(character.position, character.direction, attackRange);
 			for (int i = 1; i <= attackRange; i++) {
+				System.out.println("attack! i=" + i + ", attackRange=" + attackRange);
 				Point checkPosition = getCertainPosition(characterPosition, character.direction, i);
+				System.out.println("checkPosition = " + checkPosition);
 				Monster checkMonster = getPositionMonster(checkPosition);
+				System.out.println("checkMonster = " + checkMonster);
 				if (checkMonster != null) {
 					System.out.println("cdc characterAttack: monster at attackrange " + i);
 					if (0 <= checkMonster.HP - skillTable[clientID][1]){
@@ -210,7 +213,7 @@ public class CDC {
 		Iterator<Monster> monsterIterator = monsterList.iterator();
 		while (monsterIterator.hasNext()) {
 			Monster monster = monsterIterator.next();
-			if (monster.position == position) {
+			if (monster.position.x == position.x && monster.position.y==position.y && monster.HP>0) {
 				return monster;
 			}
 		}
