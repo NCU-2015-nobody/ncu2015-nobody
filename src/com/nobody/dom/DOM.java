@@ -9,11 +9,14 @@ import com.nobody.tcpcm.Client;
 public class DOM {
 	information info = new information();
 	private Client client;
-	
+	private CDTimer cdTimer;
 	
 	public DOM(Client client)
 	{
 		this.client = client;
+		this.cdTimer =  new CDTimer(this);
+		Thread cdThread = new Thread(cdTimer);
+		cdThread.start();
 	}
 	
 	
@@ -103,31 +106,14 @@ public class DOM {
 		info.health_monsterList.set(indexM, health);
 
 	}
-
-	public boolean CDTimer() ///////// not done
+	
+	private void updateCDTimer()
 	{
-		final int timeInterval = 1000;
-
-		if (info.CD == 0) {
-			info.CD = 3;
-			Thread t = new Thread(new Runnable() {
-				public void run() {
-
-					try {
-						Thread.sleep(timeInterval);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-
-					info.CD = 0;
-				}
-			});
-			t.start();
-			return true;
-		} else {
-			return false;
-		}
-
+		cdTimer.setCDTime(10);
+	}
+	
+	public boolean isCD(){
+		return info.CD;
 	}
 
 	public Vector getAllDynamicObjects() {
@@ -161,7 +147,7 @@ public class DOM {
 		System.out.println("index: " + index);
 		System.out.println("size: " + info.dirList.size());
 		
-		if (info.CD > 0) {
+		if (info.CD) {
 			character[0] = 0; // 0 for no attack; 1 for attack
 		} else {
 			character[0] = 1;
@@ -217,10 +203,10 @@ public class DOM {
 		boolean[] boolCD = { false, false, false, false };
 		int self_no = client.character() - 1;
 
-		if (info.CD > 0)
-			boolCD[self_no] = false;
-		else
+		if (info.CD) // can't attack
 			boolCD[self_no] = true;
+		else
+			boolCD[self_no] = false;
 
 		return boolCD;
 	}
@@ -238,7 +224,7 @@ public class DOM {
 		public ArrayList<Integer> dir_monsterList = new ArrayList<Integer>();
 		public ArrayList<Integer> health_monsterList = new ArrayList<Integer>();
 
-		public int CD;
+		public boolean CD;
 		public int[] maxHP = new int[4];
 	}
 }
