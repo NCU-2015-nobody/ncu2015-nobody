@@ -31,6 +31,8 @@ public class SRE
 		int dir = -1;
 		int health = -1;
 		
+		int count = 0;
+		
 		for(int i = 0 ; i < 3 ; i++)
 		{
 			v_picture.add(characterInfo[i]);
@@ -58,17 +60,36 @@ public class SRE
 			}
 			else
 			{
-				if(before != current) // walking
+				if(count < 4)
 				{
-					v_picture.add(no + "-0-" +dir);
-					v_picture.add(current);
+					if(before != current) // walking
+					{
+						v_picture.add(no + "-0-" +dir);
+						v_picture.add(current);
+					}
+					else //stand straight
+					{
+						v_picture.add(no + "-1-" + dir);
+						v_picture.add(current);
+					}
 				}
-				else //stand straight
+				else
 				{
-					v_picture.add(no + "-1-" +dir);
-					v_picture.add(current);
+					if(before != current) // walking
+					{
+						v_picture.add("0-0-" + dir);
+						v_picture.add(current);
+					}
+					else //stand straight
+					{
+						v_picture.add("0-1-" + dir);
+						v_picture.add(current);
+					}
 				}
+				
+				
 			}
+			count++;
 		}
 		
 		canvas.updateSprite(v_picture);

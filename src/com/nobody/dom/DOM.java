@@ -143,10 +143,6 @@ public class DOM {
 		int self_no = client.character();
 		int index = info.clientNumberList.indexOf(self_no);
 		
-		System.out.println("num: " + info.clientNumberList.size());
-		System.out.println("index: " + index);
-		System.out.println("size: " + info.dirList.size());
-		
 		if (info.CD) {
 			character[0] = 0; // 0 for no attack; 1 for attack
 		} else {
