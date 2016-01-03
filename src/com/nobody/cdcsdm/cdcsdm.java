@@ -102,9 +102,8 @@ public class cdcsdm {
 					YY++ ;
 				}
 			}break;
-				
+			
 		}
-		
 		return obstacleList ;
 	}
 	
