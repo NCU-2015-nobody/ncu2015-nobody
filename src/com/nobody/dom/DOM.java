@@ -154,7 +154,7 @@ public class DOM {
 	public int[] mainCharacterInfo() {
 		int[] character = new int[3];
 		int self_no = client.character();
-		int index = info.clientNumberList.indexOf(self_no);
+		int index = info.clientNumberList.indexOf(self_no-1);
 
 		if (info.CD > 0) {
 			character[0] = 0; // 0 for no attack; 1 for attack
