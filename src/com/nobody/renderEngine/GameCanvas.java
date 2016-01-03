@@ -375,15 +375,14 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		//�N�Ҧ��ӥX�{���Ϥ�Ū�ipicture�}�C��
 		try
 		{
-			
+			Toolkit tk = Toolkit.getDefaultToolkit();
+			for (int i = 0; i < 68; i++) {
+				preLoad[i] = tk.getDefaultToolkit().getImage("./image/sprite/" + i + ".png");
+				tk.prepareImage(preLoad[i], -1, -1, null);
+			}
 		}
 		catch(Exception e) {
-			
-		}
-		Toolkit tk = Toolkit.getDefaultToolkit();
-		for(int i = 0;i<68;i++){
-			preLoad[i] = tk.getDefaultToolkit().getImage("./image/sprite/"+i+".png");
-			tk.prepareImage(preLoad[i], -1, -1, null);
+			e.printStackTrace();
 		}
 	}
 	
