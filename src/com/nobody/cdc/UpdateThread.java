@@ -32,7 +32,7 @@ public class UpdateThread implements Runnable {
 					System.out.println("character ID : " + character.clientID);
 					double distanceX = Math.abs(character.position.getX() - monster.position.getX()); // �����
 					double distanceY = Math.abs(character.position.getY() - monster.position.getY());
-					if (distanceX < 250 && distanceY < 400) {// if monster is in
+					if (distanceX < 250 && distanceY < 400 && character.HP>0) {// if monster is in
 																// the window of
 																// the character
 						distance.add(distanceX * distanceX + distanceY * distanceY);
