@@ -22,7 +22,6 @@ public class UpdateThread implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("updateThread here.");
 			
             for(Monster monster: monsterList){
                 Vector<Double> distance = new Vector <Double>() ;
@@ -32,7 +31,6 @@ public class UpdateThread implements Runnable{
 
                     double distanceX = Math.abs(character.position.getX() - monster.position.getX()) ; //�����
                     double distanceY = Math.abs(character.position.getY() - monster.position.getY()) ;
-                    System.out.println("distanceX and distanceY:  "+ distanceX + "---" + distanceY);
                     if( distanceX<250 && distanceY<400 ){//if monster is in the window of the character
                         distance.add(distanceX*distanceX+distanceY*distanceY) ;
                         characterDetect.add(character) ;
