@@ -107,7 +107,7 @@ public class DOM {
 
 	}
 	
-	private void updateCDTimer()
+	public void updateCDTimer()
 	{
 		cdTimer.setCDTime(10);
 	}

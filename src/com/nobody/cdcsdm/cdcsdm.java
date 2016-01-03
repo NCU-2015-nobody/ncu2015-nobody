@@ -62,6 +62,7 @@ public class cdcsdm {
 			case 0:{
 				for(int n=0 ; n<attackRange ; n++){
 					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						System.out.println("this is obstacle, type: " + columnList.get(XX).get(YY));
 						obstacleList.add(true) ;
 					}
 					else
@@ -72,6 +73,7 @@ public class cdcsdm {
 			
 			case 1:{
 				for(int n=0 ; n<attackRange ; n++){
+					System.out.println("this is obstacle, type: " + columnList.get(XX).get(YY));
 					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
 						obstacleList.add(true) ;
 					}
@@ -84,6 +86,7 @@ public class cdcsdm {
 			case 2:{
 				for(int n=0 ; n<attackRange ; n++){
 					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						System.out.println("this is obstacle, type: " + columnList.get(XX).get(YY));
 						obstacleList.add(true) ;
 					}
 					else
@@ -95,6 +98,7 @@ public class cdcsdm {
 			case 3:{
 				for(int n=0 ; n<attackRange ; n++){
 					if( columnList.get(XX).get(YY)==2 || columnList.get(XX).get(YY)==6 ){
+						System.out.println("this is obstacle, type: " + columnList.get(XX).get(YY));
 						obstacleList.add(true) ;
 					}
 					else
