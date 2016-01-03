@@ -59,6 +59,7 @@ public class SRE
 				{
 					v_picture.add("1-2-4");
 					v_picture.add(current);
+					continue;
 				}
 
 				if (before != current) // walking
