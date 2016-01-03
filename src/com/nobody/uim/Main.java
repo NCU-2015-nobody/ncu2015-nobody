@@ -8,6 +8,7 @@ import com.nobody.renderEngine.GameCanvas;
 import com.nobody.renderEngine.GameFrame;
 import com.nobody.renderEngine.Listener;
 import com.nobody.renderEngine.RenderThread;
+import com.nobody.renderEngine.SRE;
 import com.nobody.renderEngine.SceneDataModule;
 import com.nobody.renderEngine.SceneRender;
 import com.nobody.renderEngine.UIRender;
@@ -108,12 +109,15 @@ public class Main {
 			 */
 			SceneRender background = new SceneRender(sdm, dom, canvas);
 			background.renderScene();
+			
+			SRE spriteRender = new SRE(dom);
+			
 			UIRender uiSystem = new UIRender(dom, canvas);
 
 			/*
 			 * create RenderThread and startup thread
 			 */
-			RenderThread renderThread = new RenderThread(background, uiSystem);
+			RenderThread renderThread = new RenderThread(background, spriteRender, uiSystem);
 			Thread thread = new Thread(renderThread);
 			thread.start();
 

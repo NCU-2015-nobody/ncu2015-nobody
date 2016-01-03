@@ -4,13 +4,13 @@ package com.nobody.renderEngine;
 public class RenderThread implements Runnable
 {
 	private SceneRender sceneRender;
-	//  private SpriteRender spriteRender;
+	private SRE spriteRender;
 	private UIRender uiRender;
 	
-	public RenderThread(SceneRender sceneRender/*, SpriteRender spriteRender*/, UIRender uiRender)
+	public RenderThread(SceneRender sceneRender, SRE spriteRender, UIRender uiRender)
 	{
 		this.sceneRender = sceneRender;
-		// this.spriteRender = spriteRender;
+		this.spriteRender = spriteRender;
 		this.uiRender = uiRender;
 	}
 
@@ -20,7 +20,7 @@ public class RenderThread implements Runnable
 		while(true)
 		{
 			sceneRender.renderScene();
-			//spriteRender.renderSprites();
+			spriteRender.renderSprites();
 			uiRender.renderUI();
 			
 			

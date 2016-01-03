@@ -3,17 +3,25 @@ package com.nobody.renderEngine;
 import java.awt.Point;
 import java.util.Vector;
 
+import com.nobody.dom.DOM;
 import com.nobody.renderEngine.DOMtest;
 
 public class SRE 
 {
+	private DOM dom;
+	
+	public SRE(DOM dom)
+	{
+		this.dom = dom;
+	}
+	
 	@SuppressWarnings("null")
 	void renderSprites()
 	{	
-		Vector v = DOMtest.getAllDynamicObjects(); 
+		Vector v = dom.getAllDynamicObjects(); 
 		Vector v_picture = new Vector(); 
-		int[] characterInfo = DOMtest.mainCharacterinfo();
-		Point mainXY = DOMtest.getVirtualCharacterXY();
+		int[] characterInfo = dom.mainCharacterInfo();
+		Point mainXY = dom.getVirtualCharacterXY();
 		
 		int no = -1;
 		Point before = null;

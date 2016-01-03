@@ -38,12 +38,12 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 	private boolean[] cdFlag;
 	
 	
-	private Image[] picture = new Image[100]; //±ýÃ¸»s¹Ï¤ù
-	private Image[] preLoad = new Image[68];//¥ý¸ü¤J¹Ï¤ù
-	private Point p[] = new Point[100]; //¶Ç¤Jªºµ´¹ï§¤¼Ð
-	private int attacked=0; //¤W¦¸§ðÀ»ª¬ºA
-	private Point p_player; //¥D¨¤®y¼Ð
-	int attack_con = 0; //­pºâ§ðÀ»¹Ï¤ù«ùÄò®É¶¡
+	private Image[] picture = new Image[100]; //ï¿½ï¿½Ã¸ï¿½sï¿½Ï¤ï¿½
+	private Image[] preLoad = new Image[68];//ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½Ï¤ï¿½
+	private Point p[] = new Point[100]; //ï¿½Ç¤Jï¿½ï¿½ï¿½ï¿½ï¿½ï§¤ï¿½ï¿½
+	private int attacked=0; //ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A
+	private Point p_player; //ï¿½Dï¿½ï¿½ï¿½yï¿½ï¿½
+	int attack_con = 0; //ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¤ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½
 	int a[] = new int[20];
 	
 	
@@ -62,6 +62,8 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		initialBlocks();
 		initialHPPercentage();
 		initialCDFlag();
+		
+		loadSpriteImage();
 		
 		loadUIImage();
 	}
@@ -84,13 +86,13 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		
 		//v=attack+dir+job+point+filenaame+point
 		
-		String s[] = new String[100]; //¶Ç¤Jªº¹Ï¤ù¦WºÙ
-		int attackNow; //¦s§ðÀ»»P§_
-		int dir; //¦s­±¹ï¤è¦V
-		int job; //¦s¥D¨¤Â¾·~
+		String s[] = new String[100]; //ï¿½Ç¤Jï¿½ï¿½ï¿½Ï¤ï¿½ï¿½Wï¿½ï¿½
+		int attackNow; //ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½_
+		int dir; //ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½V
+		int job; //ï¿½sï¿½Dï¿½ï¿½Â¾ï¿½~
 		
 		
-		//¨ú¥XÃ¸¹Ï©Ò»Ý¸ê°T
+		//ï¿½ï¿½ï¿½XÃ¸ï¿½Ï©Ò»Ý¸ï¿½T
 		p_player = (Point) v.get(3);
 		v.remove(3);
 		job = (int) v.get(2);
@@ -99,21 +101,21 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		v.remove(1);
 		attackNow = (int) v.get(0);
 		v.remove(0);
-		//¨ú¥XÃ¸¹Ï©Ò»Ý¸ê°T
+		//ï¿½ï¿½ï¿½XÃ¸ï¿½Ï©Ò»Ý¸ï¿½T
 		
-		//§PÂ_¬O§_»ÝÅã¥Ü§ðÀ»¹Ï¤ù
+		//ï¿½Pï¿½_ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½Ü§ï¿½ï¿½ï¿½ï¿½Ï¤ï¿½
 		if(attacked == 0){
 			if(attackNow == 1){
 				attack_con = 3;
 				v = selectAttack(dir,job,v);
 				/*
-				 * §ðÀ»°Êµe
+				 * ï¿½ï¿½ï¿½ï¿½ï¿½Êµe
 				 */
 			}
 			else if(attack_con > 0){
 				v = selectAttack(dir,job,v);
 				/*
-				 * Ä~Äò§ðÀ»°Êµe
+				 * ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµe
 				 */
 				
 				System.out.println("attack");
@@ -123,36 +125,36 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		else if(attack_con > 0){
 			v = selectAttack(dir,job,v);
 			/*
-			 * Ä~Äò§ðÀ»°Êµe
+			 * ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµe
 			 */
 			System.out.println("attack");
 			attack_con--;
 		}
-		//§PÂ_§ðÀ»µ²§ô
+		//ï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		
-		attacked = attackNow;//°O¿ý¤W¤@¦¸§ðÀ»ª¬ªp
+		attacked = attackNow;//ï¿½Oï¿½ï¿½ï¿½Wï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½p
 		
 		
-		//²MªÅ¤W¦¸updateªº¸ê°T
+		//ï¿½Mï¿½Å¤Wï¿½ï¿½updateï¿½ï¿½ï¿½ï¿½T
 		for(int i=0;i<100;i++)	{
 			p[i] = null;
 			s[i] = null;
 		}
 		
 		
-		//§âvector v ¤À¦¨ "ÀÉ¦W" ©M "§¤¼Ð" ¨â­Ó°}¦C
+		//ï¿½ï¿½vector v ï¿½ï¿½ï¿½ï¿½ "ï¿½É¦W" ï¿½M "ï¿½ï¿½ï¿½ï¿½" ï¿½ï¿½Ó°}ï¿½C
 		for(int i = 0;i<v.size();i++){
 			if(v.get(i) instanceof String){
 				s[i/2] = (String) v.get(i);
 				System.out.println(i/2+"//"+s[i/2]);
 				switch(s[i/2]){
-					//¦º¤`
+					//ï¿½ï¿½ï¿½`
 					case "1-2-4":
 						picture[i/2] = preLoad[66];
 						break;
 						
-					//©Çª«¨«¸ô
+					//ï¿½Çªï¿½ï¿½ï¿½ï¿½ï¿½
 					case "0-0-0":
 						animation(0, i, 0);
 						break;
@@ -166,7 +168,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						animation(3, i, 9);
 						break;
 						
-					//©Çª«¯¸¥ß
+					//ï¿½Çªï¿½ï¿½ï¿½ï¿½ï¿½
 					case "0-1-0":
 						picture[i/2] = preLoad[0];
 						break;
@@ -180,7 +182,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						picture[i/2] = preLoad[9];
 						break;
 						
-					//¾Ô¤h¨«¸ô
+					//ï¿½Ô¤hï¿½ï¿½ï¿½ï¿½
 					case "1-0-0":
 						animation(4, i, 12);
 						break;
@@ -194,7 +196,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						animation(7, i, 21);
 						break;
 						
-					//¾Ô¤h¯¸¥ß
+					//ï¿½Ô¤hï¿½ï¿½ï¿½ï¿½
 					case "1-1-0":
 						picture[i/2] = preLoad[12];
 						break;
@@ -208,7 +210,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						picture[i/2] = preLoad[21];
 						break;
 						
-					//ªª®v¨«¸ô
+					//ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½
 					case "2-0-0":
 						animation(8, i, 24);
 						break;
@@ -222,7 +224,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						animation(11, i, 33);
 						break;
 						
-					//ªª®v¯¸¥ß
+					//ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½
 					case "2-1-0":
 						picture[i/2] = preLoad[24];
 						break;
@@ -236,7 +238,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						picture[i/2] = preLoad[33];
 						break;
 						
-					//ªk®v¨«¸ô
+					//ï¿½kï¿½vï¿½ï¿½ï¿½ï¿½
 					case "3-0-0":
 						animation(12, i, 36);
 						break;
@@ -250,7 +252,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						animation(15, i, 45);
 						break;
 						
-					//ªk®v¯¸¥ß
+					//ï¿½kï¿½vï¿½ï¿½ï¿½ï¿½
 					case "3-1-0":
 						picture[i/2] = preLoad[36];
 						break;
@@ -264,7 +266,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						picture[i/2] = preLoad[45];
 						break;
 					
-					//¤}¤â¨«¸ô
+					//ï¿½}ï¿½â¨«ï¿½ï¿½
 					case "4-0-0":
 						animation(16, i, 48);
 						break;
@@ -278,7 +280,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						animation(19, i, 57);
 						break;
 						
-					//¤}¤â¯¸¥ß
+					//ï¿½}ï¿½â¯¸ï¿½ï¿½
 					case "4-1-0":
 						picture[i/2] = preLoad[48];
 						break;
@@ -293,17 +295,17 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						picture[i/2] = preLoad[57];
 						break;
 						
-					//¾Ô¤h§ðÀ»
+					//ï¿½Ô¤hï¿½ï¿½ï¿½ï¿½
 					case "1-3-0":
 						picture[i/2] = preLoad[60];
 						break;
 					
-					//ªª®v§ðÀ»
+					//ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½
 					case "2-3-0":
 						picture[i/2] = preLoad[64];
 						break;
 						
-					//ªk®v§ðÀ»
+					//ï¿½kï¿½vï¿½ï¿½ï¿½ï¿½
 					case "3-3-0":
 						picture[i/2] = preLoad[61];
 						break;
@@ -314,7 +316,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 						picture[i/2] = preLoad[63];
 						break;
 						
-					//¤}¤â§ðÀ»
+					//ï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½
 					case "4-3-0":
 						picture[i/2] = preLoad[65];
 						break;
@@ -368,9 +370,16 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		}
 	}
 	
-	void loadSpriteImage() throws IOException{
+	private void loadSpriteImage() {
 		
-		//±N©Ò¦³¸Ó¥X²{ªº¹Ï¤ùÅª¶ipicture°}¦C¤¤
+		//ï¿½Nï¿½Ò¦ï¿½ï¿½Ó¥Xï¿½{ï¿½ï¿½ï¿½Ï¤ï¿½Åªï¿½ipictureï¿½}ï¿½Cï¿½ï¿½
+		try
+		{
+			
+		}
+		catch(Exception e) {
+			
+		}
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		for(int i = 0;i<68;i++){
 			preLoad[i] = tk.getDefaultToolkit().getImage("./image/sprite/"+i+".png");
