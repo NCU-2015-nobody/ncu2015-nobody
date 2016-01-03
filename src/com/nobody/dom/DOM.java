@@ -109,7 +109,7 @@ public class DOM {
 	
 	public void updateCDTimer()
 	{
-		System.out.println("updateCD in dom");
+//		System.out.println("updateCD in dom");
 		cdTimer.setCDTime(10);
 	}
 	
