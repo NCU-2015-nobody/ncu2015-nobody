@@ -51,7 +51,16 @@ public class Main {
 
 			cdc = server.getCDC();
 			isServer = true;
-
+			
+			// start monster thread
+			try {
+				System.out.println("In the Main, updateMonsterThread")  ;
+				cdc.updateMonsterThread();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			/*
 			 * create UDPbc
 			 */
@@ -63,14 +72,7 @@ public class Main {
 				e.printStackTrace();
 			}
 
-			// start monster thread
-			try {
-				System.out.println("In the Main, try updateMonsterThread")  ;
-				cdc.updateMonsterThread();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 		} // end of create server
 		else// create client
 		{
