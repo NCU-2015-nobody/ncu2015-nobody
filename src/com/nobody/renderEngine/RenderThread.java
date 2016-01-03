@@ -19,7 +19,7 @@ public class RenderThread implements Runnable
 	{
 		// sleep for cdc and dom initialization
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(15000);
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
