@@ -35,8 +35,7 @@ public class CDC {
 		Point position = new Point();
 		for (int n = 0; n < list.size(); n++) {
 			position.setLocation(list.get(n).get(0), list.get(n).get(1));
-			monster = new Monster(n + 1, position);
-			monsterList.add(monster);
+			addMonster(position) ;
 		}
 	}
 
