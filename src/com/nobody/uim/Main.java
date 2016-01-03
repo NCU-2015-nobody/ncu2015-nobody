@@ -32,7 +32,7 @@ public class Main {
 		System.out.println("main cliick hash code :" + gui.hashCode());
 		while (flag == false) {
 			flag = gui.getFlag();
-//			System.out.println(flag);
+			// System.out.println(flag);
 			try {
 				Thread.sleep(200);
 			} catch (InterruptedException e) {
@@ -56,11 +56,12 @@ public class Main {
 			 */
 			UDPBC udpbc = new UDPBC(server, cdc);
 			try {
+//				Thread.sleep(5000);
 				udpbc.startUDPBroadCast();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
+
 			// start monster thread
 			try {
 				cdc.updateMonsterThread();

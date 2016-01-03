@@ -47,21 +47,14 @@ public class UDPBC {
 		ipList = ipList2;
 
 		for (int i = 0; i < 4; i++) {
-			try { // connect to the UDP Server
-					// if (i == 0) {
-					// port = 5566;
-					// } else {
+			try {
 				port = 5567;
-				// }
 				System.out.println("Connect with" + ipList.get(i) + ", port:" + port);
-				// if (i == 0) {
-				//this.isa[i] = new InetSocketAddress("127.0.0.1", port);
-				// } else {
 				this.isa[i] = new InetSocketAddress(ipList.get(i), port);
-				// }
 				this.socket[i].connect(isa[i]);
 				this.bw[i] = new BufferedWriter(new OutputStreamWriter(socket[i].getOutputStream()));
-				System.out.println("Connect success");
+				System.out.println("Connect success ip:" + ipList.get(i));
+//				Thread.sleep(1000);
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("Some thing wrong! with connect" + ipList.get(i));
@@ -95,6 +88,7 @@ public class UDPBC {
 					bw[i].write(msg);
 					bw[i].newLine();
 					bw[i].flush();
+					Thread.sleep(200);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -106,13 +100,13 @@ public class UDPBC {
 			Thread.sleep(200);
 
 			updateInfo = cdc.getUpdateInfo();
-			if(updateInfo.size() > 0) {
+			if (updateInfo.size() > 0) {
 				System.out.println("get update info from cdc.");
 				it = updateInfo.iterator();
 				System.out.println("updateInfo size :" + updateInfo.size());
 			}
 			msg = "";
-			
+
 			while (it.hasNext()) {
 				Object info = it.next();
 				if (info instanceof Character) {
@@ -129,7 +123,9 @@ public class UDPBC {
 
 				for (int i = 0; i < 4; i++) {
 					try {
-						//System.out.println("no first time Boardcast msg " + msg);
+						// System.out.println("no first time Boardcast msg " +
+						// msg);
+						Thread.sleep(200);
 						bw[i].write(msg);
 						bw[i].newLine();
 						bw[i].flush();

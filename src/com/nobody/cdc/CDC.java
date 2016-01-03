@@ -66,7 +66,7 @@ public class CDC {
 		Character character = getCertainCharacter(clientID);
 		Point newPosition = getCertainPosition(character.position, newDirection, 1);
 		System.out.println("clientID="+clientID+",character.position="+character.position+",newDirection"+newDirection);
-		boolean isObstacle = cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
+		boolean isObstacle = !cdcsdm.checkObstacle(character.position, newDirection, 1).get(0);
 		boolean isTrap = cdcsdm.checkTrap(newPosition);
 		if (!isObstacle) {// position ahead is not obstacle
 			character.position.setLocation(newPosition);
