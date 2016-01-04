@@ -140,6 +140,7 @@ public class GameCanvas extends JPanel implements UpdateScene, UpdateUI
 		for(int i=0;i<100;i++)	{
 			p[i] = null;
 			s[i] = null;
+			picture[i] = null;
 		}
 		
 		
